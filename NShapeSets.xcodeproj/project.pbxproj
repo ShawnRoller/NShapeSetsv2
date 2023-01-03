@@ -14,6 +14,7 @@
 		29374BA52963C42900664042 /* NShapeSetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BA42963C42900664042 /* NShapeSetsTests.swift */; };
 		29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BAE2963C42900664042 /* NShapeSetsUITests.swift */; };
 		29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */; };
+		29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BBF2963CBB900664042 /* BackgroundGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		29374BAA2963C42900664042 /* NShapeSetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NShapeSetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29374BAE2963C42900664042 /* NShapeSetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITests.swift; sourceTree = "<group>"; };
 		29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29374BBF2963CBB900664042 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,8 @@
 		29374B922963C42700664042 /* NShapeSets */ = {
 			isa = PBXGroup;
 			children = (
+				29374BBE2963CB9D00664042 /* Primitives */,
+				29374BBD2963CB5700664042 /* Components */,
 				29374B932963C42700664042 /* NShapeSetsApp.swift */,
 				29374B952963C42700664042 /* ContentView.swift */,
 				29374B972963C42900664042 /* Assets.xcassets */,
@@ -125,6 +129,21 @@
 				29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */,
 			);
 			path = NShapeSetsUITests;
+			sourceTree = "<group>";
+		};
+		29374BBD2963CB5700664042 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		29374BBE2963CB9D00664042 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				29374BBF2963CBB900664042 /* BackgroundGradient.swift */,
+			);
+			path = Primitives;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 			files = (
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
+				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
