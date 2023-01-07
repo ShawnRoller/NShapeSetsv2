@@ -15,6 +15,7 @@
 		29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BAE2963C42900664042 /* NShapeSetsUITests.swift */; };
 		29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */; };
 		29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BBF2963CBB900664042 /* BackgroundGradient.swift */; };
+		29CE8924296A199D00EFEA53 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE8923296A199D00EFEA53 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		29374BAE2963C42900664042 /* NShapeSetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITests.swift; sourceTree = "<group>"; };
 		29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29374BBF2963CBB900664042 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		29CE8923296A199D00EFEA53 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		29374B922963C42700664042 /* NShapeSets */ = {
 			isa = PBXGroup;
 			children = (
+				29CE8922296A198F00EFEA53 /* Assets */,
 				29374BBE2963CB9D00664042 /* Primitives */,
 				29374BBD2963CB5700664042 /* Components */,
 				29374B932963C42700664042 /* NShapeSetsApp.swift */,
@@ -144,6 +147,14 @@
 				29374BBF2963CBB900664042 /* BackgroundGradient.swift */,
 			);
 			path = Primitives;
+			sourceTree = "<group>";
+		};
+		29CE8922296A198F00EFEA53 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				29CE8923296A199D00EFEA53 /* Colors.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
+				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
 				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
 			);
