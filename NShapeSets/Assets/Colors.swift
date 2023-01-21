@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 let circularGradientInner = "CircularGradientInner"
 let circularGradientOuter = "CircularGradientOuter"
@@ -22,6 +21,7 @@ let verticalGradientTop = "VerticalGradientTop"
 let verticalGradientBottom = "VerticalGradientBottom"
 let verticalGradientSecondaryTop = "VerticalGradientSecondaryTop"
 let verticalGradientSecondaryBottom = "VerticalGradientSecondaryBottom"
+let shadowColor = "ShadowColor"
 
 struct Palette {
     static let backgroundGradientColors = [Color(verticalGradientTop), Color(verticalGradientBottom)]
@@ -74,4 +74,6 @@ struct Palette {
     static let setsSliderFill = Color(secondaryColor)
     static let setsSliderBackground = Color(tertiaryColor)
     static let setsSliderKnob = Color(primaryColor)
+    
+    static let shadow = Color(shadowColor)
 }
