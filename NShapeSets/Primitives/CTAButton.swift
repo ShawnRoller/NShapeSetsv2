@@ -15,15 +15,17 @@ enum CtaType {
 
 struct CTAButton: View {
     let title: String
+    var role: CtaType = .primary
     let action: () -> Void
-    let role: CtaType = .primary
     
     var backgroundColor: Color {
         switch role {
         case .primary:
             return Palette.primaryButtonFill
-        default:
-            return Palette.primaryButtonFill
+        case .secondary:
+            return Palette.secondaryButtonFill
+        case .destructive:
+            return Palette.destructiveButtonFill
         }
     }
     
@@ -31,8 +33,10 @@ struct CTAButton: View {
         switch role {
         case .primary:
             return Palette.primaryButtonBorder
-        default:
-            return Palette.primaryButtonBorder
+        case .secondary:
+            return Palette.secondaryButtonBorder
+        case .destructive:
+            return Palette.destructiveButtonBorder
         }
     }
     
@@ -40,8 +44,10 @@ struct CTAButton: View {
         switch role {
         case .primary:
             return Palette.primaryButtonTitleText
-        default:
-            return Palette.primaryButtonTitleText
+        case .secondary:
+            return Palette.secondaryButtonTitleText
+        case .destructive:
+            return Palette.destructiveButtonTitleText
         }
     }
     
@@ -67,6 +73,10 @@ struct CTAButton: View {
 
 struct CTAButton_Previews: PreviewProvider {
     static var previews: some View {
-        CTAButton(title: "Start") {}
+        Group {
+            CTAButton(title: "Start", role: CtaType.primary) {}
+            CTAButton(title: "Start", role: CtaType.secondary) {}
+            CTAButton(title: "Start", role: CtaType.destructive) {}
+        }
     }
 }

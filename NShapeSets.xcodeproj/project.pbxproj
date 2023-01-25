@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
+		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
+		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
@@ -51,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		29032C00297C59F200E792B4 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AXR ArcadeMachine.ttf"; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F305F7D2980CD16008194E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1F305F7E2980CD29008194E5 /* PrimaryButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2935B3702980B8D800B66589 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +144,7 @@
 				2935B3702980B8D800B66589 /* Fonts */,
 				29CE8922296A198F00EFEA53 /* Assets */,
 				29374BBE2963CB9D00664042 /* Primitives */,
-				29374BBD2963CB5700664042 /* Components */,
+				1F305F7D2980CD16008194E5 /* Components */,
 				29374B932963C42700664042 /* NShapeSetsApp.swift */,
 				29374B952963C42700664042 /* ContentView.swift */,
 				29374B972963C42900664042 /* Assets.xcassets */,
@@ -164,13 +176,6 @@
 				29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */,
 			);
 			path = NShapeSetsUITests;
-			sourceTree = "<group>";
-		};
-		29374BBD2963CB5700664042 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		29374BBE2963CB9D00664042 /* Primitives */ = {
@@ -329,6 +334,7 @@
 			files = (
 				29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */,
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
+				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
 				2935B37B2980C14000B66589 /* CustomSlider.swift in Sources */,
 				1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */,
@@ -343,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29374BA52963C42900664042 /* NShapeSetsTests.swift in Sources */,
 				29CE8925296A207B00EFEA53 /* Colors.swift in Sources */,
 				29032C02297C59F200E792B4 /* Typography.swift in Sources */,
@@ -355,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */,
 				29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */,
 				29032C03297C59F200E792B4 /* Typography.swift in Sources */,
