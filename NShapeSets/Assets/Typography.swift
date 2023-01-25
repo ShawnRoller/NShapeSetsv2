@@ -23,7 +23,7 @@ extension View {
         return self.modifier(ScaledFont(name: name, size: size))
     }
     func ctaFont() -> some View {
-        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:60)).baselineOffset(12)
     }
 //    func header1Font() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
