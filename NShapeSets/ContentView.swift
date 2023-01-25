@@ -9,19 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var progress: Float = 50
+    @State private var sets: Double = 50
+    @State private var rest: Double = 50
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            ProgressBar(progress: $progress)
-            CTAButton(title: "Start") {
-                progress += 5
+        ZStack {
+            BackgroundGradient()
+            VStack {
+                ProgressBar(progress: $progress)
+                CustomSlider(value: $sets)
+                CustomSlider(value: $rest)
+                CTAButton(title: "Start") {
+                    progress += 5
+                }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
