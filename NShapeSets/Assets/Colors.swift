@@ -34,7 +34,7 @@ struct Palette {
     static let progressGradient = Gradient(colors: Palette.progressGradientColors)
     static let progressShadow = Color(secondaryColor)
     
-    static let progressBackgroundGradientColors = [Color(horizontalGradientStart), Color(horizontalGradientEnd)]
+    static let progressBackgroundGradientColors = [Color(horizontalGradientSecondaryStart), Color(horizontalGradientSecondaryEnd)]
     static let progressBackgroundGradient = Gradient(colors: Palette.progressBackgroundGradientColors)
     
     static let primaryButtonFill = Color(primaryColor)

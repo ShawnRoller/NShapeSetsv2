@@ -25,7 +25,6 @@ struct CustomSlider: UIViewRepresentable {
         }
     }
     
-    // TODO: convert to use Palette.accentColor1 once UIColor supports Color conversion
     var thumbColor: UIColor? = UIColor(Palette.setsSliderKnob)
     var minTrackColor: UIColor? = UIColor(Palette.setsSliderFill)
     var maxTrackColor: UIColor? = UIColor(Palette.setsSliderBackground)

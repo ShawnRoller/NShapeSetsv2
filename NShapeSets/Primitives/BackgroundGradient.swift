@@ -9,12 +9,22 @@ import SwiftUI
 
 struct BackgroundGradient: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let background = LinearGradient(gradient: Palette.backgroundGradient, startPoint: .top, endPoint: .bottom)
+        
+        return Rectangle()
+            .fill(background)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct BackgroundGradient_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundGradient()
+        Group {
+            BackgroundGradient()
+                .environment(\.colorScheme, .light)
+            
+            BackgroundGradient()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var progress: Float = 50
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
-            CTAButton(title: "Start") {}
+            ProgressBar(progress: $progress)
+            CTAButton(title: "Start") {
+                progress += 5
+            }
         }
         .padding()
     }
