@@ -10,6 +10,9 @@
 		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
+		1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
+		1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
+		1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
@@ -55,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		29032C00297C59F200E792B4 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AXR ArcadeMachine.ttf"; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				2935B3762980BDBD00B66589 /* NSlider.swift */,
 				2935B37A2980C14000B66589 /* CustomSlider.swift */,
 				1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */,
+				1F48CEDB29822952006250DB /* CircleGradient.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */,
+				1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */,
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
 				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
@@ -352,6 +358,7 @@
 				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29374BA52963C42900664042 /* NShapeSetsTests.swift in Sources */,
 				29CE8925296A207B00EFEA53 /* Colors.swift in Sources */,
+				1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */,
 				29032C02297C59F200E792B4 /* Typography.swift in Sources */,
 				1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				2935B37C2980C14000B66589 /* CustomSlider.swift in Sources */,
@@ -365,6 +372,7 @@
 				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */,
 				29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */,
+				1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */,
 				29032C03297C59F200E792B4 /* Typography.swift in Sources */,
 				1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				2935B37D2980C14000B66589 /* CustomSlider.swift in Sources */,
