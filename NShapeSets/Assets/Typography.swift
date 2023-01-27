@@ -25,6 +25,12 @@ extension View {
     func ctaFont() -> some View {
         return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:60)).baselineOffset(12)
     }
+    func logoTitleFont() -> some View {
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:180)).baselineOffset(12)
+    }
+    func logoSubtitleFont() -> some View {
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:90)).baselineOffset(12)
+    }
 //    func header1Font() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
 //    }
