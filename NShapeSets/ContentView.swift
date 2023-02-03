@@ -18,13 +18,7 @@ struct ContentView: View {
             BackgroundGradient()
             VStack {
                 ProgressBar(progress: $progress)
-                SetupActionSheet(isVisible: $showingActionSheet) {
-                    CustomSlider(value: $sets)
-                    CustomSlider(value: $rest)
-                    CTAButton(title: "Start") {
-                        progress += 5
-                    }
-                }
+                SetupActionSheet(restValue: $sets, setsValue: $rest)
             }
         }
     }

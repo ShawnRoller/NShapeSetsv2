@@ -2,29 +2,30 @@
 //  SetupActionSheet.swift
 //  NShapeSets
 //
-//  Created by Shawn Roller on 1/30/23.
+//  Created by Shawn Roller on 2/3/23.
 //
 
 import SwiftUI
 
-struct SetupActionSheet<Content: View>: View {
-    @Binding var isVisible: Bool
-    var content: () -> Content
-    
-    init(isVisible: Binding<Bool>, @ViewBuilder content: @escaping () -> Content) {
-        self.content = content
-        self._isVisible = isVisible
-    }
+struct SetupActionSheet: View {
+    @Binding var restValue: Double
+    @Binding var setsValue: Double
     
     var body: some View {
-        ActionSheet(content: content)
+        ActionSheet {
+            Main {
+                CustomSlider(value: $restValue)
+                CustomSlider(value: $setsValue)
+            }
+            Footer {
+                CTAButton(title: "Start", action: {})
+            }
+        }
     }
 }
 
 struct SetupActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        SetupActionSheet(isVisible: .constant(true)) {
-            Text("Hello world")
-        }
+        SetupActionSheet(restValue: .constant(50), setsValue: .constant(50))
     }
 }
