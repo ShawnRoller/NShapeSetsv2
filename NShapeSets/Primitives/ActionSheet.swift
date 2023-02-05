@@ -12,13 +12,13 @@ typealias Footer<V> = Group<V> where V:View
 
 struct ActionSheet<View1, View2>: View where View1: View, View2: View {
     var content: () -> TupleView<(Main<View1>, Footer<View2>)>
-    
-    init(@ViewBuilder content: @escaping () -> TupleView<(Main<View1>, Footer<View2>)>) {
-        self.content = content
-    }
-    
     @State private var offset: CGFloat = 0
-    @State private var isExpanded = true
+    @Binding var isExpanded: Bool
+    
+    init(isExpanded: Binding<Bool>, @ViewBuilder content: @escaping () -> TupleView<(Main<View1>, Footer<View2>)>) {
+        self.content = content
+        self._isExpanded = isExpanded
+    }
     
     let maxOffset: CGFloat = 230
     let pivotPoint: CGFloat = 100
@@ -47,14 +47,22 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
                 }
                 .onEnded { value in
                     if value.translation.height > pivotPoint {
-                        offset = maxOffset
                         isExpanded = false
                     } else {
-                        offset = 0
                         isExpanded = true
                     }
                 }
         )
+        .onChange(of: isExpanded) { value in
+            if value == true {
+                offset = 0
+            } else {
+                offset = maxOffset
+            }
+        }
+        .onAppear {
+            self.offset = isExpanded ? 0 : maxOffset
+        }
     }
     
     var body: some View {
@@ -92,7 +100,7 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
 
 struct ActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        ActionSheet {
+        ActionSheet(isExpanded: .constant(true)) {
             Main {
                 Text("213")
             }

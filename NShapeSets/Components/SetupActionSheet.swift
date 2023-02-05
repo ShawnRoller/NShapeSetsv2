@@ -10,15 +10,16 @@ import SwiftUI
 struct SetupActionSheet: View {
     @Binding var restValue: Double
     @Binding var setsValue: Double
+    @State private var isExpanded = false
     
     var body: some View {
-        ActionSheet {
+        ActionSheet(isExpanded: $isExpanded) {
             Main {
                 CustomSlider(value: $restValue)
                 CustomSlider(value: $setsValue)
             }
             Footer {
-                CTAButton(title: "Start", action: {})
+                CTAButton(title: "Start", action: { isExpanded.toggle() })
             }
         }
     }
