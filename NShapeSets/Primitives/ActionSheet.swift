@@ -20,7 +20,11 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
         self._isExpanded = isExpanded
     }
     
-    let maxOffset: CGFloat = 230
+    let maxHeight: CGFloat = 314
+    let minHeight: CGFloat = 114
+    var maxOffset: CGFloat {
+        return maxHeight - minHeight
+    }
     let pivotPoint: CGFloat = 100
     let overshot: CGFloat = 10
     
@@ -34,7 +38,7 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
                 .contentShape(Rectangle())
             Spacer()
         }
-        .frame(height: 10)
+        .frame(height: 6)
         .gesture(
             DragGesture(coordinateSpace: .global)
                 .onChanged { value in
@@ -81,10 +85,10 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
                 .padding()
                 .frame(minWidth: 0,
                        maxWidth: .infinity,
-                       minHeight: 50,
-                       maxHeight: 400)
+                       minHeight: minHeight,
+                       maxHeight: maxHeight)
                 .background(Palette.actionSheetGradient)
-                .cornerRadius(40, corners: [.topLeft, .topRight])
+                .cornerRadius(20, corners: [.topLeft, .topRight])
             }
             .ignoresSafeArea()
             .offset(y: offset + (overshot * 2))
@@ -92,6 +96,7 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
             VStack {
                 Spacer()
                 footer
+                    .offset(y: 10)
             }
             .padding()
         }
@@ -100,12 +105,22 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
 
 struct ActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        ActionSheet(isExpanded: .constant(true)) {
-            Main {
-                Text("213")
+        Group {
+            ActionSheet(isExpanded: .constant(true)) {
+                Main {
+                    Text("213")
+                }
+                Footer {
+                    CTAButton(title: "Start", action: {})
+                }
             }
-            Footer {
-                CTAButton(title: "Start", action: {})
+            ActionSheet(isExpanded: .constant(false)) {
+                Main {
+                    Text("213")
+                }
+                Footer {
+                    CTAButton(title: "Start", action: {})
+                }
             }
         }
     }
