@@ -43,6 +43,9 @@
 		29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BAE2963C42900664042 /* NShapeSetsUITests.swift */; };
 		29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */; };
 		29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BBF2963CBB900664042 /* BackgroundGradient.swift */; };
+		299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299ACC8D2995427D00528A48 /* ValueSelector.swift */; };
+		299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299ACC8D2995427D00528A48 /* ValueSelector.swift */; };
+		299ACC902995427D00528A48 /* ValueSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299ACC8D2995427D00528A48 /* ValueSelector.swift */; };
 		29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
 		29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
 		29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
@@ -91,6 +94,7 @@
 		29374BAE2963C42900664042 /* NShapeSetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITests.swift; sourceTree = "<group>"; };
 		29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29374BBF2963CBB900664042 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		299ACC8D2995427D00528A48 /* ValueSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueSelector.swift; sourceTree = "<group>"; };
 		29CE61C5298D60C20084A713 /* SetupActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupActionSheet.swift; sourceTree = "<group>"; };
 		29CE8923296A199D00EFEA53 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		29CE892A296A20C200EFEA53 /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				1F305F7E2980CD29008194E5 /* PrimaryButton.swift */,
 				1F8ED2BB29836C7200650696 /* LogoView.swift */,
 				29CE61C5298D60C20084A713 /* SetupActionSheet.swift */,
+				299ACC8D2995427D00528A48 /* ValueSelector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
+				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
 				2935B3772980BDBD00B66589 /* NSlider.swift in Sources */,
@@ -387,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1FC55EFE298776E7002BE892 /* ActionSheet.swift in Sources */,
@@ -405,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299ACC902995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1FC55EFF298776E7002BE892 /* ActionSheet.swift in Sources */,

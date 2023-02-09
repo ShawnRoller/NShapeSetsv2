@@ -76,4 +76,9 @@ struct Palette {
     static let setsSliderKnob = Color(primaryColor)
     
     static let shadow = Color(shadowColor)
+    
+    static let primary = Color(primaryColor)
+    static let secondary = Color(secondaryColor)
+    static let tertiary = Color(tertiaryColor)
+    static let quaternary = Color(quaternaryColor)
 }

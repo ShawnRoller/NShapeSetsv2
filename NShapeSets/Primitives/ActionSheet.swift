@@ -25,8 +25,20 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
     var maxOffset: CGFloat {
         return maxHeight - minHeight
     }
-    let pivotPoint: CGFloat = 100
+    var pivotPoint: CGFloat {
+        return maxOffset / 2
+    }
     let overshot: CGFloat = 10
+    
+    fileprivate func setOffset(expanded: Bool) {
+        if expanded {
+            offset = 0
+            isExpanded = true
+        } else {
+            offset = maxOffset
+            isExpanded = false
+        }
+    }
     
     fileprivate func grabber() -> some View {
         return HStack {
@@ -51,18 +63,14 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
                 }
                 .onEnded { value in
                     if value.translation.height > pivotPoint {
-                        isExpanded = false
+                        setOffset(expanded: false)
                     } else {
-                        isExpanded = true
+                        setOffset(expanded: true)
                     }
                 }
         )
         .onChange(of: isExpanded) { value in
-            if value == true {
-                offset = 0
-            } else {
-                offset = maxOffset
-            }
+            setOffset(expanded: value)
         }
         .onAppear {
             self.offset = isExpanded ? 0 : maxOffset
@@ -77,7 +85,6 @@ struct ActionSheet<View1, View2>: View where View1: View, View2: View {
                 Spacer()
                 VStack {
                     grabber()
-                    Spacer()
                     main
                         .opacity(2 - Double(abs(offset / 30)))
                     Spacer()

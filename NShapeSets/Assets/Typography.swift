@@ -31,6 +31,12 @@ extension View {
     func logoSubtitleFont() -> some View {
         return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:90)).baselineOffset(12)
     }
+    func selectorTitleFont() -> some View {
+        return self.modifier(ScaledFont(name: "Karla", size:30))
+    }
+    func selectorSubtitleFont() -> some View {
+        return self.modifier(ScaledFont(name: "Karla", size:13))
+    }
 //    func header1Font() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
 //    }
