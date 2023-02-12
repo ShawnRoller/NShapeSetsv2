@@ -37,6 +37,9 @@ extension View {
     func selectorSubtitleFont() -> some View {
         return self.modifier(ScaledFont(name: "Karla", size:13))
     }
+    func totalTimeFont() -> some View {
+        return self.modifier(ScaledFont(name: "Karla", size:13))
+    }
 //    func header1Font() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
 //    }

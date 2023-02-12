@@ -11,9 +11,12 @@ struct BackgroundGradient: View {
     var body: some View {
         let background = LinearGradient(gradient: Palette.backgroundGradient, startPoint: .top, endPoint: .bottom)
         
-        return Rectangle()
-            .fill(background)
-            .edgesIgnoringSafeArea(.all)
+        ZStack {
+            Rectangle()
+                .fill(background)
+                .edgesIgnoringSafeArea(.all)
+        }
+        .background()
     }
 }
 

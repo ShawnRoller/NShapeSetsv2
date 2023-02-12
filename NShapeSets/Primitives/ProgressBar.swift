@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    @Binding var progress: Float
+    var progress: Float
     
     var body: some View {
         let background = LinearGradient(gradient: Palette.progressBackgroundGradient, startPoint: .leading, endPoint: .trailing)
@@ -19,7 +19,6 @@ struct ProgressBar: View {
                 Rectangle()
                     .fill(background)
                     .cornerRadius(.infinity)
-                    .frame(height: 6)
                 Rectangle()
                     .fill(progressBackground)
                     .cornerRadius(.infinity)
@@ -27,11 +26,12 @@ struct ProgressBar: View {
                     .animation(Animation.spring(), value: progress)
             }
         }
+        .frame(height: 6)
     }
 }
 
 struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBar(progress: .constant(50))
+        ProgressBar(progress: 50)
     }
 }

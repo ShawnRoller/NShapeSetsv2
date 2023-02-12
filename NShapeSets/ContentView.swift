@@ -12,14 +12,18 @@ struct ContentView: View {
     @State private var sets: Double = 50
     @State private var rest: Double = 50
     @State private var showingActionSheet = true
+    @State private var totalSeconds = 999
     
     var body: some View {
         ZStack {
             BackgroundGradient()
             VStack {
-                ProgressBar(progress: $progress)
-                SetupActionSheet(restValue: $sets, setsValue: $rest)
+                InfoBar(progress: progress, totalSeconds: totalSeconds)
+                LogoView()
+                    .padding()
+                Spacer()
             }
+            SetupActionSheet(restValue: $sets, setsValue: $rest)
         }
     }
 }
@@ -27,5 +31,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
