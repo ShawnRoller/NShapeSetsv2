@@ -10,7 +10,7 @@ import SwiftUI
 struct SetupActionSheet: View {
     @Binding var restValue: Double
     @Binding var setsValue: Double
-    @State private var isExpanded = true
+    @Binding var isExpanded: Bool
     
     var body: some View {
         ActionSheet(isExpanded: $isExpanded) {
@@ -27,6 +27,6 @@ struct SetupActionSheet: View {
 
 struct SetupActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        SetupActionSheet(restValue: .constant(50), setsValue: .constant(50))
+        SetupActionSheet(restValue: .constant(50), setsValue: .constant(50), isExpanded: .constant(true))
     }
 }
