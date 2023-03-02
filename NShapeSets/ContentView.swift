@@ -18,7 +18,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             BackgroundGradient()
-            ProgressBar(progress: $progress)
             VStack {
                 InfoBar(progress: progress, totalSeconds: totalSeconds)
                 LogoView()
@@ -28,7 +27,6 @@ struct ContentView: View {
                 Spacer()
             }
             .onChange(of: showingActionSheet) { value in
-                print("changing value: \(value)")
                 topPadding = value ? 10 : 100
             }
             SetupActionSheet(restValue: $sets, setsValue: $rest, isExpanded: $showingActionSheet)
