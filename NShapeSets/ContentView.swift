@@ -13,17 +13,25 @@ struct ContentView: View {
     @State private var rest: Double = 50
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
+    @State private var topPadding: CGFloat = 10
     
     var body: some View {
         ZStack {
             BackgroundGradient()
+            ProgressBar(progress: $progress)
             VStack {
                 InfoBar(progress: progress, totalSeconds: totalSeconds)
                 LogoView()
                     .padding()
+                    .padding(.top, topPadding)
+                    .animation(Animation.spring(), value: topPadding)
                 Spacer()
             }
-            SetupActionSheet(restValue: $sets, setsValue: $rest)
+            .onChange(of: showingActionSheet) { value in
+                print("changing value: \(value)")
+                topPadding = value ? 10 : 100
+            }
+            SetupActionSheet(restValue: $sets, setsValue: $rest, isExpanded: $showingActionSheet)
         }
     }
 }
