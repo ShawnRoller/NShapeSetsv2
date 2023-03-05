@@ -13,6 +13,9 @@
 		1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
+		1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
+		1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
+		1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
@@ -80,6 +83,7 @@
 /* Begin PBXFileReference section */
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
+		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1FC55EFC298776E7002BE892 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */,
 				1F48CEDB29822952006250DB /* CircleGradient.swift */,
 				1FC55EFC298776E7002BE892 /* ActionSheet.swift */,
+				1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				2978FF20299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
+				1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
 				2935B37B2980C14000B66589 /* CustomSlider.swift in Sources */,
 				1FC55F0229877A17002BE892 /* ViewExtensions.swift in Sources */,
 				1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */,
@@ -427,6 +433,7 @@
 				1FC55F0329877A17002BE892 /* ViewExtensions.swift in Sources */,
 				2978FF21299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37C2980C14000B66589 /* CustomSlider.swift in Sources */,
+				1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +455,7 @@
 				1FC55F0429877A17002BE892 /* ViewExtensions.swift in Sources */,
 				2978FF22299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37D2980C14000B66589 /* CustomSlider.swift in Sources */,
+				1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
