@@ -14,16 +14,22 @@ struct ContentView: View {
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
+    @State private var restRemaining: CGFloat = 1
+    @State private var workout: Workout = Workout.example
     
     var body: some View {
         ZStack {
             BackgroundGradient()
             VStack {
                 InfoBar(progress: progress, totalSeconds: totalSeconds)
-                LogoView()
-                    .padding()
-                    .padding(.top, topPadding)
-                    .animation(Animation.spring(), value: topPadding)
+//                LogoView()
+//                    .padding()
+//                    .padding(.top, topPadding)
+//                    .animation(Animation.spring(), value: topPadding)
+                ProgressRing(progress: restRemaining)
+                Button("decrement") {
+                    restRemaining -= 0.1
+                }
                 Spacer()
             }
             .onChange(of: showingActionSheet) { value in

@@ -46,6 +46,9 @@
 		29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BAE2963C42900664042 /* NShapeSetsUITests.swift */; };
 		29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */; };
 		29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29374BBF2963CBB900664042 /* BackgroundGradient.swift */; };
+		294C8AB729B6ACB9000A2BB7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* Workout.swift */; };
+		294C8AB829B6ACB9000A2BB7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* Workout.swift */; };
+		294C8AB929B6ACB9000A2BB7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* Workout.swift */; };
 		2978FF1B299990DC005A3C3A /* InfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1A299990DC005A3C3A /* InfoBar.swift */; };
 		2978FF1C299990DC005A3C3A /* InfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1A299990DC005A3C3A /* InfoBar.swift */; };
 		2978FF1D299990DC005A3C3A /* InfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1A299990DC005A3C3A /* InfoBar.swift */; };
@@ -104,6 +107,7 @@
 		29374BAE2963C42900664042 /* NShapeSetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITests.swift; sourceTree = "<group>"; };
 		29374BB02963C42900664042 /* NShapeSetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29374BBF2963CBB900664042 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		294C8AB629B6ACB9000A2BB7 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		2978FF1A299990DC005A3C3A /* InfoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBar.swift; sourceTree = "<group>"; };
 		2978FF1F299991E2005A3C3A /* TimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelpers.swift; sourceTree = "<group>"; };
 		299ACC8D2995427D00528A48 /* ValueSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueSelector.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		29374B922963C42700664042 /* NShapeSets */ = {
 			isa = PBXGroup;
 			children = (
+				294C8AB529B6ACA4000A2BB7 /* Models */,
 				2978FF1E299991CF005A3C3A /* Utils */,
 				2935B3752980B95400B66589 /* Info.plist */,
 				1FC55F0029877A01002BE892 /* Extensions */,
@@ -241,6 +246,14 @@
 				1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */,
 			);
 			path = Primitives;
+			sourceTree = "<group>";
+		};
+		294C8AB529B6ACA4000A2BB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				294C8AB629B6ACB9000A2BB7 /* Workout.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2978FF1E299991CF005A3C3A /* Utils */ = {
@@ -396,6 +409,7 @@
 				1FC55EFD298776E7002BE892 /* ActionSheet.swift in Sources */,
 				2978FF1B299990DC005A3C3A /* InfoBar.swift in Sources */,
 				29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */,
+				294C8AB729B6ACB9000A2BB7 /* Workout.swift in Sources */,
 				1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */,
 				1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */,
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
@@ -422,6 +436,7 @@
 				2978FF1C299990DC005A3C3A /* InfoBar.swift in Sources */,
 				299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
+				294C8AB829B6ACB9000A2BB7 /* Workout.swift in Sources */,
 				29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1FC55EFE298776E7002BE892 /* ActionSheet.swift in Sources */,
 				29374BA52963C42900664042 /* NShapeSetsTests.swift in Sources */,
@@ -444,6 +459,7 @@
 				2978FF1D299990DC005A3C3A /* InfoBar.swift in Sources */,
 				299ACC902995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
+				294C8AB929B6ACB9000A2BB7 /* Workout.swift in Sources */,
 				29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1FC55EFF298776E7002BE892 /* ActionSheet.swift in Sources */,
 				29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */,
