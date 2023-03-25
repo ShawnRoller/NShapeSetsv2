@@ -11,15 +11,7 @@ struct ProgressRing: View {
     var progress: CGFloat
     
     var body: some View {
-        ZStack {
-            Circle()
-                .trim(from: 0, to: progress)
-                .stroke(Palette.restBar, style: StrokeStyle(lineWidth: 20, lineCap: .round))
-                .rotationEffect(Angle(degrees: -90))
-                .animation(.spring(), value: progress)
-                .shadow(color: Palette.restBarShadow, radius: 20)
-        }
-        .padding()
+        Ring(progress: progress, color: Palette.restBar, shadowColor: Palette.restBarShadow, width: 20)
     }
 }
 
