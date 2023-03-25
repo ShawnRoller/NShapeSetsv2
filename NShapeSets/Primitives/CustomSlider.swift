@@ -8,28 +8,11 @@
 import SwiftUI
 
 struct CustomSlider: UIViewRepresentable {
-    
-    final class Coordinator: NSObject {
-        // The class property value is a binding: It’s a reference to the SwiftUISlider
-        // value, which receives a reference to a @State variable value in ContentView.
-        var value: Binding<Double>
-        
-        // Create the binding when you initialize the Coordinator
-        init(value: Binding<Double>) {
-            self.value = value
-        }
-        
-        // Create a valueChanged(_:) action
-        @objc func valueChanged(_ sender: UISlider) {
-            self.value.wrappedValue = Double(sender.value)
-        }
-    }
-    
     var thumbColor: UIColor? = UIColor(Palette.setsSliderKnob)
     var minTrackColor: UIColor? = UIColor(Palette.setsSliderFill)
     var maxTrackColor: UIColor? = UIColor(Palette.setsSliderBackground)
     var range: ClosedRange<Double>? = 1...100
-    var step: Double? = 1
+    var step: Double = 1
     
     @Binding var value: Double
     
@@ -57,7 +40,22 @@ struct CustomSlider: UIViewRepresentable {
     }
     
     func makeCoordinator() -> CustomSlider.Coordinator {
-        Coordinator(value: $value)
+        Coordinator(self)
+    }
+    
+    final class Coordinator: NSObject {
+        var sliderView: CustomSlider
+        
+        // Create the binding when you initialize the Coordinator
+        init(_ slider: CustomSlider) {
+            self.sliderView = slider
+        }
+        
+        // Create a valueChanged(_:) action
+        @objc func valueChanged(_ sender: UISlider) {
+            let newValue = round(Double(sender.value) / sliderView.step) * sliderView.step
+            sliderView.value = newValue
+        }
     }
 }
 

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var progress: Float = 50
-    @State private var sets: Double = 50
-    @State private var rest: Double = 50
+    @State private var sets: Int = 15
+    @State private var rest: Int = 90
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
-    @State private var restRemaining: CGFloat = 1
+    @State private var restRemaining: Int = 30
     @State private var workout: Workout = Workout.example
-    @State private var showingLogo = true
+    @State private var showingLogo = false
     
     var body: some View {
         ZStack {
@@ -30,10 +30,11 @@ struct ContentView: View {
                             .padding(.top, topPadding)
                             .animation(Animation.spring(), value: topPadding)
                     } else {
-                        ProgressRing(progress: restRemaining)
+                        RestView(restTime: rest, restRemaining: restRemaining)
                     }
                     Button("toggle") {
-                        showingLogo.toggle()
+//                        showingLogo.toggle()
+                        restRemaining -= 1
                     }
                 }
                 .animation(.spring(), value: showingLogo)
@@ -42,7 +43,7 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { value in
                 topPadding = value ? 10 : 100
             }
-            SetupActionSheet(restValue: $sets, setsValue: $rest, isExpanded: $showingActionSheet)
+            SetupActionSheet(restValue: $rest, setsValue: $sets, isExpanded: $showingActionSheet)
         }
     }
 }

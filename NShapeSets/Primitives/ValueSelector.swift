@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct ValueSelector: View {
-    @Binding var value: Double
+    @Binding var value: Int
     var title = "sets"
+    var step: Double = 1
+    var range: ClosedRange<Double> = 1...100
     
     var body: some View {
         VStack {
             HStack(alignment: .firstTextBaseline) {
-                Text("\(value, specifier: "%.0f")")
+                Text("\(value)")
                     .selectorTitleFont()
                     .foregroundColor(Palette.quaternary)
                 Text(title)
                     .selectorSubtitleFont()
                     .foregroundColor(Palette.primary)
             }
-            CustomSlider(value: $value)
+            CustomSlider(range: range, step: step, value: Binding<Double>(
+                get: { Double(value) },
+                set: { value = Int($0) }
+            ))
         }
     }
 }

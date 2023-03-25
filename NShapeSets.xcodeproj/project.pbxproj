@@ -19,6 +19,15 @@
 		1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
+		1FBA7A0729CF32B1007A594F /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0629CF32B1007A594F /* RestView.swift */; };
+		1FBA7A0829CF32B1007A594F /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0629CF32B1007A594F /* RestView.swift */; };
+		1FBA7A0929CF32B1007A594F /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0629CF32B1007A594F /* RestView.swift */; };
+		1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
+		1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
+		1FBA7A0D29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
+		1FBA7A0F29CF3A46007A594F /* SetsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */; };
+		1FBA7A1029CF3A46007A594F /* SetsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */; };
+		1FBA7A1129CF3A46007A594F /* SetsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */; };
 		1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
@@ -34,7 +43,6 @@
 		2935B3722980B92800B66589 /* AXR ArcadeMachine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */; };
 		2935B3732980B92800B66589 /* AXR ArcadeMachine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */; };
 		2935B3742980B92800B66589 /* AXR ArcadeMachine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */; };
-		2935B3772980BDBD00B66589 /* NSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935B3762980BDBD00B66589 /* NSlider.swift */; };
 		2935B37B2980C14000B66589 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935B37A2980C14000B66589 /* CustomSlider.swift */; };
 		2935B37C2980C14000B66589 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935B37A2980C14000B66589 /* CustomSlider.swift */; };
 		2935B37D2980C14000B66589 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935B37A2980C14000B66589 /* CustomSlider.swift */; };
@@ -88,13 +96,15 @@
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		1FBA7A0629CF32B1007A594F /* RestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestView.swift; sourceTree = "<group>"; };
+		1FBA7A0A29CF38F8007A594F /* RestSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSelector.swift; sourceTree = "<group>"; };
+		1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsSelector.swift; sourceTree = "<group>"; };
 		1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1FC55EFC298776E7002BE892 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		1FC55F0129877A17002BE892 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		29032C00297C59F200E792B4 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		2935B3712980B92800B66589 /* AXR ArcadeMachine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AXR ArcadeMachine.ttf"; sourceTree = "<group>"; };
 		2935B3752980B95400B66589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2935B3762980BDBD00B66589 /* NSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSlider.swift; sourceTree = "<group>"; };
 		2935B37A2980C14000B66589 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		29374B902963C42700664042 /* NShapeSets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NShapeSets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29374B932963C42700664042 /* NShapeSetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NShapeSetsApp.swift; sourceTree = "<group>"; };
@@ -145,10 +155,12 @@
 			isa = PBXGroup;
 			children = (
 				1F305F7E2980CD29008194E5 /* PrimaryButton.swift */,
+				1FBA7A0629CF32B1007A594F /* RestView.swift */,
 				1F8ED2BB29836C7200650696 /* LogoView.swift */,
 				29CE61C5298D60C20084A713 /* SetupActionSheet.swift */,
-				299ACC8D2995427D00528A48 /* ValueSelector.swift */,
 				2978FF1A299990DC005A3C3A /* InfoBar.swift */,
+				1FBA7A0A29CF38F8007A594F /* RestSelector.swift */,
+				1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,12 +250,12 @@
 			children = (
 				29374BBF2963CBB900664042 /* BackgroundGradient.swift */,
 				29CE892A296A20C200EFEA53 /* CTAButton.swift */,
-				2935B3762980BDBD00B66589 /* NSlider.swift */,
 				2935B37A2980C14000B66589 /* CustomSlider.swift */,
 				1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */,
 				1F48CEDB29822952006250DB /* CircleGradient.swift */,
 				1FC55EFC298776E7002BE892 /* ActionSheet.swift */,
 				1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */,
+				299ACC8D2995427D00528A48 /* ValueSelector.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -428,8 +440,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBA7A0F29CF3A46007A594F /* SetsSelector.swift in Sources */,
 				1FC55EFD298776E7002BE892 /* ActionSheet.swift in Sources */,
 				2978FF1B299990DC005A3C3A /* InfoBar.swift in Sources */,
+				1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */,
 				29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */,
 				294C8AB729B6ACB9000A2BB7 /* Workout.swift in Sources */,
 				1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */,
@@ -444,10 +458,10 @@
 				1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
+				1FBA7A0729CF32B1007A594F /* RestView.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
-				2935B3772980BDBD00B66589 /* NSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +469,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */,
 				2978FF1C299990DC005A3C3A /* InfoBar.swift in Sources */,
+				1FBA7A1029CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				294C8AB829B6ACB9000A2BB7 /* Workout.swift in Sources */,
@@ -468,6 +484,7 @@
 				1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */,
 				1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				1FC55F0329877A17002BE892 /* ViewExtensions.swift in Sources */,
+				1FBA7A0829CF32B1007A594F /* RestView.swift in Sources */,
 				2978FF21299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37C2980C14000B66589 /* CustomSlider.swift in Sources */,
 				1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
@@ -478,7 +495,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBA7A0D29CF38F8007A594F /* RestSelector.swift in Sources */,
 				2978FF1D299990DC005A3C3A /* InfoBar.swift in Sources */,
+				1FBA7A1129CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC902995427D00528A48 /* ValueSelector.swift in Sources */,
 				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				294C8AB929B6ACB9000A2BB7 /* Workout.swift in Sources */,
@@ -491,6 +510,7 @@
 				1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */,
 				1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				1FC55F0429877A17002BE892 /* ViewExtensions.swift in Sources */,
+				1FBA7A0929CF32B1007A594F /* RestView.swift in Sources */,
 				2978FF22299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37D2980C14000B66589 /* CustomSlider.swift in Sources */,
 				1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
