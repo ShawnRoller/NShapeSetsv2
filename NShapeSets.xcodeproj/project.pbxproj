@@ -16,6 +16,9 @@
 		1F51409529CFE30200DD9A2A /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409429CFE30200DD9A2A /* WorkoutView.swift */; };
 		1F51409629CFE30200DD9A2A /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409429CFE30200DD9A2A /* WorkoutView.swift */; };
 		1F51409729CFE30200DD9A2A /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409429CFE30200DD9A2A /* WorkoutView.swift */; };
+		1F51409929CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
+		1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
+		1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
@@ -101,6 +104,7 @@
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F51409429CFE30200DD9A2A /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		1F51409829CFEA5400DD9A2A /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1FBA7A0A29CF38F8007A594F /* RestSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSelector.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				29374B952963C42700664042 /* ContentView.swift */,
 				29374B972963C42900664042 /* Assets.xcassets */,
 				29374B992963C42900664042 /* Preview Content */,
+				1F51409829CFEA5400DD9A2A /* Documentation.docc */,
 			);
 			path = NShapeSets;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				1FBA7A0F29CF3A46007A594F /* SetsSelector.swift in Sources */,
 				1FC55EFD298776E7002BE892 /* ActionSheet.swift in Sources */,
 				2978FF1B299990DC005A3C3A /* InfoBar.swift in Sources */,
+				1F51409929CFEA5400DD9A2A /* Documentation.docc in Sources */,
 				1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */,
 				29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */,
 				294C8AB729B6ACB9000A2BB7 /* Workout.swift in Sources */,
@@ -494,6 +500,7 @@
 				29CE8925296A207B00EFEA53 /* Colors.swift in Sources */,
 				1FBA7A2029CF4244007A594F /* ActiveRing.swift in Sources */,
 				1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */,
+				1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */,
 				29032C02297C59F200E792B4 /* Typography.swift in Sources */,
 				1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */,
 				1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */,
@@ -522,6 +529,7 @@
 				29374BAF2963C42900664042 /* NShapeSetsUITests.swift in Sources */,
 				1FBA7A2129CF4244007A594F /* ActiveRing.swift in Sources */,
 				1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */,
+				1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */,
 				29032C03297C59F200E792B4 /* Typography.swift in Sources */,
 				1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */,
 				1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */,
