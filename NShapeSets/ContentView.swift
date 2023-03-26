@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var restRemaining: Int = 30
     @State private var workout: Workout = Workout.example
     @State private var showingLogo = false
+    @State private var currentSet = 4
+    @State private var isRest = false
     
     var body: some View {
         ZStack {
@@ -30,14 +32,13 @@ struct ContentView: View {
                             .padding(.top, topPadding)
                             .animation(Animation.spring(), value: topPadding)
                     } else {
-                        RestView(restTime: rest, restRemaining: restRemaining)
-                    }
-                    Button("toggle") {
-//                        showingLogo.toggle()
-                        restRemaining -= 1
+                        WorkoutView(workout: workout, currentSet: currentSet, isRest: isRest, restRemaining: restRemaining)
                     }
                 }
                 .animation(.spring(), value: showingLogo)
+                Button("toggle") {
+                    isRest.toggle()
+                }
                 Spacer()
             }
             .onChange(of: showingActionSheet) { value in
