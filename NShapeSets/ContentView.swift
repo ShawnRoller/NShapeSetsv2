@@ -35,9 +35,12 @@ struct ContentView: View {
                         WorkoutView(workout: workout, currentSet: currentSet, isRest: isRest, restRemaining: restRemaining)
                     }
                 }
+                .padding(.top, topPadding)
+                .animation(Animation.spring(), value: topPadding)
                 .animation(.spring(), value: showingLogo)
                 Button("toggle") {
                     isRest.toggle()
+//                    showingLogo.toggle()
                 }
                 Spacer()
             }

@@ -33,18 +33,24 @@ struct WorkoutView: View {
         VStack {
             if isRest {
                 Text("\(restRemaining)")
-                    .logoTitleFont()
+                    .directive1Font()
+                    .foregroundColor(Palette.activeTitleText)
             } else {
                 Text("set \(currentSet)")
-                    .logoTitleFont()
+                    .directive1Font()
+                    .foregroundColor(Palette.restText)
                 Text("\(setsRemainingString)")
-                    .ctaFont()
+                    .directive2Font()
+                    .foregroundColor(Palette.restText)
             }
         }
     }
     
     var body: some View {
         ZStack {
+            CircleGradient()
+                .padding()
+                .opacity(0.5)
             ProgressRing(progress: progress, isRest: isRest)
             renderContent()
         }

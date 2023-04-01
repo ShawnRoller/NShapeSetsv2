@@ -40,12 +40,12 @@ extension View {
     func totalTimeFont() -> some View {
         return self.modifier(ScaledFont(name: "Karla", size:13))
     }
-//    func header1Font() -> some View {
-//        return self.modifier(ScaledFont(name: "Gotham-Book", size:60))
-//    }
-//    func header2Font() -> some View {
-//        return self.modifier(ScaledFont(name: "Gotham-Book", size:45))
-//    }
+    func directive1Font() -> some View {
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:150)).baselineOffset(12)
+    }
+    func directive2Font() -> some View {
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:60)).baselineOffset(12)
+    }
 //    func watchInputFont() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:26))
 //    }
