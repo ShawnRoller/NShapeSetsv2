@@ -14,3 +14,5 @@ struct Workout {
     
     static var example = Workout(rounds: 16, rest: 90)
 }
+
+

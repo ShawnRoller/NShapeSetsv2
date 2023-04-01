@@ -26,8 +26,9 @@ struct WorkoutView: View {
                remaining == 1 ? "1 set left" :
                "\(remaining) sets left"
     }
-
-
+    private var titleText: String {
+        isRest ? "\(restRemaining)" : "set \(currentSet)"
+    }
     
     func renderContent() -> some View {
         VStack {
@@ -52,7 +53,14 @@ struct WorkoutView: View {
                 .padding()
                 .opacity(0.5)
             ProgressRing(progress: progress, isRest: isRest)
-            renderContent()
+            VStack {
+                Text(titleText)
+                    .directive1Font()
+                .foregroundColor(Palette.restText)
+                Text("\(setsRemainingString)")
+                    .directive2Font()
+                    .foregroundColor(Palette.restText)
+            }
         }
     }
 }

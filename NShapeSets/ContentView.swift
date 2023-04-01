@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var progress: Float = 50
-    @State private var sets: Int = 15
-    @State private var rest: Int = 90
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
@@ -47,7 +45,7 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { value in
                 topPadding = value ? 10 : 100
             }
-            SetupActionSheet(restValue: $rest, setsValue: $sets, isExpanded: $showingActionSheet)
+            SetupActionSheet(restValue: $workout.rest, setsValue: $workout.rounds, isExpanded: $showingActionSheet)
         }
     }
 }
