@@ -18,9 +18,12 @@ struct Ring: View {
             .trim(from: 0, to: progress)
             .stroke(color, style: StrokeStyle(lineWidth: width, lineCap: .round))
             .rotationEffect(Angle(degrees: -90))
-            .animation(.spring(), value: progress)
             .shadow(color: shadowColor, radius: 20)
             .padding()
+            .animation(.spring(), value: progress)
+            .animation(.spring(), value: color)
+            .animation(.spring(), value: shadowColor)
+            .animation(.spring(), value: width)
     }
 }
 

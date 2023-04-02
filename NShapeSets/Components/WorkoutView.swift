@@ -13,38 +13,18 @@ import SwiftUI
 
 struct WorkoutView: View {
     var workout: Workout
-    var currentSet: Int
-    var isRest: Bool
-    var restRemaining: Int
     private var progress: CGFloat {
-        CGFloat(restRemaining) / CGFloat(workout.rest)
+        CGFloat(workout.restRemaining) / CGFloat(workout.rest)
     }
     private var setsRemainingString: String {
-        let remaining = workout.rounds - currentSet
+        let remaining = workout.rounds - workout.currentSet
         
         return remaining == 0 ? "final set" :
                remaining == 1 ? "1 set left" :
                "\(remaining) sets left"
     }
     private var titleText: String {
-        isRest ? "\(restRemaining)" : "set \(currentSet)"
-    }
-    
-    func renderContent() -> some View {
-        VStack {
-            if isRest {
-                Text("\(restRemaining)")
-                    .directive1Font()
-                    .foregroundColor(Palette.activeTitleText)
-            } else {
-                Text("set \(currentSet)")
-                    .directive1Font()
-                    .foregroundColor(Palette.restText)
-                Text("\(setsRemainingString)")
-                    .directive2Font()
-                    .foregroundColor(Palette.restText)
-            }
-        }
+        workout.state == .Rest ? "\(workout.restRemaining)" : "set \(workout.currentSet)"
     }
     
     var body: some View {
@@ -52,7 +32,7 @@ struct WorkoutView: View {
             CircleGradient()
                 .padding()
                 .opacity(0.5)
-            ProgressRing(progress: progress, isRest: isRest)
+            ProgressRing(progress: progress, isRest: workout.state == .Rest)
             VStack {
                 Text(titleText)
                     .directive1Font()
@@ -67,6 +47,6 @@ struct WorkoutView: View {
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutView(workout: Workout.example, currentSet: 3, isRest: false, restRemaining: Workout.example.rest / 3)
+        WorkoutView(workout: Workout.example)
     }
 }

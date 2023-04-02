@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var progress: Float = 50
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
-    @State private var restRemaining: Int = 30
     @State private var workout: Workout = Workout.example
     @State private var showingLogo = false
-    @State private var currentSet = 4
-    @State private var isRest = false
+    private var progress: Float {
+        Float(workout.currentSet) / Float(workout.rounds) * 100
+    }
     
     var body: some View {
         ZStack {
@@ -30,14 +29,14 @@ struct ContentView: View {
                             .padding(.top, topPadding)
                             .animation(Animation.spring(), value: topPadding)
                     } else {
-                        WorkoutView(workout: workout, currentSet: currentSet, isRest: isRest, restRemaining: restRemaining)
+                        WorkoutView(workout: workout)
                     }
                 }
                 .padding(.top, topPadding)
                 .animation(Animation.spring(), value: topPadding)
                 .animation(.spring(), value: showingLogo)
                 Button("toggle") {
-                    isRest.toggle()
+                    workout.state = workout.state == .Rest ? .Active : .Rest
 //                    showingLogo.toggle()
                 }
                 Spacer()
