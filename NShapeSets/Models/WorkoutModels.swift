@@ -21,6 +21,9 @@ struct Workout {
     var state: WorkoutState
     var currentSet: Int
     var restRemaining: Int
+    var progress: Float {
+        Float(currentSet) / Float(rounds) * 100
+    }
     
     init(rounds: Int, rest: Int, superSets: Int = 1) {
         self.rounds = rounds

@@ -13,15 +13,12 @@ struct ContentView: View {
     @State private var topPadding: CGFloat = 10
     @State private var workout: Workout = Workout.example
     @State private var showingLogo = false
-    private var progress: Float {
-        Float(workout.currentSet) / Float(workout.rounds) * 100
-    }
     
     var body: some View {
         ZStack {
             BackgroundGradient()
             VStack {
-                InfoBar(progress: progress, totalSeconds: totalSeconds)
+                InfoBar(progress: workout.progress, totalSeconds: totalSeconds)
                 ZStack {
                     if showingLogo {
                         LogoView()
@@ -44,7 +41,7 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { value in
                 topPadding = value ? 10 : 100
             }
-            SetupActionSheet(restValue: $workout.rest, setsValue: $workout.rounds, isExpanded: $showingActionSheet)
+            SetupActionSheet(workout: $workout, isExpanded: $showingActionSheet)
         }
     }
 }
