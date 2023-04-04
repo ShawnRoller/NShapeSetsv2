@@ -12,7 +12,7 @@
 import SwiftUI
 
 struct WorkoutView: View {
-    var workout: Workout
+    @ObservedObject var workout: Workout
     private var progress: CGFloat {
         CGFloat(workout.restRemaining) / CGFloat(workout.rest)
     }

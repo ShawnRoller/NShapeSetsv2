@@ -11,16 +11,15 @@ struct ContentView: View {
     @State private var showingActionSheet = true
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
-    @State private var workout: Workout = Workout.example
-    @State private var showingLogo = false
+    @ObservedObject private var workout: Workout = Workout.example
     
     var body: some View {
         ZStack {
             BackgroundGradient()
             VStack {
-                InfoBar(progress: workout.progress, totalSeconds: totalSeconds)
+                renderInfoBar()
                 ZStack {
-                    if showingLogo {
+                    if workout.state == .Setup {
                         LogoView()
                             .padding()
                             .padding(.top, topPadding)
@@ -31,18 +30,41 @@ struct ContentView: View {
                 }
                 .padding(.top, topPadding)
                 .animation(Animation.spring(), value: topPadding)
-                .animation(.spring(), value: showingLogo)
-                Button("toggle") {
-                    workout.state = workout.state == .Rest ? .Active : .Rest
-//                    showingLogo.toggle()
-                }
                 Spacer()
             }
             .onChange(of: showingActionSheet) { value in
                 topPadding = value ? 10 : 100
             }
-            SetupActionSheet(workout: $workout, isExpanded: $showingActionSheet)
+            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet, onCTAPress: onCTAPress)
         }
+    }
+    
+    func renderInfoBar() -> some View {
+        let renderStates: [WorkoutState] = [.Recap, .Rest, .Active]
+        return Group {
+            if (renderStates.contains(workout.state)) {
+                InfoBar(progress: workout.progress, totalSeconds: totalSeconds)
+            } else {
+                EmptyView()
+            }
+        }
+    }
+    
+    func onCTAPress() -> Void {
+        var setupVisible = false
+        switch workout.state {
+        case .Setup:
+            workout.startWorkout()
+        case .Active:
+            workout.startRest()
+        case .Rest:
+            workout.nextSet()
+        case .Recap:
+            workout.endWorkout()
+            setupVisible = true
+        }
+        
+        showingActionSheet = setupVisible
     }
 }
 

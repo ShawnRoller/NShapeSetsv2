@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct SetupActionSheet: View {
-    @Binding var workout: Workout
+    var workout: Workout
+    @Binding var rest: Int
+    @Binding var rounds: Int
     @Binding var isExpanded: Bool
+    var onCTAPress: () -> Void
+    
     private var buttonTitle: String {
         var title = "Start"
         switch workout.state {
         case .Setup:
-            title = "State"
+            title = "Start"
         case .Active:
             title = "Rest"
         case .Rest:
@@ -28,11 +32,11 @@ struct SetupActionSheet: View {
     var body: some View {
         ActionSheet(isExpanded: $isExpanded) {
             Main {
-                RestSelector(restValue: $workout.rest)
-                SetsSelector(setsValue: $workout.rounds)
+                RestSelector(restValue: $rest)
+                SetsSelector(setsValue: $rounds)
             }
             Footer {
-                CTAButton(title: buttonTitle, action: { isExpanded.toggle() })
+                CTAButton(title: buttonTitle, action: onCTAPress)
             }
         }
     }
@@ -40,6 +44,6 @@ struct SetupActionSheet: View {
 
 struct SetupActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        SetupActionSheet(workout: .constant(Workout.example), isExpanded: .constant(true))
+        SetupActionSheet(workout: Workout.example, rest: .constant(Workout.example.rest), rounds: .constant(Workout.example.rounds), isExpanded: .constant(true), onCTAPress: {})
     }
 }
