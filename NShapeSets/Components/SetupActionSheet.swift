@@ -15,7 +15,7 @@ struct SetupActionSheet: View {
     var onCTAPress: () -> Void
     
     private var buttonTitle: String {
-        var title = "Start"
+        var title: String
         switch workout.state {
         case .Setup:
             title = "Start"
@@ -30,7 +30,7 @@ struct SetupActionSheet: View {
     }
     
     private var ctaType: CtaType {
-        var type = CtaType.primary
+        var type: CtaType
         switch workout.state {
         case .Setup:
             type = .primary
