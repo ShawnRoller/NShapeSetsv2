@@ -17,7 +17,11 @@ enum WorkoutState {
 
 class Workout: ObservableObject {
     @Published var rounds: Int
-    @Published var rest: Int
+    @Published var rest: Int {
+        didSet {
+            restRemaining = rest
+        }
+    }
     @Published var superSets: Int
     @Published var state: WorkoutState
     @Published var currentSet: Int
@@ -33,12 +37,14 @@ class Workout: ObservableObject {
     }
     
     func startRest() -> Void {
-        // TODO: handle last set
-        state = .Rest
+        if currentSet == rounds {
+            endWorkout()
+        } else {
+            state = .Rest
+        }
     }
     
     func nextSet() -> Void {
-        // TODO: handle last set
         state = .Active
         currentSet += 1
     }
@@ -47,8 +53,8 @@ class Workout: ObservableObject {
         state = .Recap
     }
     
-    func setRest(_ newRest: Int) -> Void {
-        rest = newRest
+    func reset() -> Void {
+        state = .Setup
     }
     
     init(rounds: Int, rest: Int, superSets: Int = 1) {

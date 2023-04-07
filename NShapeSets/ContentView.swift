@@ -24,6 +24,8 @@ struct ContentView: View {
                             .padding()
                             .padding(.top, topPadding)
                             .animation(Animation.spring(), value: topPadding)
+                    } else if workout.state == .Recap {
+                        RecapView(workout: workout)
                     } else {
                         WorkoutView(workout: workout)
                     }
@@ -60,7 +62,7 @@ struct ContentView: View {
         case .Rest:
             workout.nextSet()
         case .Recap:
-            workout.endWorkout()
+            workout.reset()
             setupVisible = true
         }
         

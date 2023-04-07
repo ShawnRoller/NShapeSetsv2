@@ -20,7 +20,7 @@ struct SetupActionSheet: View {
         case .Setup:
             title = "Start"
         case .Active:
-            title = "Rest"
+            title = workout.currentSet == workout.rounds ? "Done" : "Rest"
         case .Rest:
             title = "Skip"
         case .Recap:
@@ -33,7 +33,7 @@ struct SetupActionSheet: View {
         ActionSheet(isExpanded: $isExpanded) {
             Main {
                 RestSelector(restValue: $rest)
-                SetsSelector(setsValue: $rounds)
+                SetsSelector(setsValue: $rounds, minSet: workout.currentSet)
             }
             Footer {
                 CTAButton(title: buttonTitle, action: onCTAPress)
