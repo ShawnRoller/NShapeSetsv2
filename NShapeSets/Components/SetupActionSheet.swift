@@ -24,9 +24,24 @@ struct SetupActionSheet: View {
         case .Rest:
             title = "Skip"
         case .Recap:
-            title = "Done"
+            title = "Let's go"
         }
         return title
+    }
+    
+    private var ctaType: CtaType {
+        var type = CtaType.primary
+        switch workout.state {
+        case .Setup:
+            type = .primary
+        case .Active:
+            type = .primary
+        case .Rest:
+            type = .destructive
+        case .Recap:
+            type = .secondary
+        }
+        return type
     }
     
     var body: some View {
@@ -36,7 +51,7 @@ struct SetupActionSheet: View {
                 SetsSelector(setsValue: $rounds, minSet: workout.currentSet)
             }
             Footer {
-                CTAButton(title: buttonTitle, action: onCTAPress)
+                CTAButton(title: buttonTitle, role: ctaType, action: onCTAPress)
             }
         }
     }
