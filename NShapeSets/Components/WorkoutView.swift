@@ -26,6 +26,9 @@ struct WorkoutView: View {
     private var titleText: String {
         workout.state == .Rest ? "\(workout.restRemaining)" : "set \(workout.currentSet)"
     }
+    private var titleColor: Color {
+        workout.state == .Rest ? Palette.restText : Palette.activeTitleText
+    }
     
     var body: some View {
         ZStack {
@@ -36,7 +39,7 @@ struct WorkoutView: View {
             VStack {
                 Text(titleText)
                     .directive1Font()
-                .foregroundColor(Palette.restText)
+                    .foregroundColor(titleColor)
                 Text("\(setsRemainingString)")
                     .directive2Font()
                     .foregroundColor(Palette.restText)
