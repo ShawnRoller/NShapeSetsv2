@@ -18,7 +18,7 @@ struct CTAButton: View {
     var role: CtaType = .primary
     let action: () -> Void
     
-    var backgroundColor: Color {
+    private var backgroundColor: Color {
         switch role {
         case .primary:
             return Palette.primaryButtonFill
@@ -29,7 +29,7 @@ struct CTAButton: View {
         }
     }
     
-    var borderColor: Color {
+    private var borderColor: Color {
         switch role {
         case .primary:
             return Palette.primaryButtonBorder
@@ -40,7 +40,7 @@ struct CTAButton: View {
         }
     }
     
-    var titleColor: Color {
+    private var titleColor: Color {
         switch role {
         case .primary:
             return Palette.primaryButtonTitleText
@@ -51,9 +51,21 @@ struct CTAButton: View {
         }
     }
     
+    private var haptic: () -> Void {
+        switch role {
+        case .primary:
+            return Haptic.medium
+        case .secondary:
+            return Haptic.medium
+        case .destructive:
+            return Haptic.heavy
+        }
+    }
+    
     var body: some View {
         Button(action: {
             action()
+            haptic()
         }) {
             Text(title)
                 .frame(maxWidth: .infinity, maxHeight: 50.0)
