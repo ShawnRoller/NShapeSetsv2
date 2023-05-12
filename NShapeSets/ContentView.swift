@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
     @ObservedObject private var workout: Workout = Workout.example
+    @ObservedObject private var totalTimer = TotalTimer()
     
     var body: some View {
         ZStack {
@@ -45,7 +46,7 @@ struct ContentView: View {
         let renderStates: [WorkoutState] = [.Recap, .Rest, .Active]
         return Group {
             if (renderStates.contains(workout.state)) {
-                InfoBar(progress: workout.progress, totalSeconds: totalSeconds)
+                InfoBar(progress: workout.progress, totalSeconds: totalTimer.totalTime)
             } else {
                 EmptyView()
             }
@@ -57,12 +58,15 @@ struct ContentView: View {
         switch workout.state {
         case .Setup:
             workout.startWorkout()
+            totalTimer.stop()
         case .Active:
             workout.startRest()
+            totalTimer.start()
         case .Rest:
             workout.nextSet()
         case .Recap:
             workout.reset()
+            totalTimer.stop()
             setupVisible = true
         }
         

@@ -16,6 +16,12 @@
 		1F14EA142A0B2292009E98A9 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F14EA152A0B2292009E98A9 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F14EA162A0B2292009E98A9 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
+		1F14EA182A0EE26E009E98A9 /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
+		1F14EA192A0EE26E009E98A9 /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
+		1F14EA1A2A0EE26E009E98A9 /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
+		1F14EA1C2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
+		1F14EA1D2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
+		1F14EA1E2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
 		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
@@ -113,6 +119,8 @@
 		1F01449A29DFAE6100C2EA5F /* RecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapView.swift; sourceTree = "<group>"; };
 		1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelpers.swift; sourceTree = "<group>"; };
 		1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTimer.swift; sourceTree = "<group>"; };
+		1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModels.swift; sourceTree = "<group>"; };
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F51409429CFE30200DD9A2A /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
@@ -293,6 +301,8 @@
 			children = (
 				294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */,
 				1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */,
+				1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */,
+				1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -493,7 +503,9 @@
 				1FC55F0229877A17002BE892 /* ViewExtensions.swift in Sources */,
 				1FBFF8632980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
+				1F14EA182A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F14EA142A0B2292009E98A9 /* CountdownTimer.swift in Sources */,
+				1F14EA1C2A0EE28D009E98A9 /* TimerModels.swift in Sources */,
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
@@ -521,8 +533,10 @@
 				1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */,
 				29032C02297C59F200E792B4 /* Typography.swift in Sources */,
 				1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */,
+				1F14EA1D2A0EE28D009E98A9 /* TimerModels.swift in Sources */,
 				1FBFF8642980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				1FC55F0329877A17002BE892 /* ViewExtensions.swift in Sources */,
+				1F14EA192A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F0144A029E4E89700C2EA5F /* HapticHelpers.swift in Sources */,
 				1F01449C29DFAE6100C2EA5F /* RecapView.swift in Sources */,
 				1FBA7A1C29CF404D007A594F /* Ring.swift in Sources */,
@@ -553,8 +567,10 @@
 				1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */,
 				29032C03297C59F200E792B4 /* Typography.swift in Sources */,
 				1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */,
+				1F14EA1E2A0EE28D009E98A9 /* TimerModels.swift in Sources */,
 				1FBFF8652980C5FD0000AF6D /* ProgressBar.swift in Sources */,
 				1FC55F0429877A17002BE892 /* ViewExtensions.swift in Sources */,
+				1F14EA1A2A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F0144A129E4E89700C2EA5F /* HapticHelpers.swift in Sources */,
 				1F01449D29DFAE6100C2EA5F /* RecapView.swift in Sources */,
 				1FBA7A1D29CF404D007A594F /* Ring.swift in Sources */,

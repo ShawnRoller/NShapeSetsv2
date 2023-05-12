@@ -8,11 +8,6 @@
 import SwiftUI
 import Combine
 
-enum TimerState {
-    case Stopped
-    case Active
-}
-
 class CountdownTimer: ObservableObject {
     @Published var remainingTime: Int
     private var initialTime: Int
