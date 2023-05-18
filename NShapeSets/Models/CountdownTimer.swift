@@ -11,14 +11,17 @@ import Combine
 class CountdownTimer: ObservableObject {
     @Published var remainingTime: Int
     private var initialTime: Int
+    private var onCountdownComplete: () -> Void
     private var timer: AnyCancellable?
     
-    init(initialTime: Int) {
+    init(initialTime: Int, onCountdownComplete: @escaping () -> Void) {
         self.initialTime = initialTime
         self.remainingTime = initialTime
+        self.onCountdownComplete = onCountdownComplete
     }
     
     func start() -> Void {
+        timer?.cancel()
         timer = Timer.publish(every: 1, on: .main, in: .common)
                     .autoconnect()
                     .sink { [weak self] _ in
@@ -27,6 +30,7 @@ class CountdownTimer: ObservableObject {
                             self.remainingTime -= 1
                         } else {
                             self.timer?.cancel()
+                            self.onCountdownComplete()
 //                            self.triggerNotification()
                         }
                     }
@@ -41,5 +45,5 @@ class CountdownTimer: ObservableObject {
         remainingTime = initialTime
     }
     
-    static var example = CountdownTimer(initialTime: 30)
+    static var example = CountdownTimer(initialTime: 30, onCountdownComplete: {})
 }

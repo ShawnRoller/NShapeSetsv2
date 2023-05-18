@@ -16,24 +16,34 @@ enum WorkoutState {
 }
 
 class Workout: ObservableObject {
+    @ObservedObject var timer: CountdownTimer
     @Published var rounds: Int
     @Published var rest: Int {
         didSet {
-            restRemaining = rest
+            // set the remaining rest if the rest value is changing during a workout
+            self.timer = CountdownTimer(initialTime: rest, onCountdownComplete: nextSet)
+            //update remainingRest when the timer changes
+            timerCancellable = timer.$remainingTime.sink { [weak self] _ in
+                self?.objectWillChange.send()
+            }
+            if state == .Rest {
+                self.timer.start()
+            }
         }
     }
     @Published var superSets: Int
     @Published var state: WorkoutState
     @Published var currentSet: Int
-    @Published var restRemaining: Int
     var progress: Float {
         Float(currentSet) / Float(rounds) * 100
     }
     
     private var progressCancellable: AnyCancellable?
+    private var timerCancellable: AnyCancellable?
     
     func startWorkout() -> Void {
         state = .Active
+        timer.stop()
     }
     
     func startRest() -> Void {
@@ -41,20 +51,34 @@ class Workout: ObservableObject {
             endWorkout()
         } else {
             state = .Rest
+            setupTimer()
+            timer.start()
         }
     }
     
     func nextSet() -> Void {
         state = .Active
         currentSet += 1
+        timer.stop()
     }
     
     func endWorkout() -> Void {
         state = .Recap
+        timer.stop()
     }
     
     func reset() -> Void {
         state = .Setup
+        timer.stop()
+    }
+    
+    func setupTimer() -> Void {
+        timer = CountdownTimer(initialTime: self.rest, onCountdownComplete: nextSet)
+        
+        //update remainingRest when the timer changes
+        timerCancellable = timer.$remainingTime.sink { [weak self] _ in
+            self?.objectWillChange.send()
+        }
     }
     
     init(rounds: Int, rest: Int, superSets: Int = 1) {
@@ -63,8 +87,9 @@ class Workout: ObservableObject {
         self.superSets = superSets
         self.state = .Setup
         self.currentSet = 1
-        self.restRemaining = rest
+        timer = CountdownTimer(initialTime: rest, onCountdownComplete: {})
         
+        // update progress when the currentSet changes
         progressCancellable = $currentSet.sink { [weak self] _ in
             self?.objectWillChange.send()
         }

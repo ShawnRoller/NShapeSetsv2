@@ -14,7 +14,7 @@ import SwiftUI
 struct WorkoutView: View {
     @ObservedObject var workout: Workout
     private var progress: CGFloat {
-        CGFloat(workout.restRemaining) / CGFloat(workout.rest)
+        CGFloat(workout.timer.remainingTime) / CGFloat(workout.rest)
     }
     private var setsRemainingString: String {
         let remaining = workout.rounds - workout.currentSet
@@ -24,7 +24,7 @@ struct WorkoutView: View {
                "\(remaining) sets left"
     }
     private var titleText: String {
-        workout.state == .Rest ? "\(workout.restRemaining)" : "set \(workout.currentSet)"
+        workout.state == .Rest ? "\(workout.timer.remainingTime)" : "set \(workout.currentSet)"
     }
     private var titleColor: Color {
         workout.state == .Rest ? Palette.restText : Palette.activeTitleText
