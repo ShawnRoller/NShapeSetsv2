@@ -17,6 +17,7 @@ enum WorkoutState {
 
 class Workout: ObservableObject {
     @ObservedObject var timer: CountdownTimer
+    @ObservedObject var totalTimer = TotalTimer()
     @Published var rounds: Int
     @Published var rest: Int {
         didSet {
@@ -40,10 +41,16 @@ class Workout: ObservableObject {
     
     private var progressCancellable: AnyCancellable?
     private var timerCancellable: AnyCancellable?
+    private var totalCancellable: AnyCancellable?
     
     func startWorkout() -> Void {
         state = .Active
         timer.stop()
+        totalTimer.start()
+        
+        totalCancellable = totalTimer.$totalTime.sink { [weak self] _ in
+            self?.objectWillChange.send()
+        }
     }
     
     func startRest() -> Void {
@@ -65,11 +72,13 @@ class Workout: ObservableObject {
     func endWorkout() -> Void {
         state = .Recap
         timer.stop()
+        totalTimer.pause()
     }
     
     func reset() -> Void {
         state = .Setup
         timer.stop()
+        totalTimer.stop()
     }
     
     func setupTimer() -> Void {

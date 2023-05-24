@@ -11,6 +11,7 @@ NShape Sets built with SwiftUI (and a bit of UIKit)
 - [ ] implement a timer class
     - [ ] tie it to the "rest" duration of a Workout
 - [ ] animate the "active" ring so it pulses with every second that goes by
+- [ ] consider moving the observable objects like countdownTimer to the appropriate view, rather than the workout
 - [x] flesh out how nextSet, startRest, and endWorkout should function
 - [x] Make the ContentView work
     - [x] The Sliders need to update the Workout value appropriately
@@ -27,3 +28,5 @@ How it should work
 - accepts a start value
 - runs in the background
 - triggers a local notification when the timer hits 0
+
+

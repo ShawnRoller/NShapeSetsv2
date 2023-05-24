@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
     @ObservedObject private var workout: Workout = Workout.example
-    @ObservedObject private var totalTimer = TotalTimer()
     
     var body: some View {
         ZStack {
@@ -46,7 +45,7 @@ struct ContentView: View {
         let renderStates: [WorkoutState] = [.Recap, .Rest, .Active]
         return Group {
             if (renderStates.contains(workout.state)) {
-                InfoBar(progress: workout.progress, totalSeconds: totalTimer.totalTime)
+                InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime)
             } else {
                 EmptyView()
             }
@@ -54,19 +53,18 @@ struct ContentView: View {
     }
     
     func onCTAPress() -> Void {
+        // TODO: determine how to stop the total timer when the recap view appears
+        // should the total timer be part of the workout?
         var setupVisible = false
         switch workout.state {
         case .Setup:
             workout.startWorkout()
-            totalTimer.stop()
         case .Active:
             workout.startRest()
-            totalTimer.start()
         case .Rest:
             workout.nextSet()
         case .Recap:
             workout.reset()
-            totalTimer.stop()
             setupVisible = true
         }
         
