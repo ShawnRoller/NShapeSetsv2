@@ -73,15 +73,33 @@ func generateComposition(from training: Training) -> CustomWorkoutComposition {
 }
 
 struct ContentView: View {
-    let training = Training.example
+    private let sets: [Int] = Array(1...99)
+    private let restValues: [Int] = Array(5...300)
+    private var rest: [Int] {
+        return restValues.compactMap { v in v % 5 == 0 ? v : nil }
+    }
+    @State private var selectedSets: Double = 15
+    @State private var selectedRest: Double = 90
+    
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            HStack {
+                Picker("Sets", selection: $selectedSets) {
+                    ForEach(sets, id: \.self) {
+                        Text(String($0))
+                            .font(.title2)
+                    }
+                }
+                Picker("Rest", selection: $selectedRest) {
+                    ForEach(rest, id: \.self) {
+                        Text(String($0))
+                            .font(.title2)
+                    }
+                }
+            }
             Button("Generate workout") {
+                let training = Training(warmup: 10, cooldown: 30, rounds: Int(selectedSets), rest: selectedRest)
                 let composition = generateComposition(from: training)
                 let workoutComposition = WorkoutComposition(customComposition: composition)
                 print(workoutComposition)
