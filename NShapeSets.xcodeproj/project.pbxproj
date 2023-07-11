@@ -40,6 +40,12 @@
 		1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
+		1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
+		1F9FB1192A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
+		1F9FB11A2A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
+		1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
+		1F9FB11D2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
+		1F9FB11E2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
 		1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0D29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
@@ -69,6 +75,8 @@
 		1FCAA4D92A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCAA4D82A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITests.swift */; };
 		1FCAA4DB2A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCAA4DA2A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITestsLaunchTests.swift */; };
 		1FCAA4DE2A32C04700B9EA07 /* NShapeSets-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1FCAA4BB2A32C04600B9EA07 /* NShapeSets-watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE8923296A199D00EFEA53 /* Colors.swift */; };
+		1FD2A7042A5CF26C0002FEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29374B972963C42900664042 /* Assets.xcassets */; };
 		29032C01297C59F200E792B4 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
 		29032C02297C59F200E792B4 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
 		29032C03297C59F200E792B4 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
@@ -171,6 +179,8 @@
 		1F51409829CFEA5400DD9A2A /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		1F9FB1172A3F688700BA9EC5 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		1FBA7A0A29CF38F8007A594F /* RestSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSelector.swift; sourceTree = "<group>"; };
 		1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsSelector.swift; sourceTree = "<group>"; };
 		1FBA7A1A29CF404D007A594F /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
@@ -286,6 +296,8 @@
 			children = (
 				1FCAA4BD2A32C04600B9EA07 /* NShapeSets_watchApp.swift */,
 				1FCAA4BF2A32C04600B9EA07 /* ContentView.swift */,
+				1F9FB1172A3F688700BA9EC5 /* SetupView.swift */,
+				1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */,
 				1FCAA4C12A32C04700B9EA07 /* Assets.xcassets */,
 				1FCAA4C32A32C04700B9EA07 /* Preview Content */,
 			);
@@ -618,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCAA4C52A32C04700B9EA07 /* Preview Assets.xcassets in Resources */,
+				1FD2A7042A5CF26C0002FEC0 /* Assets.xcassets in Resources */,
 				1FCAA4C22A32C04700B9EA07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,7 +704,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCAA4C02A32C04600B9EA07 /* ContentView.swift in Sources */,
+				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
+				1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */,
 				1FCAA4BE2A32C04600B9EA07 /* NShapeSets_watchApp.swift in Sources */,
+				1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,7 +715,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9FB1192A3F688700BA9EC5 /* SetupView.swift in Sources */,
 				1FCAA4CF2A32C04700B9EA07 /* NShapeSets_watch_Watch_AppTests.swift in Sources */,
+				1F9FB11D2A3F68C400BA9EC5 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +726,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCAA4DB2A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITestsLaunchTests.swift in Sources */,
+				1F9FB11A2A3F688700BA9EC5 /* SetupView.swift in Sources */,
 				1FCAA4D92A32C04700B9EA07 /* NShapeSets_watch_Watch_AppUITests.swift in Sources */,
+				1F9FB11E2A3F68C400BA9EC5 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
