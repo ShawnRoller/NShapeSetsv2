@@ -14,8 +14,8 @@ struct SetupView: View {
     private var rest: [Int] {
         return restValues.compactMap { v in v % 5 == 0 ? v : nil }
     }
-    @State private var selectedSets: Double = 15
-    @State private var selectedRest: Double = 90
+    @State private var selectedSets: Int = 15
+    @State private var selectedRest: Int = 90
     var workoutType: WorkoutType = workouts.first!
     
     var body: some View {
@@ -47,10 +47,9 @@ struct SetupView: View {
                 }
             }
             Button("Create workout") {
-                let training = Training(warmup: 10, cooldown: 30, rounds: Int(selectedSets), rest: selectedRest, workoutType: workoutType.type)
+                let training = Training(warmup: 10, cooldown: 30, rounds: selectedSets, rest: Double(selectedRest), workoutType: workoutType.type)
                 let composition = generateComposition(from: training)
                 let workoutComposition = WorkoutComposition(customComposition: composition)
-                print(workoutComposition)
                 Task {
                     do {
                         try await workoutComposition.presentPreview()
