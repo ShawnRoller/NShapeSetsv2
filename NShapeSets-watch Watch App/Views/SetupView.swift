@@ -46,20 +46,15 @@ struct SetupView: View {
                     .labelsHidden()
                 }
             }
-            Button("Create workout") {
-                let training = Training(warmup: 10, cooldown: 30, rounds: selectedSets, rest: Double(selectedRest), workoutType: workoutType.type)
-                let composition = generateComposition(from: training)
-                let workoutComposition = WorkoutComposition(customComposition: composition)
-                Task {
-                    do {
-                        try await workoutComposition.presentPreview()
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
             .padding()
-            .buttonStyle(BorderedButtonStyle(tint: Palette.primaryButtonFill))
+            NavigationLink(destination: ActiveWorkoutView(workout: Workout.example)) {
+                Text("Start")
+                    .foregroundColor(Palette.primaryButtonTitleText)
+                    .watchCtaFont()
+            }
+            .frame(height: 44)
+            .background(Palette.primaryButtonFill)
+            .cornerRadius(100)
         }
         .navigationTitle {
             Text(workoutType.name)

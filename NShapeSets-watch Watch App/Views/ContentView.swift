@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import HealthKit
 
 struct ContentView: View {
     @State private var preferredColumn = NavigationSplitViewColumn.detail

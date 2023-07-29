@@ -14,6 +14,7 @@ import SwiftUI
 struct ProgressRing: View {
     var progress: CGFloat
     var isRest: Bool
+    var ringWidth: Double = 20
     
     private var restProgress: CGFloat {
         isRest ? progress : 1.0
@@ -25,7 +26,7 @@ struct ProgressRing: View {
         isRest ? Palette.restBarShadow : Palette.activeRing
     }
     private var width: Double {
-        isRest ? 20 : 6
+        isRest ? ringWidth : ringWidth * 0.3
     }
     
     var body: some View {

@@ -19,35 +19,33 @@ struct Training {
     static let example = Training(warmup: 10, cooldown: 30, rounds: 6, rest: 66, workoutType: .traditionalStrengthTraining)
 }
 
-func generateWarmupStep(time: Double) -> WarmupStep {
-    let seconds = HKQuantity(unit: .second(), doubleValue: time)
-    let goal: WorkoutGoal = .time(seconds)
-    let step = WarmupStep(goal: goal)
+func generateWarmupStep(time: Double) -> WorkoutStep {
+//    let seconds = HKQuantity(unit: .second(), doubleValue: time)
+    let goal: WorkoutGoal = .time(time, .seconds)
+    let step = WorkoutStep(goal: goal)
     
     return step
 }
 
-func generateCooldownStep(time: Double) -> CooldownStep {
-    let seconds = HKQuantity(unit: .second(), doubleValue: time)
-    let goal: WorkoutGoal = .time(seconds)
-    let step = CooldownStep(goal: goal)
+func generateCooldownStep(time: Double) -> WorkoutStep {
+    let goal: WorkoutGoal = .time(time, .seconds)
+    let step = WorkoutStep(goal: goal)
     
     return step
 }
 
-func generateRestStep(time: Double) -> BlockStep {
-    let seconds = HKQuantity(unit: .second(), doubleValue: time)
-    let goal: WorkoutGoal = .time(seconds)
-    let step = BlockStep(.rest, goal: goal)
+func generateRestStep(time: Double) -> IntervalStep {
+    var restStep = IntervalStep(.recovery)
+    restStep.step.goal = .time(time, .seconds)
     
-    return step
+    return restStep
 }
 
-func generateWorkStep() -> BlockStep {
-    // create an open goal
-    let step = BlockStep(.work)
+func generateWorkStep() -> IntervalStep {
+    var workStep = IntervalStep(.work)
+    workStep.step.goal = .open
     
-    return step
+    return workStep
 }
 
 func generateBlock(rounds: Int, time: Double) -> IntervalBlock {
@@ -59,16 +57,14 @@ func generateBlock(rounds: Int, time: Double) -> IntervalBlock {
     return block
 }
 
-func generateComposition(from training: Training) -> CustomWorkoutComposition {
+func generateComposition(from training: Training) -> CustomWorkout {
     let warmupStep = generateWarmupStep(time: training.warmup)
     let cooldownStep = generateCooldownStep(time: training.cooldown)
     let block = generateBlock(rounds: training.rounds, time: training.rest)
     
     let activity: HKWorkoutActivityType = training.workoutType
     
-    guard let customComposition = try? CustomWorkoutComposition(activity: activity, displayName: "NShape Sets", warmup: warmupStep, blocks: [block], cooldown: cooldownStep) else {
-        fatalError("sumting wong")
-    }
+    let customComposition = CustomWorkout(activity: activity, displayName: "NShape Sets", warmup: warmupStep, blocks: [block], cooldown: cooldownStep)
     
     return customComposition
 }

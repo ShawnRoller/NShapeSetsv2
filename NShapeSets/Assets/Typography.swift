@@ -46,6 +46,9 @@ extension View {
     func directive2Font() -> some View {
         return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:60)).baselineOffset(12)
     }
+    func watchCtaFont() -> some View {
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:50)).baselineOffset(10)
+    }
 //    func watchInputFont() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:26))
 //    }
@@ -67,10 +70,10 @@ extension View {
 //    func watchInstructionTitleFont() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size:22))
 //    }
-//    func watchInstructionDetailFont(withSmallText smallText: Bool = false) -> some View {
-//        let size: CGFloat = smallText ? 12 : 17
-//        return self.modifier(ScaledFont(name: "Gotham-Book", size:size))
-//    }
+    func watchInstructionDetailFont(withSmallText smallText: Bool = false) -> some View {
+        let size: CGFloat = smallText ? 12 : 17
+        return self.modifier(ScaledFont(name: "Gotham-Book", size:size))
+    }
 //    func widgetInfoFont() -> some View {
 //        return self.modifier(ScaledFont(name: "Gotham-Book", size: 20))
 //    }
