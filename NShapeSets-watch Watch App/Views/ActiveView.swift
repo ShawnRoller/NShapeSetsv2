@@ -22,15 +22,25 @@ struct ActiveView: View {
     
     var body: some View {
         VStack {
-            DetailView(title: "Total time:", value: "\(TimeHelper.getTimeFromSeconds(timer.totalTime))", smallText: true)
-            InstructionView(title: "Current set:", value: "\(timer.currentRound)")
-            Spacer().frame(height:0)
-            DetailView(title: "Remaining:", value: "\(timer.remainingRounds)", smallText: true)
+            InfoBar(progress: 50, totalSeconds: 555, detailColor: .white, detailOnTop: true)
+                .padding([.top, .leading, .trailing])
+            Spacer()
+            ZStack {
+                CircleGradient()
+                    .padding()
+                SetsView(currentSet: 9, totalSets: 15)
+            }
+//            DetailView(title: "Total time:", value: "\(TimeHelper.getTimeFromSeconds(timer.totalTime))", smallText: true)
+//            InstructionView(title: "Current set:", value: "\(timer.currentRound)")
+//            Spacer().frame(height:0)
+//            DetailView(title: "Remaining:", value: "\(timer.remainingRounds)", smallText: true)
             Spacer()
             PrimaryButton(title: buttonTitle, buttonColor: Palette.secondary) {
                 self.onButtonTap()
             }
+            .padding(.bottom)
         }
+        .ignoresSafeArea(edges: [.bottom, .top])
     }
 }
 

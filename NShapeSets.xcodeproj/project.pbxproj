@@ -70,6 +70,10 @@
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
 		1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
+		1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
+		1FA6E0FB2A793D8B00AE84A0 /* InfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1A299990DC005A3C3A /* InfoBar.swift */; };
+		1FA6E0FC2A793D9C00AE84A0 /* TimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1F299991E2005A3C3A /* TimeHelpers.swift */; };
+		1FA6E0FE2A79417F00AE84A0 /* SetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6E0FD2A79417F00AE84A0 /* SetsView.swift */; };
 		1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0D29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
@@ -222,6 +226,7 @@
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1F9FB1172A3F688700BA9EC5 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		1FA6E0FD2A79417F00AE84A0 /* SetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
 		1FB238262A60371D004D426C /* NShapeSets-watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NShapeSets-watch Watch App.entitlements"; sourceTree = "<group>"; };
 		1FBA7A0A29CF38F8007A594F /* RestSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSelector.swift; sourceTree = "<group>"; };
 		1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsSelector.swift; sourceTree = "<group>"; };
@@ -339,6 +344,7 @@
 			children = (
 				1F7EE5D02A66EE7E007CBBEA /* PrimaryButton.swift */,
 				1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */,
+				1FA6E0FD2A79417F00AE84A0 /* SetsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -814,6 +820,7 @@
 				1F7EE5A42A66CE60007CBBEA /* WorkoutSessionContext.swift in Sources */,
 				1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */,
 				1F7EE5D32A66EF40007CBBEA /* RestView.swift in Sources */,
+				1FA6E0FE2A79417F00AE84A0 /* SetsView.swift in Sources */,
 				1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */,
 				1F7EE5A62A66CF1D007CBBEA /* HealthKitHelper.swift in Sources */,
 				1F7EE5B42A66D955007CBBEA /* Typography.swift in Sources */,
@@ -826,6 +833,7 @@
 				1F7EE5C12A66DB7C007CBBEA /* TimeHelper.swift in Sources */,
 				1F7EE5C42A66DC29007CBBEA /* DefaultManager.swift in Sources */,
 				1F7EE5AE2A66D8B5007CBBEA /* WorkoutModels.swift in Sources */,
+				1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */,
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
 				1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
@@ -839,6 +847,8 @@
 				1F7EE5CD2A66EDFA007CBBEA /* ActiveView.swift in Sources */,
 				1F7EE5B22A66D932007CBBEA /* ProgressRing.swift in Sources */,
 				1F7EE5BA2A66DAEA007CBBEA /* StateModels.swift in Sources */,
+				1FA6E0FB2A793D8B00AE84A0 /* InfoBar.swift in Sources */,
+				1FA6E0FC2A793D9C00AE84A0 /* TimeHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

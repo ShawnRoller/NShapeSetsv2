@@ -10,21 +10,52 @@ import SwiftUI
 struct InfoBar: View {
     var progress: Float
     var totalSeconds: Int
+    var detailColor: Color = Palette.quaternary
+    var detailOnTop = false
     private var time: String {
         return getTime(from: totalSeconds)
     }
     
     var body: some View {
-        VStack {
-            ProgressBar(progress: progress)
-                .padding([.leading, .trailing])
-            Label {
-                Text(time)
-                    .totalTimeFont()
-                    .foregroundColor(Palette.quaternary)
-            } icon: {
-                Image(systemName: "clock.fill")
-                    .foregroundColor(Palette.quaternary)
+        VStack(alignment: detailOnTop ? .leading : .center) {
+            topView()
+            bottomView()
+        }
+    }
+    
+    func topView() -> some View {
+        Group {
+            if (detailOnTop) {
+                Label {
+                    Text(time)
+                        .totalTimeFont()
+                        .foregroundColor(detailColor)
+                } icon: {
+                    Image(systemName: "clock.fill")
+                        .foregroundColor(detailColor)
+                }
+                .padding(.leading)
+            } else {
+                ProgressBar(progress: progress)
+                    .padding([.leading, .trailing])
+            }
+        }
+    }
+    
+    func bottomView() -> some View {
+        Group {
+            if (detailOnTop) {
+                ProgressBar(progress: progress)
+                    .padding([.leading, .trailing])
+            } else {
+                Label {
+                    Text(time)
+                        .totalTimeFont()
+                        .foregroundColor(detailColor)
+                } icon: {
+                    Image(systemName: "clock.fill")
+                        .foregroundColor(detailColor)
+                }
             }
         }
     }
