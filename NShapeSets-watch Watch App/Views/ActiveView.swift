@@ -28,6 +28,7 @@ struct ActiveView: View {
             ZStack {
                 CircleGradient()
                     .padding()
+                ProgressRing(progress: 100, isRest: false, ringWidth: 5)
                 SetsView(currentSet: 9, totalSets: 15)
             }
 //            DetailView(title: "Total time:", value: "\(TimeHelper.getTimeFromSeconds(timer.totalTime))", smallText: true)
@@ -38,7 +39,7 @@ struct ActiveView: View {
             PrimaryButton(title: buttonTitle, buttonColor: Palette.secondary) {
                 self.onButtonTap()
             }
-            .padding(.bottom)
+            .padding(.bottom, 12)
         }
         .ignoresSafeArea(edges: [.bottom, .top])
     }

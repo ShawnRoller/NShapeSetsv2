@@ -14,15 +14,27 @@ struct RestView: View {
     
     var body: some View {
         VStack {
-            DetailView(title: "Total time:", value: "\(TimeHelper.getTimeFromSeconds(timer.totalTime))", smallText: true)
-            InstructionView(title: "Resting...", value: "\(timer.remainingRest)", countdownTotal: timer.rest, currentCountdown: timer.remainingRest)
+            InfoBar(progress: 50, totalSeconds: 555, detailColor: .white, detailOnTop: true)
+                .padding([.top, .leading, .trailing])
             Spacer()
-            DetailView(title: "Next set:", value: "\(timer.nextSetString)", smallText: true)
-            Spacer().frame(height: 0)
-            PrimaryButton(title: "Skip", buttonColor: Palette.primary) {
+            ZStack {
+                CircleGradient()
+                    .padding()
+                ProgressRing(progress: 70, isRest: true, ringWidth: 5)
+                RestTimeView(remainingTime: 40)
+            }
+//            DetailView(title: "Total time:", value: "\(TimeHelper.getTimeFromSeconds(timer.totalTime))", smallText: true)
+//            InstructionView(title: "Resting...", value: "\(timer.remainingRest)", countdownTotal: timer.rest, currentCountdown: timer.remainingRest)
+//            Spacer()
+//            DetailView(title: "Next set:", value: "\(timer.nextSetString)", smallText: true)
+//            Spacer().frame(height: 0)
+            Spacer()
+            PrimaryButton(title: "Skip", buttonColor: Palette.tertiary) {
                 self.onButtonTap()
             }
+            .padding(.bottom, 12)
         }
+        .ignoresSafeArea(edges: [.bottom, .top])
     }
 }
 

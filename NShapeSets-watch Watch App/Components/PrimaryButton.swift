@@ -17,10 +17,11 @@ struct PrimaryButton: View {
             self.onButtonTap()
         }, label: {
             Text(title)
-//                .watchInputFont()
+                .watchCtaFont()
         })
-            .background(buttonColor)
-            .cornerRadius(100)
+        .background(buttonColor)
+        .cornerRadius(100)
+        .frame(height: 44)
     }
 }
 
