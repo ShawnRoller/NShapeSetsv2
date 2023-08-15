@@ -61,6 +61,7 @@ struct SetupView: View {
                 .font(.title3)
                 .foregroundStyle(Palette.secondary)
         }
+        .padding(.bottom, 2)
         .ignoresSafeArea(edges: .bottom)
     }
 }

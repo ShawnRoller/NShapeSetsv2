@@ -14,8 +14,9 @@ struct RestView: View {
     
     var body: some View {
         VStack {
-            InfoBar(progress: 50, totalSeconds: 555, detailColor: .white, detailOnTop: true)
-                .padding([.top, .leading, .trailing])
+            InfoBar(progress: 50, totalSeconds: 555, detailColor: .secondary, detailOnTop: true)
+                .padding([.top], 22.0)
+                .padding([.leading, .trailing])
             Spacer()
             ZStack {
                 CircleGradient()
@@ -32,7 +33,6 @@ struct RestView: View {
             PrimaryButton(title: "Skip", buttonColor: Palette.tertiary) {
                 self.onButtonTap()
             }
-            .padding(.bottom, 12)
         }
         .ignoresSafeArea(edges: [.bottom, .top])
     }

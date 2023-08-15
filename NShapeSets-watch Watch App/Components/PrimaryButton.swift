@@ -10,6 +10,7 @@ import SwiftUI
 struct PrimaryButton: View {
     var title: String
     var buttonColor: Color = Palette.secondaryButtonFill
+    var titleColor: Color = .white
     var onButtonTap: () -> Void
     
     var body: some View {
@@ -17,6 +18,7 @@ struct PrimaryButton: View {
             self.onButtonTap()
         }, label: {
             Text(title)
+                .foregroundStyle(titleColor)
                 .watchCtaFont()
         })
         .background(buttonColor)

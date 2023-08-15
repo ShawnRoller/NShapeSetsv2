@@ -13,7 +13,6 @@ struct RestTimeView: View {
     var body: some View {
         Text("\(remainingTime)")
             .font(.largeTitle)
-            .padding(.trailing)
             .foregroundStyle(Palette.secondary)
     }
 }

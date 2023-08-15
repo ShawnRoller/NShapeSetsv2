@@ -16,13 +16,12 @@ struct SetsView: View {
             Spacer()
             Text("\(currentSet)")
                 .font(.largeTitle)
-                .padding(.trailing)
                 .foregroundStyle(Palette.secondary)
             Spacer()
                 .overlay(
                     HStack {
                         Text("/ \(totalSets)")
-                            .padding(.leading, 12.0)
+                            .padding(.leading, 26.0)
                         Spacer()
                     }
                 )

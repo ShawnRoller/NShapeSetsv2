@@ -17,7 +17,7 @@ struct InfoBar: View {
     }
     
     var body: some View {
-        VStack(alignment: detailOnTop ? .leading : .center) {
+        VStack(alignment: .center) {
             topView()
             bottomView()
         }
@@ -35,6 +35,7 @@ struct InfoBar: View {
                         .foregroundColor(detailColor)
                 }
                 .padding(.leading)
+                .labelStyle(.titleOnly)
             } else {
                 ProgressBar(progress: progress)
                     .padding([.leading, .trailing])
