@@ -16,7 +16,7 @@ struct SetsView: View {
             Spacer()
             Text("\(currentSet)")
                 .font(.largeTitle)
-                .foregroundStyle(Palette.secondary)
+                .foregroundStyle(Palette.primary)
             Spacer()
                 .overlay(
                     HStack {

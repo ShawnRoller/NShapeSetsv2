@@ -11,59 +11,80 @@ import os
 
 struct ActiveWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var workoutState: ScreenState = .active
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
-    @ObservedObject var timer: TimerWrapper
     
-    var workout: Workout
-    
+    @ObservedObject var workout: Workout
     private var healthStore = HKHealthStore()
+    
+    private var buttonTitle: String {
+        var title: String
+        switch workout.state {
+        case .Setup:
+            title = "Start"
+        case .Active:
+            title = workout.currentSet == workout.rounds ? "Done" : "Rest"
+        case .Rest:
+            title = "Skip"
+        case .Recap:
+            title = "Let's go"
+        }
+        return title
+    }
+    
+    private var buttonColor: Color {
+        var color = Palette.secondary
+        switch workout.state {
+        case .Rest:
+            color = Palette.tertiary
+        default:
+            color = Palette.secondary
+        }
+        return color
+    }
     
     init(workout: Workout) {
         self.workout = workout
-        self.timer = TimerWrapper.example
-    }
-    
-    func startWorkout() {
-    }
-    
-    func endWorkout() {
-        self.timer.stopTimeTracking()
     }
     
     var body: some View {
         VStack {
-            getViewForState(workoutState)
+            InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true)
+                .padding([.top], 22.0)
+                .padding([.leading, .trailing])
+            Spacer()
+            getView(for: workout)
+            Spacer()
+            PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
+                self.onCTAPress()
+            }
         }
         .onAppear() {
             os_log("Active workout appeared!", log: .ui)
             self.setDefaultSettings()
-            self.timer.startTimeTracking()
             self.startWorkout()
         }
         .alert(isPresented: $showingAlert) {
             if (activeAlert == .done) {
                 self.endWorkout()
-                let totalTime = TimeHelper.getTimeFromSeconds(self.timer.totalTime)
-                return Alert(title: Text("Workout complete!"), message: Text("You completed all sets in \(totalTime)!"), dismissButton: .default(Text("OK"), action: {
-                    self.timer.reset()
+                return Alert(title: Text("Workout complete!"), message: Text("You completed all sets in \(workout.totalTimer.totalTime)!"), dismissButton: .default(Text("OK"), action: {
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                         self.goBack()
                     }
                 }))
             } else {
                 return Alert(title: Text("All done?"), primaryButton: .destructive(Text("Done!"), action: {
+                        self.endWorkout()
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                             self.goBack()
                         }
                 }), secondaryButton: .cancel())
             }
         }
+        .ignoresSafeArea(edges: [.bottom, .top])
         .onDisappear() {
             if !self.showingAlert {
                 self.endWorkout()
-                self.timer.reset()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -79,6 +100,22 @@ struct ActiveWorkoutView: View {
         })
     }
     
+    func onCTAPress() -> Void {
+        switch workout.state {
+        case .Setup:
+            workout.startWorkout()
+        case .Active:
+            workout.startRest()
+        case .Rest:
+            workout.nextSet()
+        case .Recap:
+            self.endWorkout()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                self.goBack()
+            }
+        }
+    }
+    
     func setDefaultSettings() {
         let defaultWorkoutRest = self.workout.rest
         let defaultWorkoutSets = self.workout.rounds
@@ -87,23 +124,20 @@ struct ActiveWorkoutView: View {
         DefaultManager.setDefault(value: defaultWorkoutSets, forKey: Defaults.workoutRounds)
     }
     
-    func getViewForState(_ state: ScreenState) -> some View {
-        return Group {
-            if timer.isActive {
-                RestView(workout: workout, timer: timer) {
-                    self.onSkip()
-                }
-            }
-            else {
-                ActiveView(workout: workout, timer: timer) {
-                    self.onRest()
-                }
-            }
-        }
+    func startWorkout() {
+        workout.startWorkout()
+    }
+    
+    func endWorkout() {
+        workout.reset()
+    }
+    
+    func getView(for workout: Workout) -> some View {
+        return WorkoutView(workout: workout)
     }
     
     func countdown() {
-        if 1...3 ~= timer.remainingRest {
+        if 1...3 ~= workout.timer.remainingTime {
             HapticHelper.playCountdownHaptic()
         }
     }
@@ -111,8 +145,7 @@ struct ActiveWorkoutView: View {
     func onRestEnd() {
         os_log("rest is over", log: .ui)
         HapticHelper.playStartHaptic()
-        workoutState = workoutState == .active ? .rest : .active
-        timer.restComplete()
+        workout.nextSet()
     }
     
     func goBack() {
@@ -122,13 +155,12 @@ struct ActiveWorkoutView: View {
     
     func onRest() {
         os_log("Rest started", log: .ui)
-        if timer.currentRound == timer.rounds {
+        if workout.currentSet == workout.rounds {
             activeAlert = .done
             showingAlert = true
         }
         else {
-            workoutState = workoutState == .active ? .rest : .active
-            timer.start()
+            workout.startRest()
         }
     }
     

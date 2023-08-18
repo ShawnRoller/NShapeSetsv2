@@ -76,9 +76,11 @@ class Workout: ObservableObject {
     }
     
     func reset() -> Void {
-        state = .Setup
-        timer.stop()
+        endWorkout()
+        
         totalTimer.stop()
+        state = .Setup
+        currentSet = 1
     }
     
     func setupTimer() -> Void {
@@ -104,7 +106,5 @@ class Workout: ObservableObject {
         }
     }
     
-    static var example = Workout(rounds: 16, rest: 90)
+    static var example = Workout(rounds: 3, rest: 6)
 }
-
-

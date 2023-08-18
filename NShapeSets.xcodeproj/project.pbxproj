@@ -34,6 +34,7 @@
 		1F51409929CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
+		1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61A1F22A8EA306003FB788 /* WorkoutView.swift */; };
 		1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
@@ -42,7 +43,6 @@
 		1F7EE5A82A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */; };
-		1F7EE5AD2A66D8A6007CBBEA /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409429CFE30200DD9A2A /* WorkoutView.swift */; };
 		1F7EE5AE2A66D8B5007CBBEA /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */; };
 		1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
@@ -61,10 +61,8 @@
 		1F7EE5C62A66DC5C007CBBEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5C52A66DC5C007CBBEA /* Constants.swift */; };
 		1F7EE5C72A66DC5C007CBBEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5C52A66DC5C007CBBEA /* Constants.swift */; };
 		1F7EE5CB2A66DCFB007CBBEA /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5C92A66DCFB007CBBEA /* HapticHelper.swift */; };
-		1F7EE5CD2A66EDFA007CBBEA /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5CC2A66EDFA007CBBEA /* ActiveView.swift */; };
 		1F7EE5CF2A66EE33007CBBEA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5CE2A66EE33007CBBEA /* DetailView.swift */; };
 		1F7EE5D12A66EE7E007CBBEA /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5D02A66EE7E007CBBEA /* PrimaryButton.swift */; };
-		1F7EE5D32A66EF40007CBBEA /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5D22A66EF40007CBBEA /* RestView.swift */; };
 		1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
@@ -209,6 +207,7 @@
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F51409429CFE30200DD9A2A /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		1F51409829CFEA5400DD9A2A /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		1F61A1F22A8EA306003FB788 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F7EE5A32A66CE60007CBBEA /* WorkoutSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionContext.swift; sourceTree = "<group>"; };
 		1F7EE5A52A66CF1D007CBBEA /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
@@ -221,10 +220,8 @@
 		1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultManager.swift; sourceTree = "<group>"; };
 		1F7EE5C52A66DC5C007CBBEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F7EE5C92A66DCFB007CBBEA /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
-		1F7EE5CC2A66EDFA007CBBEA /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		1F7EE5CE2A66EE33007CBBEA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1F7EE5D02A66EE7E007CBBEA /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		1F7EE5D22A66EF40007CBBEA /* RestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestView.swift; sourceTree = "<group>"; };
 		1F89AF0F2A6EFC9400A45964 /* NShapeSets-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "NShapeSets-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1F9FB1172A3F688700BA9EC5 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -363,10 +360,9 @@
 				1FCAA4BF2A32C04600B9EA07 /* ContentView.swift */,
 				1F7EE5B62A66DA9F007CBBEA /* ActiveWorkoutView.swift */,
 				1F9FB1172A3F688700BA9EC5 /* SetupView.swift */,
-				1F7EE5CC2A66EDFA007CBBEA /* ActiveView.swift */,
 				1F7EE5CE2A66EE33007CBBEA /* DetailView.swift */,
-				1F7EE5D22A66EF40007CBBEA /* RestView.swift */,
 				1FA6E1032A794B3400AE84A0 /* RecapView.swift */,
+				1F61A1F22A8EA306003FB788 /* WorkoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -829,7 +825,6 @@
 				1F7EE5A42A66CE60007CBBEA /* WorkoutSessionContext.swift in Sources */,
 				1FA6E1002A7945BF00AE84A0 /* RestTimeView.swift in Sources */,
 				1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */,
-				1F7EE5D32A66EF40007CBBEA /* RestView.swift in Sources */,
 				1FA6E0FE2A79417F00AE84A0 /* SetsView.swift in Sources */,
 				1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */,
 				1F7EE5A62A66CF1D007CBBEA /* HealthKitHelper.swift in Sources */,
@@ -848,15 +843,14 @@
 				1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */,
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
+				1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */,
 				1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
-				1F7EE5AD2A66D8A6007CBBEA /* WorkoutView.swift in Sources */,
 				1F7EE5D12A66EE7E007CBBEA /* PrimaryButton.swift in Sources */,
 				1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */,
 				1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */,
 				1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */,
 				1FCAA4BE2A32C04600B9EA07 /* NShapeSets_watchApp.swift in Sources */,
 				1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */,
-				1F7EE5CD2A66EDFA007CBBEA /* ActiveView.swift in Sources */,
 				1F7EE5B22A66D932007CBBEA /* ProgressRing.swift in Sources */,
 				1F7EE5BA2A66DAEA007CBBEA /* StateModels.swift in Sources */,
 				1FA6E0FB2A793D8B00AE84A0 /* InfoBar.swift in Sources */,
