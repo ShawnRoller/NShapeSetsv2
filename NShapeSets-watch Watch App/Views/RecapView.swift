@@ -9,15 +9,14 @@ import SwiftUI
 
 struct RecapView: View {
     var body: some View {
-        ScrollView {
-            RecapDetailView(title: "Sets", value: "15")
-            RecapDetailView(title: "Rest time", value: "12:30")
-            RecapDetailView(title: "Total time", value: "31:45")
-            RecapDetailView(title: "Skipped rest", value: "2")
-            PrimaryButton(title: "Done", buttonColor: Palette.quaternary) {
-                // TODO: go back to setup
+        VStack {
+            ScrollView {
+                RecapDetailView(title: "Sets", value: "15")
+                RecapDetailView(title: "Rest time", value: "12:30")
+                RecapDetailView(title: "Total time", value: "31:45")
+                RecapDetailView(title: "Skipped rest", value: "2")
+                    .padding(.top)
             }
-            .padding(.top)
         }
     }
 }

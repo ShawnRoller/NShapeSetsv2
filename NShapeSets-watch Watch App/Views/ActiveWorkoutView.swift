@@ -13,6 +13,7 @@ struct ActiveWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
+    @State private var isRecap = true
     
     @ObservedObject var workout: Workout
     private var healthStore = HKHealthStore()
@@ -55,8 +56,21 @@ struct ActiveWorkoutView: View {
             Spacer()
             getView(for: workout)
             Spacer()
-            PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
-                self.onCTAPress()
+            Group {
+                if workout.currentSet == workout.rounds {
+                    NavigationLink(destination: RecapView()) {
+                        Text("Done")
+                            .foregroundColor(Palette.primaryButtonTitleText)
+                            .watchCtaFont()
+                    }
+                    .frame(height: 44)
+                    .background(Palette.primaryButtonFill)
+                    .cornerRadius(100)
+                } else {
+                    PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
+                        self.onCTAPress()
+                    }
+                }
             }
         }
         .onAppear() {
@@ -105,7 +119,11 @@ struct ActiveWorkoutView: View {
         case .Setup:
             workout.startWorkout()
         case .Active:
-            workout.startRest()
+            if workout.currentSet == workout.rounds {
+                self.endWorkout()
+            } else {
+                workout.startRest()
+            }
         case .Rest:
             workout.nextSet()
         case .Recap:
@@ -129,11 +147,13 @@ struct ActiveWorkoutView: View {
     }
     
     func endWorkout() {
-        workout.reset()
+        print("ending workout")
+        workout.endWorkout()
+        isRecap = true
     }
     
     func getView(for workout: Workout) -> some View {
-        return WorkoutView(workout: workout)
+        WorkoutView(workout: workout)
     }
     
     func countdown() {
@@ -150,6 +170,7 @@ struct ActiveWorkoutView: View {
     
     func goBack() {
         os_log("Going back to setup...", log: .ui)
+        workout.reset()
         presentationMode.wrappedValue.dismiss()
     }
     
