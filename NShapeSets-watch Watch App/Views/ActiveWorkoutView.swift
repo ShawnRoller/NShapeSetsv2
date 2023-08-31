@@ -13,7 +13,6 @@ struct ActiveWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
-    @State private var isRecap = true
     
     @ObservedObject var workout: Workout
     private var healthStore = HKHealthStore()
@@ -147,9 +146,7 @@ struct ActiveWorkoutView: View {
     }
     
     func endWorkout() {
-        print("ending workout")
         workout.endWorkout()
-        isRecap = true
     }
     
     func getView(for workout: Workout) -> some View {
