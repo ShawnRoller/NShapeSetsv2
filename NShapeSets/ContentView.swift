@@ -66,6 +66,8 @@ struct ContentView: View {
         case .Recap:
             workout.reset()
             setupVisible = true
+        default:
+            break;
         }
         
         showingActionSheet = setupVisible

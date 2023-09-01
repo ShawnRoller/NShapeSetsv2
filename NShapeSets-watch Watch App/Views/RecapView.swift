@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecapView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -16,6 +18,9 @@ struct RecapView: View {
                 RecapDetailView(title: "Total time", value: "31:45")
                 RecapDetailView(title: "Skipped rest", value: "2")
                     .padding(.top)
+            }
+            PrimaryButton(title: "Done", buttonColor: Palette.quaternary) {
+                dismiss()
             }
         }
     }

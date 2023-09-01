@@ -25,6 +25,8 @@ struct SetupActionSheet: View {
             title = "Skip"
         case .Recap:
             title = "Let's go"
+        default:
+            title = "Start"
         }
         return title
     }
@@ -40,6 +42,8 @@ struct SetupActionSheet: View {
             type = .destructive
         case .Recap:
             type = .secondary
+        default:
+            type = .primary
         }
         return type
     }

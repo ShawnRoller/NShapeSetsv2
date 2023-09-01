@@ -13,12 +13,13 @@ struct ActiveWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
+    @State private var showingRecap = false
     
     @ObservedObject var workout: Workout
     private var healthStore = HKHealthStore()
     
     private var buttonTitle: String {
-        var title: String
+        var title = "Start"
         switch workout.state {
         case .Setup:
             title = "Start"
@@ -28,6 +29,8 @@ struct ActiveWorkoutView: View {
             title = "Skip"
         case .Recap:
             title = "Let's go"
+        default:
+            break
         }
         return title
     }
@@ -55,21 +58,13 @@ struct ActiveWorkoutView: View {
             Spacer()
             getView(for: workout)
             Spacer()
-            Group {
-                if workout.currentSet == workout.rounds {
-                    NavigationLink(destination: RecapView()) {
-                        Text("Done")
-                            .foregroundColor(Palette.primaryButtonTitleText)
-                            .watchCtaFont()
-                    }
-                    .frame(height: 44)
-                    .background(Palette.primaryButtonFill)
-                    .cornerRadius(100)
-                } else {
-                    PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
-                        self.onCTAPress()
-                    }
-                }
+            PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
+                self.onCTAPress()
+            }
+        }
+        .onChange(of: workout.state) { prev, new in
+            if new == WorkoutState.Done {
+                self.goBack()
             }
         }
         .onAppear() {
@@ -111,6 +106,11 @@ struct ActiveWorkoutView: View {
                 })
             }
         })
+        .sheet(isPresented: $showingRecap, onDismiss: {
+            workout.state = .Done
+        }) {
+            RecapView()
+        }
     }
     
     func onCTAPress() -> Void {
@@ -120,6 +120,7 @@ struct ActiveWorkoutView: View {
         case .Active:
             if workout.currentSet == workout.rounds {
                 self.endWorkout()
+                showingRecap = true
             } else {
                 workout.startRest()
             }
@@ -130,6 +131,7 @@ struct ActiveWorkoutView: View {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                 self.goBack()
             }
+        default: break
         }
     }
     
@@ -167,6 +169,7 @@ struct ActiveWorkoutView: View {
     
     func goBack() {
         os_log("Going back to setup...", log: .ui)
+        workout.endWorkout()
         workout.reset()
         presentationMode.wrappedValue.dismiss()
     }

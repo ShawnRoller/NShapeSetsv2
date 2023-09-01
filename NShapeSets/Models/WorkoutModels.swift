@@ -13,6 +13,7 @@ enum WorkoutState {
     case Active
     case Rest
     case Recap
+    case Done
 }
 
 class Workout: ObservableObject {
