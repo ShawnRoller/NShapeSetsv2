@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
     @ObservedObject private var workout: Workout = Workout.example
+    @ObservedObject private var notifications = Notifications.shared
     
     var body: some View {
         ZStack {
@@ -34,8 +35,8 @@ struct ContentView: View {
                 .animation(Animation.spring(), value: topPadding)
                 Spacer()
             }
-            .onChange(of: showingActionSheet) { value in
-                topPadding = value ? 10 : 100
+            .onChange(of: showingActionSheet) { _, newValue in
+                topPadding = newValue ? 10 : 100
             }
             SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet, onCTAPress: onCTAPress)
         }
@@ -53,6 +54,9 @@ struct ContentView: View {
     }
     
     func onCTAPress() -> Void {
+        // Request permission to send push notifications
+        notifications.handleNotificationPermission()
+        
         // TODO: determine how to stop the total timer when the recap view appears
         // should the total timer be part of the workout?
         var setupVisible = false

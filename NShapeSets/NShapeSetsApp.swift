@@ -12,6 +12,7 @@ struct NShapeSetsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(Notifications.shared)
         }
     }
 }

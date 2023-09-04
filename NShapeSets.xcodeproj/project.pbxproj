@@ -25,6 +25,8 @@
 		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
+		1F4743772AA38C330053537D /* NotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4743762AA38C330053537D /* NotificationHelpers.swift */; };
+		1F4743782AA38C330053537D /* NotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4743762AA38C330053537D /* NotificationHelpers.swift */; };
 		1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
@@ -204,6 +206,7 @@
 		1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModels.swift; sourceTree = "<group>"; };
 		1F1EEC722A1EC178009FFD76 /* NShapeSets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NShapeSets.entitlements; sourceTree = "<group>"; };
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		1F4743762AA38C330053537D /* NotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelpers.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F51409429CFE30200DD9A2A /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		1F51409829CFEA5400DD9A2A /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
@@ -560,6 +563,7 @@
 			children = (
 				2978FF1F299991E2005A3C3A /* TimeHelpers.swift */,
 				1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */,
+				1F4743762AA38C330053537D /* NotificationHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -822,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4743782AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				1F7EE5A42A66CE60007CBBEA /* WorkoutSessionContext.swift in Sources */,
 				1FA6E1002A7945BF00AE84A0 /* RestTimeView.swift in Sources */,
 				1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */,
@@ -913,6 +918,7 @@
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
+				1F4743772AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
