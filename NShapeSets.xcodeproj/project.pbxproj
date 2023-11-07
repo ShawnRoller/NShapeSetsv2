@@ -54,8 +54,6 @@
 		1F7EE5B42A66D955007CBBEA /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
 		1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5B62A66DA9F007CBBEA /* ActiveWorkoutView.swift */; };
 		1F7EE5BA2A66DAEA007CBBEA /* StateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5B92A66DAEA007CBBEA /* StateModels.swift */; };
-		1F7EE5BD2A66DB34007CBBEA /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */; };
-		1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */; };
 		1F7EE5C02A66DB7C007CBBEA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */; };
 		1F7EE5C12A66DB7C007CBBEA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */; };
 		1F7EE5C32A66DC29007CBBEA /* DefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */; };
@@ -218,7 +216,6 @@
 		1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		1F7EE5B62A66DA9F007CBBEA /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutView.swift; sourceTree = "<group>"; };
 		1F7EE5B92A66DAEA007CBBEA /* StateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModels.swift; sourceTree = "<group>"; };
-		1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
 		1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultManager.swift; sourceTree = "<group>"; };
 		1F7EE5C52A66DC5C007CBBEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -382,7 +379,6 @@
 		1F7EE5BB2A66DB15007CBBEA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */,
 				1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */,
 				1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */,
 				1F7EE5C52A66DC5C007CBBEA /* Constants.swift */,
@@ -849,7 +845,6 @@
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
 				1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */,
-				1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
 				1F7EE5D12A66EE7E007CBBEA /* PrimaryButton.swift in Sources */,
 				1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */,
 				1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */,
@@ -900,7 +895,6 @@
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
 				1F51409529CFE30200DD9A2A /* WorkoutView.swift in Sources */,
 				2978FF20299991E2005A3C3A /* TimeHelpers.swift in Sources */,
-				1F7EE5BD2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
 				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
 				1F7EE5C32A66DC29007CBBEA /* DefaultManager.swift in Sources */,

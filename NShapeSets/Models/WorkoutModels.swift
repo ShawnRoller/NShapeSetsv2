@@ -17,6 +17,7 @@ enum WorkoutState {
 }
 
 class Workout: ObservableObject {
+    @ObservedObject private var notifications = Notifications.shared
     @ObservedObject var timer: CountdownTimer
     @ObservedObject var totalTimer = TotalTimer()
     @Published var rounds: Int
@@ -61,6 +62,7 @@ class Workout: ObservableObject {
             state = .Rest
             setupTimer()
             timer.start()
+            notifications.scheduleLocalNotification()
         }
     }
     
