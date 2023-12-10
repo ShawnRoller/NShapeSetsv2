@@ -22,9 +22,23 @@
 		1F14EA1C2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
 		1F14EA1D2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
 		1F14EA1E2A0EE28D009E98A9 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */; };
+		1F2336482AF9CC2400F2597B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2336472AF9CC2400F2597B /* WidgetKit.framework */; };
+		1F23364A2AF9CC2400F2597B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2336492AF9CC2400F2597B /* SwiftUI.framework */; };
+		1F23364D2AF9CC2400F2597B /* ActiveWorkoutTimerBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23364C2AF9CC2400F2597B /* ActiveWorkoutTimerBundle.swift */; };
+		1F23364F2AF9CC2400F2597B /* ActiveWorkoutTimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23364E2AF9CC2400F2597B /* ActiveWorkoutTimerLiveActivity.swift */; };
+		1F2336512AF9CC2400F2597B /* ActiveWorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2336502AF9CC2400F2597B /* ActiveWorkoutTimer.swift */; };
+		1F2336532AF9CC2400F2597B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2336522AF9CC2400F2597B /* AppIntent.swift */; };
+		1F2336552AF9CC2500F2597B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F2336542AF9CC2500F2597B /* Assets.xcassets */; };
+		1F2336592AF9CC2500F2597B /* ActiveWorkoutTimerExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
+		1F42D8A42B12D7B600F113BA /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */; };
+		1F42D8B22B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
+		1F42D8B32B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
+		1F42D8B42B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
+		1F4743772AA38C330053537D /* NotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4743762AA38C330053537D /* NotificationHelpers.swift */; };
+		1F4743782AA38C330053537D /* NotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4743762AA38C330053537D /* NotificationHelpers.swift */; };
 		1F48CEDC29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDD29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F48CEDE29822952006250DB /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
@@ -35,6 +49,9 @@
 		1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61A1F22A8EA306003FB788 /* WorkoutView.swift */; };
+		1F74C0DA2B06A51200E14E45 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C0D92B06A51200E14E45 /* ActivityManager.swift */; };
+		1F74C0DD2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C0DC2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift */; };
+		1F74C0DE2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C0DC2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift */; };
 		1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965829B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7E965929B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
@@ -43,7 +60,6 @@
 		1F7EE5A82A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */; };
-		1F7EE5AE2A66D8B5007CBBEA /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */; };
 		1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
 		1F7EE5B12A66D92D007CBBEA /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
@@ -52,8 +68,6 @@
 		1F7EE5B42A66D955007CBBEA /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
 		1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5B62A66DA9F007CBBEA /* ActiveWorkoutView.swift */; };
 		1F7EE5BA2A66DAEA007CBBEA /* StateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5B92A66DAEA007CBBEA /* StateModels.swift */; };
-		1F7EE5BD2A66DB34007CBBEA /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */; };
-		1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */; };
 		1F7EE5C02A66DB7C007CBBEA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */; };
 		1F7EE5C12A66DB7C007CBBEA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */; };
 		1F7EE5C32A66DC29007CBBEA /* DefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */; };
@@ -145,6 +159,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1F2336572AF9CC2500F2597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29374B882963C42700664042 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F2336442AF9CC2400F2597B;
+			remoteInfo = ActiveWorkoutTimerExtension;
+		};
 		1FCAA4CB2A32C04700B9EA07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29374B882963C42700664042 /* Project object */;
@@ -183,6 +204,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1F23365D2AF9CC2500F2597B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1F2336592AF9CC2500F2597B /* ActiveWorkoutTimerExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCAA4DF2A32C04700B9EA07 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,11 +235,24 @@
 		1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTimer.swift; sourceTree = "<group>"; };
 		1F14EA1B2A0EE28D009E98A9 /* TimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModels.swift; sourceTree = "<group>"; };
 		1F1EEC722A1EC178009FFD76 /* NShapeSets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NShapeSets.entitlements; sourceTree = "<group>"; };
+		1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActiveWorkoutTimerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2336472AF9CC2400F2597B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1F2336492AF9CC2400F2597B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1F23364C2AF9CC2400F2597B /* ActiveWorkoutTimerBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutTimerBundle.swift; sourceTree = "<group>"; };
+		1F23364E2AF9CC2400F2597B /* ActiveWorkoutTimerLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutTimerLiveActivity.swift; sourceTree = "<group>"; };
+		1F2336502AF9CC2400F2597B /* ActiveWorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutTimer.swift; sourceTree = "<group>"; };
+		1F2336522AF9CC2400F2597B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		1F2336542AF9CC2500F2597B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F2336562AF9CC2500F2597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		1F42D8B12B13B37400F113BA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1F4743762AA38C330053537D /* NotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelpers.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F51409429CFE30200DD9A2A /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		1F51409829CFEA5400DD9A2A /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1F61A1F22A8EA306003FB788 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		1F74C0D92B06A51200E14E45 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		1F74C0DC2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutTimerAttributes.swift; sourceTree = "<group>"; };
 		1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1F7EE5A32A66CE60007CBBEA /* WorkoutSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionContext.swift; sourceTree = "<group>"; };
 		1F7EE5A52A66CF1D007CBBEA /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
@@ -215,7 +260,6 @@
 		1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		1F7EE5B62A66DA9F007CBBEA /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutView.swift; sourceTree = "<group>"; };
 		1F7EE5B92A66DAEA007CBBEA /* StateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModels.swift; sourceTree = "<group>"; };
-		1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
 		1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultManager.swift; sourceTree = "<group>"; };
 		1F7EE5C52A66DC5C007CBBEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -273,6 +317,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F2336422AF9CC2400F2597B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F23364A2AF9CC2400F2597B /* SwiftUI.framework in Frameworks */,
+				1F2336482AF9CC2400F2597B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCAA4B82A32C04600B9EA07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +371,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2336462AF9CC2400F2597B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F2336472AF9CC2400F2597B /* WidgetKit.framework */,
+				1F2336492AF9CC2400F2597B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F23364B2AF9CC2400F2597B /* ActiveWorkoutTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1F74C0DC2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift */,
+				1F23364C2AF9CC2400F2597B /* ActiveWorkoutTimerBundle.swift */,
+				1F23364E2AF9CC2400F2597B /* ActiveWorkoutTimerLiveActivity.swift */,
+				1F2336502AF9CC2400F2597B /* ActiveWorkoutTimer.swift */,
+				1F2336522AF9CC2400F2597B /* AppIntent.swift */,
+				1F2336542AF9CC2500F2597B /* Assets.xcassets */,
+				1F2336562AF9CC2500F2597B /* Info.plist */,
+			);
+			path = ActiveWorkoutTimer;
+			sourceTree = "<group>";
+		};
 		1F305F7D2980CD16008194E5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +455,6 @@
 		1F7EE5BB2A66DB15007CBBEA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1F7EE5BC2A66DB34007CBBEA /* TimerWrapper.swift */,
 				1F7EE5BF2A66DB7C007CBBEA /* TimeHelper.swift */,
 				1F7EE5C22A66DC29007CBBEA /* DefaultManager.swift */,
 				1F7EE5C52A66DC5C007CBBEA /* Constants.swift */,
@@ -463,6 +538,8 @@
 				1FCAA4BC2A32C04600B9EA07 /* NShapeSets-watch Watch App */,
 				1FCAA4CD2A32C04700B9EA07 /* NShapeSets-watch Watch AppTests */,
 				1FCAA4D72A32C04700B9EA07 /* NShapeSets-watch Watch AppUITests */,
+				1F23364B2AF9CC2400F2597B /* ActiveWorkoutTimer */,
+				1F2336462AF9CC2400F2597B /* Frameworks */,
 				29374B912963C42700664042 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -476,6 +553,7 @@
 				1FCAA4BB2A32C04600B9EA07 /* NShapeSets-watch Watch App.app */,
 				1FCAA4CA2A32C04700B9EA07 /* NShapeSets-watch Watch AppTests.xctest */,
 				1FCAA4D42A32C04700B9EA07 /* NShapeSets-watch Watch AppUITests.xctest */,
+				1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,6 +625,7 @@
 		294C8AB529B6ACA4000A2BB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F42D8B12B13B37400F113BA /* Models.swift */,
 				294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */,
 				1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */,
 				1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */,
@@ -560,6 +639,8 @@
 			children = (
 				2978FF1F299991E2005A3C3A /* TimeHelpers.swift */,
 				1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */,
+				1F4743762AA38C330053537D /* NotificationHelpers.swift */,
+				1F74C0D92B06A51200E14E45 /* ActivityManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -576,6 +657,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F2336442AF9CC2400F2597B /* ActiveWorkoutTimerExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F23365A2AF9CC2500F2597B /* Build configuration list for PBXNativeTarget "ActiveWorkoutTimerExtension" */;
+			buildPhases = (
+				1F2336412AF9CC2400F2597B /* Sources */,
+				1F2336422AF9CC2400F2597B /* Frameworks */,
+				1F2336432AF9CC2400F2597B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActiveWorkoutTimerExtension;
+			productName = ActiveWorkoutTimerExtension;
+			productReference = 1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1FCAA4BA2A32C04600B9EA07 /* NShapeSets-watch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FCAA4E62A32C04700B9EA07 /* Build configuration list for PBXNativeTarget "NShapeSets-watch Watch App" */;
@@ -638,11 +736,13 @@
 				29374B8E2963C42700664042 /* Resources */,
 				1F9E38CD29B7FDD300CA4120 /* SwiftLint */,
 				1FCAA4DF2A32C04700B9EA07 /* Embed Watch Content */,
+				1F23365D2AF9CC2500F2597B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1FCAA4DD2A32C04700B9EA07 /* PBXTargetDependency */,
+				1F2336582AF9CC2500F2597B /* PBXTargetDependency */,
 			);
 			name = NShapeSets;
 			productName = NShapeSets;
@@ -692,9 +792,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					1F2336442AF9CC2400F2597B = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					1FCAA4BA2A32C04600B9EA07 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -738,11 +841,20 @@
 				1FCAA4BA2A32C04600B9EA07 /* NShapeSets-watch Watch App */,
 				1FCAA4C92A32C04700B9EA07 /* NShapeSets-watch Watch AppTests */,
 				1FCAA4D32A32C04700B9EA07 /* NShapeSets-watch Watch AppUITests */,
+				1F2336442AF9CC2400F2597B /* ActiveWorkoutTimerExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F2336432AF9CC2400F2597B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2336552AF9CC2500F2597B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCAA4B92A32C04600B9EA07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -818,10 +930,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F2336412AF9CC2400F2597B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F23364F2AF9CC2400F2597B /* ActiveWorkoutTimerLiveActivity.swift in Sources */,
+				1F74C0DE2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift in Sources */,
+				1F2336532AF9CC2400F2597B /* AppIntent.swift in Sources */,
+				1F23364D2AF9CC2400F2597B /* ActiveWorkoutTimerBundle.swift in Sources */,
+				1F2336512AF9CC2400F2597B /* ActiveWorkoutTimer.swift in Sources */,
+				1F42D8B42B13B37400F113BA /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCAA4B72A32C04600B9EA07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4743782AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				1F7EE5A42A66CE60007CBBEA /* WorkoutSessionContext.swift in Sources */,
 				1FA6E1002A7945BF00AE84A0 /* RestTimeView.swift in Sources */,
 				1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */,
@@ -839,15 +965,15 @@
 				1F7EE5C12A66DB7C007CBBEA /* TimeHelper.swift in Sources */,
 				1F7EE5C42A66DC29007CBBEA /* DefaultManager.swift in Sources */,
 				1FA6E1042A794B3400AE84A0 /* RecapView.swift in Sources */,
-				1F7EE5AE2A66D8B5007CBBEA /* WorkoutModels.swift in Sources */,
 				1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */,
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
+				1F42D8B32B13B37400F113BA /* Models.swift in Sources */,
 				1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */,
-				1F7EE5BE2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
 				1F7EE5D12A66EE7E007CBBEA /* PrimaryButton.swift in Sources */,
 				1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */,
 				1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */,
+				1F42D8A42B12D7B600F113BA /* WorkoutModels.swift in Sources */,
 				1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */,
 				1FCAA4BE2A32C04600B9EA07 /* NShapeSets_watchApp.swift in Sources */,
 				1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */,
@@ -895,13 +1021,14 @@
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
 				1F51409529CFE30200DD9A2A /* WorkoutView.swift in Sources */,
 				2978FF20299991E2005A3C3A /* TimeHelpers.swift in Sources */,
-				1F7EE5BD2A66DB34007CBBEA /* TimerWrapper.swift in Sources */,
 				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
 				1F7EE5C32A66DC29007CBBEA /* DefaultManager.swift in Sources */,
 				1FBA7A1B29CF404D007A594F /* Ring.swift in Sources */,
+				1F74C0DA2B06A51200E14E45 /* ActivityManager.swift in Sources */,
 				1F01449B29DFAE6100C2EA5F /* RecapView.swift in Sources */,
 				1F7E965729B4C7CF00CEBDF0 /* ProgressRing.swift in Sources */,
+				1F42D8B22B13B37400F113BA /* Models.swift in Sources */,
 				2935B37B2980C14000B66589 /* CustomSlider.swift in Sources */,
 				1FC55F0229877A17002BE892 /* ViewExtensions.swift in Sources */,
 				1F7EE5C62A66DC5C007CBBEA /* Constants.swift in Sources */,
@@ -913,7 +1040,9 @@
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
+				1F4743772AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				29374BC02963CBB900664042 /* BackgroundGradient.swift in Sources */,
+				1F74C0DD2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,6 +1117,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1F2336582AF9CC2500F2597B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F2336442AF9CC2400F2597B /* ActiveWorkoutTimerExtension */;
+			targetProxy = 1F2336572AF9CC2500F2597B /* PBXContainerItemProxy */;
+		};
 		1FCAA4CC2A32C04700B9EA07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1FCAA4BA2A32C04600B9EA07 /* NShapeSets-watch Watch App */;
@@ -1016,6 +1150,71 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1F23365B2AF9CC2500F2597B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActiveWorkoutTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActiveWorkoutTimer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets.ActiveWorkoutTimer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F23365C2AF9CC2500F2597B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActiveWorkoutTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActiveWorkoutTimer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets.ActiveWorkoutTimer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1FCAA4E02A32C04700B9EA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1298,6 +1497,7 @@
 				INFOPLIST_FILE = NShapeSets/Info.plist;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1333,6 +1533,7 @@
 				INFOPLIST_FILE = NShapeSets/Info.plist;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1431,6 +1632,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F23365A2AF9CC2500F2597B /* Build configuration list for PBXNativeTarget "ActiveWorkoutTimerExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F23365B2AF9CC2500F2597B /* Debug */,
+				1F23365C2AF9CC2500F2597B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1FCAA4E62A32C04700B9EA07 /* Build configuration list for PBXNativeTarget "NShapeSets-watch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
