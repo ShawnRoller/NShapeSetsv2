@@ -65,17 +65,31 @@ final class Notifications: ObservableObject {
 //        notificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-    func scheduleLocalNotification() {
+    private func scheduleLocalNotification(title: String, subtitle: String, seconds: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Rest complete!"
-        content.subtitle = "You're on set 1. Go!"
+        content.title = title
+        content.subtitle = subtitle
         content.sound = UNNotificationSound.defaultCritical
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(5), repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(seconds), repeats: false)
         let id = UUID().uuidString
         self.notificationId = id
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func scheduleRestNotification(currentSet: Int, totalSets: Int, restSeconds: Int) {
+        let title = "Rest is over"
+        var subtitle = "Go, go, go on set \(currentSet + 1)!"
+        if (currentSet == totalSets) {
+            subtitle = "Last set! Go, go go!"
+        }
+        
+        scheduleLocalNotification(title: title, subtitle: subtitle, seconds: restSeconds)
+    }
+    
+    func cancelNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }
