@@ -5,18 +5,10 @@
 //  Created by Shawn Roller on 3/6/23.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
-enum WorkoutState {
-    case Setup
-    case Active
-    case Rest
-    case Recap
-    case Done
-}
-
-class Workout: ObservableObject {
+class Workout: ObservableObject, Identifiable {
     @ObservedObject private var notifications = Notifications.shared
     @ObservedObject var timer: CountdownTimer
     @ObservedObject var totalTimer = TotalTimer()
