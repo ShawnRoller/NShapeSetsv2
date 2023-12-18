@@ -54,7 +54,7 @@ class Workout: ObservableObject, Identifiable {
             state = .Rest
             setupTimer()
             timer.start()
-            notifications.scheduleLocalNotification()
+            notifications.scheduleRestNotification(currentSet: currentSet, totalSets: rounds, restSeconds: rest)
         }
     }
     
@@ -62,12 +62,14 @@ class Workout: ObservableObject, Identifiable {
         state = .Active
         currentSet += 1
         timer.stop()
+        notifications.cancelNotifications()
     }
     
     func endWorkout() -> Void {
         state = .Recap
         timer.stop()
         totalTimer.pause()
+        notifications.cancelNotifications()
     }
     
     func reset() -> Void {
@@ -76,6 +78,7 @@ class Workout: ObservableObject, Identifiable {
         totalTimer.stop()
         state = .Setup
         currentSet = 1
+        notifications.cancelNotifications()
     }
     
     func setupTimer() -> Void {

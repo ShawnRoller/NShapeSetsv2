@@ -48,6 +48,7 @@
 		1F51409929CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F51409A29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
 		1F51409B29CFEA5400DD9A2A /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F51409829CFEA5400DD9A2A /* Documentation.docc */; };
+		1F5E04592B267B2B0099F42E /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61A1F22A8EA306003FB788 /* WorkoutView.swift */; };
 		1F74C0DA2B06A51200E14E45 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C0D92B06A51200E14E45 /* ActivityManager.swift */; };
 		1F74C0DD2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C0DC2B06A6A900E14E45 /* ActiveWorkoutTimerAttributes.swift */; };
@@ -60,7 +61,6 @@
 		1F7EE5A82A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */; };
-		1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA132A0B2292009E98A9 /* CountdownTimer.swift */; };
 		1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
 		1F7EE5B12A66D92D007CBBEA /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F7EE5B22A66D932007CBBEA /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
@@ -950,7 +950,6 @@
 				1F4743782AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				1F7EE5A42A66CE60007CBBEA /* WorkoutSessionContext.swift in Sources */,
 				1FA6E1002A7945BF00AE84A0 /* RestTimeView.swift in Sources */,
-				1F7EE5AF2A66D91B007CBBEA /* CountdownTimer.swift in Sources */,
 				1FA6E0FE2A79417F00AE84A0 /* SetsView.swift in Sources */,
 				1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */,
 				1F7EE5A62A66CF1D007CBBEA /* HealthKitHelper.swift in Sources */,
@@ -965,6 +964,7 @@
 				1F7EE5C12A66DB7C007CBBEA /* TimeHelper.swift in Sources */,
 				1F7EE5C42A66DC29007CBBEA /* DefaultManager.swift in Sources */,
 				1FA6E1042A794B3400AE84A0 /* RecapView.swift in Sources */,
+				1F5E04592B267B2B0099F42E /* CountdownTimer.swift in Sources */,
 				1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */,
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,

@@ -13,11 +13,36 @@ class CountdownTimer: ObservableObject {
     private var initialTime: Int
     private var onCountdownComplete: () -> Void
     private var timer: AnyCancellable?
+    private var timerEndDate: Date?
     
     init(initialTime: Int, onCountdownComplete: @escaping () -> Void) {
         self.initialTime = initialTime
         self.remainingTime = initialTime
         self.onCountdownComplete = onCountdownComplete
+        
+        #if os(iOS)
+            NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        #endif
+    }
+    
+    @objc func appMovedToForeground() {
+        // get the difference between the current time and the timerEndDate in seconds
+        guard let timerEndDate else { return }
+        let differenceInSeconds = Calendar.current.dateComponents([.second], from: Date(), to: timerEndDate).second
+        
+        guard let differenceInSeconds, differenceInSeconds > 0 else {
+            onCountdownComplete()
+            return
+        }
+        remainingTime = differenceInSeconds
+        start()
+    }
+
+    @objc func appMovedToBackground() {
+        guard remainingTime > 0 else { return }
+        timer?.cancel()
+        self.timerEndDate = Date().addingTimeInterval(TimeInterval(remainingTime))
     }
     
     func start() -> Void {
@@ -31,7 +56,6 @@ class CountdownTimer: ObservableObject {
                         } else {
                             self.timer?.cancel()
                             self.onCountdownComplete()
-//                            self.triggerNotification()
                         }
                     }
     }
