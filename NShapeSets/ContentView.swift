@@ -47,7 +47,7 @@ struct ContentView: View {
     }
     
     func renderInfoBar() -> some View {
-        let renderStates: [WorkoutState] = [.Recap, .Rest, .Active]
+        let renderStates: [WorkoutState] = [.Rest, .Active]
         return Group {
             if (renderStates.contains(workout.state)) {
                 InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime)

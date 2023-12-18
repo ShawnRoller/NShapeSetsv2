@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RecapView: View {
     var workout: Workout
+    private var time: String {
+        return getTime(from: workout.totalTimer.totalTime)
+    }
     
     var body: some View {
         ZStack {
@@ -18,13 +21,13 @@ struct RecapView: View {
             VStack {
                 Text("Recap")
                     .directive1Font()
-                .foregroundColor(Palette.restText)
-                Text("Total time: 3:33")
+                    .foregroundColor(Palette.restText)
+                Text("Total time: \(time)")
                     .directive2Font()
-                .foregroundColor(Palette.restText)
+                    .foregroundColor(Palette.primary)
                 Text("Total sets: \(workout.rounds)")
                     .directive2Font()
-                    .foregroundColor(Palette.restText)
+                    .foregroundColor(Palette.primary)
             }
         }
     }
