@@ -12,7 +12,6 @@ let ENABLE_LIVE_ACTIVITY = false
 struct ContentView: View {
     @StateObject private var activityManager = ActivityManager.shared
     @State private var showingActionSheet = true
-    @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
     @ObservedObject private var workout: Workout = Workout.example
     @ObservedObject private var notifications = Notifications.shared
@@ -44,6 +43,17 @@ struct ContentView: View {
             }
             SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet.animation(.snappy), onCTAPress: onCTAPress, onEndWorkout: { workout.endWorkout() })
         }
+        .onAppear {
+            loadDefaults()
+        }
+    }
+    
+    func loadDefaults() -> Void {
+        let rest = DefaultManager.getDefault(forKey: Defaults.workoutRest) as? Int ?? Workout.example.rest
+        let rounds = DefaultManager.getDefault(forKey: Defaults.workoutRounds) as? Int ?? Workout.example.rounds
+        
+        workout.rest = rest
+        workout.rounds = rounds
     }
     
     func renderInfoBar() -> some View {

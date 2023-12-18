@@ -12,9 +12,17 @@ class Workout: ObservableObject, Identifiable {
     @ObservedObject private var notifications = Notifications.shared
     @ObservedObject var timer: CountdownTimer
     @ObservedObject var totalTimer = TotalTimer()
-    @Published var rounds: Int
+    @Published var rounds: Int {
+        didSet {
+            // save default
+            self.saveDefaults()
+        }
+    }
     @Published var rest: Int {
         didSet {
+            // save default
+            self.saveDefaults()
+            
             // set the remaining rest if the rest value is changing during a workout
             self.timer = CountdownTimer(initialTime: rest, onCountdownComplete: nextSet)
             //update remainingRest when the timer changes
@@ -36,6 +44,14 @@ class Workout: ObservableObject, Identifiable {
     private var progressCancellable: AnyCancellable?
     private var timerCancellable: AnyCancellable?
     private var totalCancellable: AnyCancellable?
+    
+    func saveDefaults() -> Void {
+        let defaultWorkoutRest = rest
+        let defaultWorkoutSets = rounds
+        
+        DefaultManager.setDefault(value: defaultWorkoutRest, forKey: Defaults.workoutRest)
+        DefaultManager.setDefault(value: defaultWorkoutSets, forKey: Defaults.workoutRounds)
+    }
     
     func startWorkout() -> Void {
         state = .Active
@@ -104,5 +120,5 @@ class Workout: ObservableObject, Identifiable {
         }
     }
     
-    static var example = Workout(rounds: 3, rest: 6)
+    static var example = Workout(rounds: 12, rest: 60)
 }
