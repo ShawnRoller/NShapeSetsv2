@@ -42,7 +42,7 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { _, newValue in
                 topPadding = newValue ? 10 : 100
             }
-            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet, onCTAPress: onCTAPress)
+            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet.animation(.snappy), onCTAPress: onCTAPress, onEndWorkout: { workout.endWorkout() })
         }
     }
     
@@ -109,6 +109,7 @@ struct ContentView: View {
         
         showingActionSheet = setupVisible
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

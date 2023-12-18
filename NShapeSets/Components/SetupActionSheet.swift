@@ -13,6 +13,7 @@ struct SetupActionSheet: View {
     @Binding var rounds: Int
     @Binding var isExpanded: Bool
     var onCTAPress: () -> Void
+    var onEndWorkout: () -> Void
     
     private var buttonTitle: String {
         var title: String
@@ -48,14 +49,28 @@ struct SetupActionSheet: View {
         return type
     }
     
+    private var showEndWorkout: Bool {
+        let endStates: [WorkoutState] = [.Active, .Rest]
+        if endStates.contains(workout.state) && isExpanded {
+            return true
+        }
+        return false
+    }
+    
     var body: some View {
+        GeometryReader { proxy in
         ActionSheet(isExpanded: $isExpanded) {
             Main {
                 RestSelector(restValue: $rest)
                 SetsSelector(setsValue: $rounds, minSet: workout.currentSet)
             }
-            Footer {
-                CTAButton(title: buttonTitle, role: ctaType, action: onCTAPress)
+                Footer {
+                    HStack {
+                        CTAButton(title: buttonTitle, role: ctaType, action: onCTAPress)
+                        CTAButton(title: "Done", role: .destructive, action: onEndWorkout)
+                            .frame(width: showEndWorkout ? proxy.size.width / 4 : 0)
+                    }
+                }
             }
         }
     }
@@ -63,6 +78,6 @@ struct SetupActionSheet: View {
 
 struct SetupActionSheet_Previews: PreviewProvider {
     static var previews: some View {
-        SetupActionSheet(workout: Workout.example, rest: .constant(Workout.example.rest), rounds: .constant(Workout.example.rounds), isExpanded: .constant(true), onCTAPress: {})
+        SetupActionSheet(workout: Workout.example, rest: .constant(Workout.example.rest), rounds: .constant(Workout.example.rounds), isExpanded: .constant(true), onCTAPress: {}, onEndWorkout: {})
     }
 }
