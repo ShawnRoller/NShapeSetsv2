@@ -17,6 +17,7 @@ struct BackgroundGradient: View {
                 .edgesIgnoringSafeArea(.all)
         }
         .background()
+        .preferredColorScheme(.dark)
     }
 }
 
