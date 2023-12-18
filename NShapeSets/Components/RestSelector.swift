@@ -11,7 +11,7 @@ struct RestSelector: View {
     @Binding var restValue: Int
     
     var body: some View {
-        ValueSelector(value: $restValue, title: "rest", step: 5.0, range: 1...180)
+        ValueSelector(value: $restValue, title: "rest", step: 5.0, range: 1...180, isTime: true)
     }
 }
 

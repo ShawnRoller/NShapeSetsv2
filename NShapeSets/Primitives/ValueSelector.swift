@@ -12,11 +12,16 @@ struct ValueSelector: View {
     var title = "sets"
     var step: Double = 1
     var range: ClosedRange<Double> = 1...100
+    var isTime = false
+    
+    var valueTitle: String {
+        self.isTime ? getTime(from: value) : "\(value)"
+    }
     
     var body: some View {
         VStack {
             HStack(alignment: .firstTextBaseline) {
-                Text("\(value)")
+                Text("\(valueTitle)")
                     .selectorTitleFont()
                     .foregroundColor(Palette.quaternary)
                 Text(title)
