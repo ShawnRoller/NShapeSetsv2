@@ -12,15 +12,10 @@ struct RecapView: View {
     private var time: String {
         return getTime(from: workout.totalTimer.totalTime)
     }
-    
-    /*
-     RecapDetailView(title: "Sets", value: "15")
-     RecapDetailView(title: "Rest time", value: "12:30")
-     RecapDetailView(title: "Total time", value: "31:45")
-     RecapDetailView(title: "Skipped rest", value: "2")
-         .padding(.top)
-     */
-    
+    private var activeTime: String {
+        return getTime(from: workout.totalTimer.totalTime - workout.totalRestTime)
+    }
+
     var listBackground: some View {
         Color.white.opacity(0)
     }
@@ -45,7 +40,7 @@ struct RecapView: View {
                         .foregroundColor(Palette.secondary)
                         .listRowBackground(listBackground)
                     
-                    Text("Rest time: \(workout.totalRestTime)")
+                    Text("Skipped rest: \(workout.skippedRest)")
                         .directive2Font()
                         .foregroundColor(Palette.secondary)
                         .listRowBackground(listBackground)
@@ -55,11 +50,10 @@ struct RecapView: View {
                         .foregroundColor(Palette.secondary)
                         .listRowBackground(listBackground)
                     
-                    Text("Skipped rest: \(workout.skippedRest)")
+                    Text("Total active time: \(activeTime)")
                         .directive2Font()
                         .foregroundColor(Palette.secondary)
                         .listRowBackground(listBackground)
-                    
                 }
                 .padding(.bottom, 100)
                 .scrollContentBackground(.hidden)
