@@ -41,11 +41,16 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { _, newValue in
                 topPadding = newValue ? 10 : 100
             }
-            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet.animation(.snappy), onCTAPress: onCTAPress, onEndWorkout: { workout.endWorkout() })
+            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet.animation(.snappy), onCTAPress: onCTAPress, onEndWorkout: onEndWorkout)
         }
         .onAppear {
             loadDefaults()
         }
+    }
+    
+    func onEndWorkout() -> Void {
+        workout.endWorkout()
+        showingActionSheet = false
     }
     
     func loadDefaults() -> Void {

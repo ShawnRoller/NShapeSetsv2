@@ -24,7 +24,7 @@ struct WorkoutView: View {
                "\(remaining) sets left"
     }
     private var titleText: String {
-        workout.state == .Rest ? "\(workout.timer.remainingTime)" : "set \(workout.currentSet)"
+        workout.state == .Rest ? "\(getTime(from: workout.timer.remainingTime))" : "set \(workout.currentSet)"
     }
     private var titleColor: Color {
         workout.state == .Rest ? Palette.restText : Palette.activeTitleText
