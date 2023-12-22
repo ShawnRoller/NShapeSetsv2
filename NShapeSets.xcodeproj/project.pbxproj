@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F01449B29DFAE6100C2EA5F /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449A29DFAE6100C2EA5F /* RecapView.swift */; };
-		1F01449C29DFAE6100C2EA5F /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449A29DFAE6100C2EA5F /* RecapView.swift */; };
-		1F01449D29DFAE6100C2EA5F /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449A29DFAE6100C2EA5F /* RecapView.swift */; };
 		1F01449F29E4E89700C2EA5F /* HapticHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */; };
 		1F0144A029E4E89700C2EA5F /* HapticHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */; };
 		1F0144A129E4E89700C2EA5F /* HapticHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01449E29E4E89700C2EA5F /* HapticHelpers.swift */; };
@@ -1071,7 +1069,6 @@
 				1FC55F0329877A17002BE892 /* ViewExtensions.swift in Sources */,
 				1F14EA192A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F0144A029E4E89700C2EA5F /* HapticHelpers.swift in Sources */,
-				1F01449C29DFAE6100C2EA5F /* RecapView.swift in Sources */,
 				1FBA7A1C29CF404D007A594F /* Ring.swift in Sources */,
 				2978FF21299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37C2980C14000B66589 /* CustomSlider.swift in Sources */,
@@ -1105,7 +1102,6 @@
 				1FC55F0429877A17002BE892 /* ViewExtensions.swift in Sources */,
 				1F14EA1A2A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F0144A129E4E89700C2EA5F /* HapticHelpers.swift in Sources */,
-				1F01449D29DFAE6100C2EA5F /* RecapView.swift in Sources */,
 				1FBA7A1D29CF404D007A594F /* Ring.swift in Sources */,
 				2978FF22299991E2005A3C3A /* TimeHelpers.swift in Sources */,
 				2935B37D2980C14000B66589 /* CustomSlider.swift in Sources */,
@@ -1495,20 +1491,22 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NShapeSets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "NShape Sets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1531,20 +1529,22 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NShapeSets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "NShape Sets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

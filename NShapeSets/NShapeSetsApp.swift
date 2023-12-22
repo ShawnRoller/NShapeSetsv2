@@ -18,6 +18,7 @@ struct NShapeSetsApp: App {
                 .onChange(of: scenePhase) { _, phase in
                     Notifications.shared.handleAppState(phase)
                 }
+                .preferredColorScheme(.dark)
         }
     }
 }

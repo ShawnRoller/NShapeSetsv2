@@ -109,7 +109,7 @@ struct ContentView: View {
         case .Active:
             workout.startRest()
         case .Rest:
-            workout.nextSet()
+            workout.skipRest()
         case .Recap:
             workout.reset()
             setupVisible = true

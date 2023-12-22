@@ -37,6 +37,10 @@ class Workout: ObservableObject, Identifiable {
     @Published var superSets: Int
     @Published var state: WorkoutState
     @Published var currentSet: Int
+    @Published var completedSets: Int
+    @Published var skippedRest: Int
+    @Published var totalRestTime: Int
+    
     var progress: Float {
         Float(currentSet) / Float(rounds) * 100
     }
@@ -44,6 +48,9 @@ class Workout: ObservableObject, Identifiable {
     private var progressCancellable: AnyCancellable?
     private var timerCancellable: AnyCancellable?
     private var totalCancellable: AnyCancellable?
+    
+    // Track how long we've been resting
+    private var startRestDate: Date?
     
     func saveDefaults() -> Void {
         let defaultWorkoutRest = rest
@@ -64,9 +71,11 @@ class Workout: ObservableObject, Identifiable {
     }
     
     func startRest() -> Void {
+        completedSets += 1
         if currentSet == rounds {
             endWorkout()
         } else {
+            startRestDate = .now
             state = .Rest
             setupTimer()
             timer.start()
@@ -74,11 +83,17 @@ class Workout: ObservableObject, Identifiable {
         }
     }
     
+    func skipRest() -> Void {
+        skippedRest += 1
+        nextSet()
+    }
+    
     func nextSet() -> Void {
         state = .Active
         currentSet += 1
         timer.stop()
         notifications.cancelNotifications()
+        endRestTracking()
     }
     
     func endWorkout() -> Void {
@@ -97,6 +112,14 @@ class Workout: ObservableObject, Identifiable {
         notifications.cancelNotifications()
     }
     
+    private func endRestTracking() -> Void {
+        guard let startRestDate else { return }
+        let currentDate = Date.now
+        let differenceInSeconds = currentDate - startRestDate
+        totalRestTime += Int(differenceInSeconds)
+        self.startRestDate = nil
+    }
+    
     func setupTimer() -> Void {
         timer = CountdownTimer(initialTime: self.rest, onCountdownComplete: nextSet)
         
@@ -112,6 +135,9 @@ class Workout: ObservableObject, Identifiable {
         self.superSets = superSets
         self.state = .Setup
         self.currentSet = 1
+        self.completedSets = 0
+        self.skippedRest = 0
+        self.totalRestTime = 0
         timer = CountdownTimer(initialTime: rest, onCountdownComplete: {})
         
         // update progress when the currentSet changes
