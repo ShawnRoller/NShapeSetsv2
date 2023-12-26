@@ -109,7 +109,7 @@ struct ActiveWorkoutView: View {
         .sheet(isPresented: $showingRecap, onDismiss: {
             workout.state = .Done
         }) {
-            RecapView()
+            RecapView(workout: workout)
         }
     }
     

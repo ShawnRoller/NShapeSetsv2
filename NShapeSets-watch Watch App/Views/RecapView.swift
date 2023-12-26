@@ -8,24 +8,37 @@
 import SwiftUI
 
 struct RecapView: View {
+    var workout: Workout
     @Environment(\.dismiss) var dismiss
     
+    private var time: String {
+        return getTime(from: workout.totalTimer.totalTime)
+    }
+    private var activeTime: String {
+        return getTime(from: workout.totalTimer.totalTime - workout.totalRestTime)
+    }
+    
     var body: some View {
-        VStack {
-            ScrollView {
-                RecapDetailView(title: "Sets", value: "15")
-                RecapDetailView(title: "Rest time", value: "12:30")
-                RecapDetailView(title: "Total time", value: "31:45")
-                RecapDetailView(title: "Skipped rest", value: "2")
-                    .padding(.top)
+        List {
+            Section {
+                Text("Recap")
+                    .watchCtaFont()
+                    .foregroundColor(Palette.primary)
+                    .listRowBackground(Color.white.opacity(0))
             }
-            PrimaryButton(title: "Done", buttonColor: Palette.quaternary) {
-                dismiss()
-            }
+            .frame(height: 10)
+            
+            RecapDetailView(title: "Sets", value: "\(workout.completedSets)")
+            RecapDetailView(title: "Skipped rest", value: "\(workout.skippedRest)")
+            RecapDetailView(title: "Total time", value: time)
+            RecapDetailView(title: "Active time", value: activeTime)
+        }
+        PrimaryButton(title: "Done", buttonColor: Palette.tertiary) {
+            dismiss()
         }
     }
 }
 
 #Preview {
-    RecapView()
+    RecapView(workout: Workout.example)
 }

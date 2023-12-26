@@ -60,7 +60,6 @@
 		1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5A72A66CF8A007CBBEA /* OSLogExtensions.swift */; };
 		1F7EE5AC2A66D821007CBBEA /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EE5AB2A66D821007CBBEA /* InstructionView.swift */; };
 		1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14EA172A0EE26E009E98A9 /* TotalTimer.swift */; };
-		1F7EE5B12A66D92D007CBBEA /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F48CEDB29822952006250DB /* CircleGradient.swift */; };
 		1F7EE5B22A66D932007CBBEA /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E965629B4C7CF00CEBDF0 /* ProgressRing.swift */; };
 		1F7EE5B32A66D93F007CBBEA /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A1A29CF404D007A594F /* Ring.swift */; };
 		1F7EE5B42A66D955007CBBEA /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29032C00297C59F200E792B4 /* Typography.swift */; };
@@ -78,6 +77,8 @@
 		1F8ED2BC29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BD29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
 		1F8ED2BE29836C7200650696 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8ED2BB29836C7200650696 /* LogoView.swift */; };
+		1F9B01EA2B3B8A7B001AF325 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B01E92B3B8A7B001AF325 /* Wave.metal */; };
+		1F9B01EC2B3B8C8C001AF325 /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B01EB2B3B8C8C001AF325 /* CircleGradient.swift */; };
 		1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
 		1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
 		1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
@@ -266,6 +267,8 @@
 		1F7EE5D02A66EE7E007CBBEA /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1F89AF0F2A6EFC9400A45964 /* NShapeSets-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "NShapeSets-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1F8ED2BB29836C7200650696 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		1F9B01E92B3B8A7B001AF325 /* Wave.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Wave.metal; sourceTree = "<group>"; };
+		1F9B01EB2B3B8C8C001AF325 /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
 		1F9FB1172A3F688700BA9EC5 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		1FA6E0FD2A79417F00AE84A0 /* SetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 				1FA6E0FD2A79417F00AE84A0 /* SetsView.swift */,
 				1FA6E0FF2A7945BF00AE84A0 /* RestTimeView.swift */,
 				1FA6E1012A794AB900AE84A0 /* RecapDetailView.swift */,
+				1F9B01EB2B3B8C8C001AF325 /* CircleGradient.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -466,6 +470,14 @@
 				1F7EE5C92A66DCFB007CBBEA /* HapticHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1F9B01E82B3B8A6D001AF325 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				1F9B01E92B3B8A7B001AF325 /* Wave.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 		1FC55F0029877A01002BE892 /* Extensions */ = {
@@ -559,6 +571,7 @@
 		29374B922963C42700664042 /* NShapeSets */ = {
 			isa = PBXGroup;
 			children = (
+				1F9B01E82B3B8A6D001AF325 /* Metal */,
 				1F7EE5BB2A66DB15007CBBEA /* Helpers */,
 				1F1EEC722A1EC178009FFD76 /* NShapeSets.entitlements */,
 				294C8AB529B6ACA4000A2BB7 /* Models */,
@@ -952,7 +965,6 @@
 				1F7EE5B72A66DA9F007CBBEA /* ActiveWorkoutView.swift in Sources */,
 				1F7EE5A62A66CF1D007CBBEA /* HealthKitHelper.swift in Sources */,
 				1F7EE5B42A66D955007CBBEA /* Typography.swift in Sources */,
-				1F7EE5B12A66D92D007CBBEA /* CircleGradient.swift in Sources */,
 				1F7EE5CB2A66DCFB007CBBEA /* HapticHelper.swift in Sources */,
 				1F7EE5CF2A66EE33007CBBEA /* DetailView.swift in Sources */,
 				1FA6E1022A794AB900AE84A0 /* RecapDetailView.swift in Sources */,
@@ -977,6 +989,7 @@
 				1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */,
 				1F7EE5B22A66D932007CBBEA /* ProgressRing.swift in Sources */,
 				1F7EE5BA2A66DAEA007CBBEA /* StateModels.swift in Sources */,
+				1F9B01EC2B3B8C8C001AF325 /* CircleGradient.swift in Sources */,
 				1FA6E0FB2A793D8B00AE84A0 /* InfoBar.swift in Sources */,
 				1FA6E0FC2A793D9C00AE84A0 /* TimeHelpers.swift in Sources */,
 			);
@@ -1034,6 +1047,7 @@
 				29374B942963C42700664042 /* NShapeSetsApp.swift in Sources */,
 				1F14EA182A0EE26E009E98A9 /* TotalTimer.swift in Sources */,
 				1F14EA142A0B2292009E98A9 /* CountdownTimer.swift in Sources */,
+				1F9B01EA2B3B8A7B001AF325 /* Wave.metal in Sources */,
 				1F14EA1C2A0EE28D009E98A9 /* TimerModels.swift in Sources */,
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
