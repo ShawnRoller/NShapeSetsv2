@@ -28,9 +28,6 @@
 		1F2336532AF9CC2400F2597B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2336522AF9CC2400F2597B /* AppIntent.swift */; };
 		1F2336552AF9CC2500F2597B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F2336542AF9CC2500F2597B /* Assets.xcassets */; };
 		1F2336592AF9CC2500F2597B /* ActiveWorkoutTimerExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
-		1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
-		1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F305F7E2980CD29008194E5 /* PrimaryButton.swift */; };
 		1F42D8A42B12D7B600F113BA /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */; };
 		1F42D8B22B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
 		1F42D8B32B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
@@ -243,7 +240,6 @@
 		1F2336522AF9CC2400F2597B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		1F2336542AF9CC2500F2597B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F2336562AF9CC2500F2597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F305F7E2980CD29008194E5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		1F42D8B12B13B37400F113BA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1F4743762AA38C330053537D /* NotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelpers.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
@@ -398,7 +394,6 @@
 		1F305F7D2980CD16008194E5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1F305F7E2980CD29008194E5 /* PrimaryButton.swift */,
 				1F8ED2BB29836C7200650696 /* LogoView.swift */,
 				29CE61C5298D60C20084A713 /* SetupActionSheet.swift */,
 				2978FF1A299990DC005A3C3A /* InfoBar.swift */,
@@ -1032,7 +1027,6 @@
 				29374B962963C42700664042 /* ContentView.swift in Sources */,
 				1F51409529CFE30200DD9A2A /* WorkoutView.swift in Sources */,
 				2978FF20299991E2005A3C3A /* TimeHelpers.swift in Sources */,
-				1F305F7F2980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				29CE8924296A199D00EFEA53 /* Colors.swift in Sources */,
 				1F7EE5C32A66DC29007CBBEA /* DefaultManager.swift in Sources */,
 				1FBA7A1B29CF404D007A594F /* Ring.swift in Sources */,
@@ -1066,7 +1060,6 @@
 				2978FF1C299990DC005A3C3A /* InfoBar.swift in Sources */,
 				1FBA7A1029CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */,
-				1F305F802980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				294C8AB829B6ACB9000A2BB7 /* WorkoutModels.swift in Sources */,
 				29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1F51409629CFE30200DD9A2A /* WorkoutView.swift in Sources */,
@@ -1099,7 +1092,6 @@
 				2978FF1D299990DC005A3C3A /* InfoBar.swift in Sources */,
 				1FBA7A1129CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC902995427D00528A48 /* ValueSelector.swift in Sources */,
-				1F305F812980CD29008194E5 /* PrimaryButton.swift in Sources */,
 				294C8AB929B6ACB9000A2BB7 /* WorkoutModels.swift in Sources */,
 				29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1F51409729CFE30200DD9A2A /* WorkoutView.swift in Sources */,

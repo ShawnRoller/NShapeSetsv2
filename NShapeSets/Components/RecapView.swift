@@ -58,18 +58,6 @@ struct RecapView: View {
                 .padding(.bottom, 100)
                 .scrollContentBackground(.hidden)
             }
-            
-//            VStack {
-//                Text("Recap")
-//                    .directive1Font()
-//                    .foregroundColor(Palette.restText)
-//                Text("Total time: \(time)")
-//                    .directive2Font()
-//                    .foregroundColor(Palette.primary)
-//                Text("Total sets: \(workout.rounds)")
-//                    .directive2Font()
-//                    .foregroundColor(Palette.primary)
-//            }
         }
     }
 }
