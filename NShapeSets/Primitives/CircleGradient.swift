@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CircleGradient: View {
     @State private var startTime = Date.now
+    let background = RadialGradient(colors: Palette.logoCircularGradientColors, center: .center, startRadius: 0, endRadius: 200)
     
     var body: some View {
-            let background = RadialGradient(colors: Palette.logoCircularGradientColors, center: .center, startRadius: 0, endRadius: 200)
-            
         TimelineView(.animation) { timeline in
             let elapsedTime = startTime.distance(to: timeline.date)
             Circle()

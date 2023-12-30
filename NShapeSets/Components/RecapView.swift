@@ -35,25 +35,18 @@ struct RecapView: View {
                             .listRowBackground(Color.white.opacity(0))
                     }
                     
-                    Text("Total sets: \(workout.completedSets)")
-                        .directive2Font()
-                        .foregroundColor(Palette.secondary)
+                    RecapDetail(title: "Total sets", value: "\(workout.completedSets)")
                         .listRowBackground(listBackground)
                     
-                    Text("Skipped rest: \(workout.skippedRest)")
-                        .directive2Font()
-                        .foregroundColor(Palette.secondary)
+                    RecapDetail(title: "Skipped rest", value: "\(workout.skippedRest)")
                         .listRowBackground(listBackground)
                     
-                    Text("Total time: \(time)")
-                        .directive2Font()
-                        .foregroundColor(Palette.secondary)
+                    RecapDetail(title: "Total time", value: time)
                         .listRowBackground(listBackground)
                     
-                    Text("Total active time: \(activeTime)")
-                        .directive2Font()
-                        .foregroundColor(Palette.secondary)
+                    RecapDetail(title: "Total active time", value: activeTime)
                         .listRowBackground(listBackground)
+                    
                 }
                 .padding(.bottom, 100)
                 .scrollContentBackground(.hidden)

@@ -80,8 +80,8 @@ final class Notifications: ObservableObject {
     }
     
     func scheduleRestNotification(currentSet: Int, totalSets: Int, restSeconds: Int) {
-        let title = "Rest is over"
-        var subtitle = "Go, go, go on set \(currentSet + 1)!"
+        let title = "Start set \(currentSet + 1)!"
+        var subtitle = "Rest is over. Go, go, go!"
         if (currentSet == totalSets) {
             subtitle = "Last set! Go, go go!"
         }

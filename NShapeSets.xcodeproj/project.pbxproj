@@ -87,6 +87,7 @@
 		1FA6E1042A794B3400AE84A0 /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6E1032A794B3400AE84A0 /* RecapView.swift */; };
 		1FA7DB1A2B3F72E200218309 /* HealthkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB192B3F72E200218309 /* HealthkitManager.swift */; };
 		1FA7DB1C2B4086E200218309 /* HealthkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB192B3F72E200218309 /* HealthkitManager.swift */; };
+		1FA7DB1E2B40B1B800218309 /* RecapDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB1D2B40B1B800218309 /* RecapDetail.swift */; };
 		1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0D29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
@@ -272,6 +273,7 @@
 		1FA6E1012A794AB900AE84A0 /* RecapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapDetailView.swift; sourceTree = "<group>"; };
 		1FA6E1032A794B3400AE84A0 /* RecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapView.swift; sourceTree = "<group>"; };
 		1FA7DB192B3F72E200218309 /* HealthkitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthkitManager.swift; sourceTree = "<group>"; };
+		1FA7DB1D2B40B1B800218309 /* RecapDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapDetail.swift; sourceTree = "<group>"; };
 		1FB238262A60371D004D426C /* NShapeSets-watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NShapeSets-watch Watch App.entitlements"; sourceTree = "<group>"; };
 		1FBA7A0A29CF38F8007A594F /* RestSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSelector.swift; sourceTree = "<group>"; };
 		1FBA7A0E29CF3A46007A594F /* SetsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsSelector.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 				299ACC8D2995427D00528A48 /* ValueSelector.swift */,
 				1FBA7A1A29CF404D007A594F /* Ring.swift */,
 				1FBA7A1E29CF4244007A594F /* ActiveRing.swift */,
+				1FA7DB1D2B40B1B800218309 /* RecapDetail.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 				1F14EA1C2A0EE28D009E98A9 /* TimerModels.swift in Sources */,
 				29032C01297C59F200E792B4 /* Typography.swift in Sources */,
 				299ACC8E2995427D00528A48 /* ValueSelector.swift in Sources */,
+				1FA7DB1E2B40B1B800218309 /* RecapDetail.swift in Sources */,
 				29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1F4743772AA38C330053537D /* NotificationHelpers.swift in Sources */,
 				1FA7DB1A2B3F72E200218309 /* HealthkitManager.swift in Sources */,
