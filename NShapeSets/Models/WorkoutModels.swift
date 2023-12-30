@@ -104,6 +104,7 @@ class Workout: ObservableObject, Identifiable {
         timer.stop()
         totalTimer.pause()
         notifications.cancelNotifications()
+        endRestTracking()
         
         // Save the workout to healthkit
         let seconds = totalTimer.totalTime
