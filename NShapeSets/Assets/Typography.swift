@@ -32,10 +32,10 @@ extension View {
         return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:90)).baselineOffset(12)
     }
     func selectorTitleFont() -> some View {
-        return self.modifier(ScaledFont(name: "Karla", size:30))
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:48)).baselineOffset(12)
     }
     func selectorSubtitleFont() -> some View {
-        return self.modifier(ScaledFont(name: "Karla", size:18))
+        return self.modifier(ScaledFont(name: "AXR ArcadeMachine", size:40)).baselineOffset(12)
     }
     func totalTimeFont() -> some View {
         return self.modifier(ScaledFont(name: "Karla", size:13))

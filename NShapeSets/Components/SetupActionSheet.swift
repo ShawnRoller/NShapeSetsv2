@@ -25,7 +25,7 @@ struct SetupActionSheet: View {
         case .Rest:
             title = "Skip"
         case .Recap:
-            title = "Let's go"
+            title = "Setup"
         default:
             title = "Start"
         }

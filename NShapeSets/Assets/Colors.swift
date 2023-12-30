@@ -62,7 +62,7 @@ struct Palette {
     static let logoCircularGradient = RadialGradient(colors: logoCircularGradientColors, center: UnitPoint(x: 0, y: 0), startRadius: 0, endRadius: 0)
     
     static let activeRing = Color(secondaryColor)
-    static let activeTitleText = Color(secondaryColor)
+    static let activeTitleText = Color(primaryColor)
     static let activeSubtitleText = Color(quaternaryColor)
     static let activeCircularGradientColors = [Color(circularGradientInner), Color(circularGradientOuter)]
     static let activeCircularGradient = RadialGradient(colors: activeCircularGradientColors, center: UnitPoint(x: 0, y: 0), startRadius: 0, endRadius: 0)

@@ -149,8 +149,6 @@
 		299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299ACC8D2995427D00528A48 /* ValueSelector.swift */; };
 		299ACC902995427D00528A48 /* ValueSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299ACC8D2995427D00528A48 /* ValueSelector.swift */; };
 		29CE61C6298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
-		29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
-		29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE61C5298D60C20084A713 /* SetupActionSheet.swift */; };
 		29CE8924296A199D00EFEA53 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE8923296A199D00EFEA53 /* Colors.swift */; };
 		29CE8925296A207B00EFEA53 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE8923296A199D00EFEA53 /* Colors.swift */; };
 		29CE892B296A20C200EFEA53 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE892A296A20C200EFEA53 /* CTAButton.swift */; };
@@ -1067,7 +1065,6 @@
 				1FBA7A1029CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC8F2995427D00528A48 /* ValueSelector.swift in Sources */,
 				294C8AB829B6ACB9000A2BB7 /* WorkoutModels.swift in Sources */,
-				29CE61C7298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1F51409629CFE30200DD9A2A /* WorkoutView.swift in Sources */,
 				1FC55EFE298776E7002BE892 /* ActionSheet.swift in Sources */,
 				29374BA52963C42900664042 /* NShapeSetsTests.swift in Sources */,
@@ -1099,7 +1096,6 @@
 				1FBA7A1129CF3A46007A594F /* SetsSelector.swift in Sources */,
 				299ACC902995427D00528A48 /* ValueSelector.swift in Sources */,
 				294C8AB929B6ACB9000A2BB7 /* WorkoutModels.swift in Sources */,
-				29CE61C8298D60C20084A713 /* SetupActionSheet.swift in Sources */,
 				1F51409729CFE30200DD9A2A /* WorkoutView.swift in Sources */,
 				1FC55EFF298776E7002BE892 /* ActionSheet.swift in Sources */,
 				29374BB12963C42900664042 /* NShapeSetsUITestsLaunchTests.swift in Sources */,

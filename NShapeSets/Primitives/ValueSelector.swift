@@ -28,6 +28,7 @@ struct ValueSelector: View {
                     .selectorSubtitleFont()
                     .foregroundColor(Palette.primary)
             }
+            .frame(maxHeight: 40)
             CustomSlider(range: range, step: step, value: Binding<Double>(
                 get: { Double(value) },
                 set: { value = Int($0) }
@@ -43,6 +44,6 @@ struct ValueSelector_Previews: PreviewProvider {
                 .environment(\.colorScheme, .dark)
             ValueSelector(value: .constant(50))
                 .environment(\.colorScheme, .light)
-        }
+        }.background(.black)
     }
 }
