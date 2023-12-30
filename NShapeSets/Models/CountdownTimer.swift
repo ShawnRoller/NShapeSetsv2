@@ -28,7 +28,7 @@ class CountdownTimer: ObservableObject {
     
     @objc func appMovedToForeground() {
         // get the difference between the current time and the timerEndDate in seconds
-        guard let timerEndDate else { return }
+        guard let timerEndDate, let timer else { return }
         let differenceInSeconds = Calendar.current.dateComponents([.second], from: Date(), to: timerEndDate).second
         
         guard let differenceInSeconds, differenceInSeconds > 0 else {
@@ -42,11 +42,13 @@ class CountdownTimer: ObservableObject {
     @objc func appMovedToBackground() {
         guard remainingTime > 0 else { return }
         timer?.cancel()
+        timer = nil
         self.timerEndDate = Date().addingTimeInterval(TimeInterval(remainingTime))
     }
     
     func start() -> Void {
         timer?.cancel()
+        timer = nil
         timer = Timer.publish(every: 1, on: .main, in: .common)
                     .autoconnect()
                     .sink { [weak self] _ in
@@ -62,10 +64,12 @@ class CountdownTimer: ObservableObject {
     
     func pause() -> Void {
         timer?.cancel()
+        timer = nil
     }
     
     func stop() -> Void {
         timer?.cancel()
+        timer = nil
         remainingTime = initialTime
     }
     
