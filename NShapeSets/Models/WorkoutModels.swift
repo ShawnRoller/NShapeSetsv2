@@ -6,9 +6,12 @@
 //
 
 import Combine
+import HealthKit
+import os
 import SwiftUI
 
 class Workout: ObservableObject, Identifiable {
+    @ObservedObject private var healthManager = HealthManager.shared
     @ObservedObject private var notifications = Notifications.shared
     @ObservedObject var timer: CountdownTimer
     @ObservedObject var totalTimer = TotalTimer()
@@ -101,6 +104,21 @@ class Workout: ObservableObject, Identifiable {
         timer.stop()
         totalTimer.pause()
         notifications.cancelNotifications()
+        
+        // Save the workout to healthkit
+        let seconds = totalTimer.totalTime
+        let userCalendar = Calendar.current
+        let date = Date()
+        var durationComponents = DateComponents()
+        durationComponents.second = seconds * -1
+        guard let startDate = (userCalendar as NSCalendar).date(byAdding: durationComponents, to: date, options: []) else {
+            os_log("Could not get startDate to save workout", log: .healthKit)
+            return
+        }
+        
+        // Estimate the calories burned
+        let calories = healthManager.getCalories(for: HKWorkoutActivityType.highIntensityIntervalTraining, seconds: totalTimer.totalTime)
+        healthManager.saveWorkout(calories, startDate: startDate, endDate: date)
     }
     
     func reset() -> Void {

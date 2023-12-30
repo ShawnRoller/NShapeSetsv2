@@ -68,11 +68,3 @@ func generateComposition(from training: Training) -> CustomWorkout {
     
     return customComposition
 }
-
-struct WorkoutType: Identifiable {
-    let id = UUID()
-    let name: String
-    let type: HKWorkoutActivityType
-}
-
-let workouts: [WorkoutType] = [WorkoutType(name: "Strength", type: .traditionalStrengthTraining), WorkoutType(name: "HIIT", type: .highIntensityIntervalTraining)]

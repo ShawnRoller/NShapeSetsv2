@@ -10,6 +10,7 @@ import SwiftUI
 let ENABLE_LIVE_ACTIVITY = false
 
 struct ContentView: View {
+    @ObservedObject private var healthManager = HealthManager.shared
     @StateObject private var activityManager = ActivityManager.shared
     @State private var showingActionSheet = true
     @State private var topPadding: CGFloat = 10
@@ -45,12 +46,17 @@ struct ContentView: View {
         }
         .onAppear {
             loadDefaults()
+            authorizeHealthKit()
         }
     }
     
     func onEndWorkout() -> Void {
         workout.endWorkout()
         showingActionSheet = false
+    }
+    
+    func authorizeHealthKit() -> Void {
+        healthManager.authorizeHealthKit()
     }
     
     func loadDefaults() -> Void {
