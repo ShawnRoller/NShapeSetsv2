@@ -12,17 +12,23 @@ struct ValueSelector: View {
     var title = "sets"
     var step: Double = 1
     var range: ClosedRange<Double> = 1...100
+    var isTime = false
+    
+    var valueTitle: String {
+        self.isTime ? getTime(from: value) : "\(value)"
+    }
     
     var body: some View {
         VStack {
             HStack(alignment: .firstTextBaseline) {
-                Text("\(value)")
+                Text("\(valueTitle)")
                     .selectorTitleFont()
                     .foregroundColor(Palette.quaternary)
                 Text(title)
                     .selectorSubtitleFont()
                     .foregroundColor(Palette.primary)
             }
+            .frame(maxHeight: 40)
             CustomSlider(range: range, step: step, value: Binding<Double>(
                 get: { Double(value) },
                 set: { value = Int($0) }
@@ -38,6 +44,6 @@ struct ValueSelector_Previews: PreviewProvider {
                 .environment(\.colorScheme, .dark)
             ValueSelector(value: .constant(50))
                 .environment(\.colorScheme, .light)
-        }
+        }.background(.black)
     }
 }

@@ -11,13 +11,16 @@ import SwiftUI
 struct NShapeSetsApp: App {
     @Environment(\.scenePhase) private var scenePhase
     
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(HealthManager.shared)
                 .environmentObject(Notifications.shared)
                 .onChange(of: scenePhase) { _, phase in
                     Notifications.shared.handleAppState(phase)
                 }
+                .preferredColorScheme(.dark)
         }
     }
 }

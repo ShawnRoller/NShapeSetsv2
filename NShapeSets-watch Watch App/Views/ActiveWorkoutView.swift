@@ -28,7 +28,7 @@ struct ActiveWorkoutView: View {
         case .Rest:
             title = "Skip"
         case .Recap:
-            title = "Let's go"
+            title = "Setup"
         default:
             break
         }
@@ -109,7 +109,7 @@ struct ActiveWorkoutView: View {
         .sheet(isPresented: $showingRecap, onDismiss: {
             workout.state = .Done
         }) {
-            RecapView()
+            RecapView(workout: workout)
         }
     }
     

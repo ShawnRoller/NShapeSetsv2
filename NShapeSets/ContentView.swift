@@ -10,9 +10,9 @@ import SwiftUI
 let ENABLE_LIVE_ACTIVITY = false
 
 struct ContentView: View {
+    @ObservedObject private var healthManager = HealthManager.shared
     @StateObject private var activityManager = ActivityManager.shared
     @State private var showingActionSheet = true
-    @State private var totalSeconds = 999
     @State private var topPadding: CGFloat = 10
     @ObservedObject private var workout: Workout = Workout.example
     @ObservedObject private var notifications = Notifications.shared
@@ -42,12 +42,33 @@ struct ContentView: View {
             .onChange(of: showingActionSheet) { _, newValue in
                 topPadding = newValue ? 10 : 100
             }
-            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet, onCTAPress: onCTAPress)
+            SetupActionSheet(workout: workout, rest: $workout.rest, rounds: $workout.rounds, isExpanded: $showingActionSheet.animation(.snappy), onCTAPress: onCTAPress, onEndWorkout: onEndWorkout)
+        }
+        .onAppear {
+            loadDefaults()
+            authorizeHealthKit()
         }
     }
     
+    func onEndWorkout() -> Void {
+        workout.endWorkout()
+        showingActionSheet = false
+    }
+    
+    func authorizeHealthKit() -> Void {
+        healthManager.authorizeHealthKit()
+    }
+    
+    func loadDefaults() -> Void {
+        let rest = DefaultManager.getDefault(forKey: Defaults.workoutRest) as? Int ?? Workout.example.rest
+        let rounds = DefaultManager.getDefault(forKey: Defaults.workoutRounds) as? Int ?? Workout.example.rounds
+        
+        workout.rest = rest
+        workout.rounds = rounds
+    }
+    
     func renderInfoBar() -> some View {
-        let renderStates: [WorkoutState] = [.Recap, .Rest, .Active]
+        let renderStates: [WorkoutState] = [.Rest, .Active]
         return Group {
             if (renderStates.contains(workout.state)) {
                 InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime)
@@ -99,7 +120,7 @@ struct ContentView: View {
         case .Active:
             workout.startRest()
         case .Rest:
-            workout.nextSet()
+            workout.skipRest()
         case .Recap:
             workout.reset()
             setupVisible = true
@@ -109,6 +130,7 @@ struct ContentView: View {
         
         showingActionSheet = setupVisible
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

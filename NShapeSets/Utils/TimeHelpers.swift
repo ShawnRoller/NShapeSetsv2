@@ -13,3 +13,9 @@ func getTime(from seconds: Int) -> String {
     let time = String(format: "%02i:%02i", minutes, seconds)
     return time
 }
+
+extension Date {
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+}
