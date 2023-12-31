@@ -28,6 +28,8 @@
 		1F2336532AF9CC2400F2597B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2336522AF9CC2400F2597B /* AppIntent.swift */; };
 		1F2336552AF9CC2500F2597B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F2336542AF9CC2500F2597B /* Assets.xcassets */; };
 		1F2336592AF9CC2500F2597B /* ActiveWorkoutTimerExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F2336452AF9CC2400F2597B /* ActiveWorkoutTimerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F407AA12B41F9E50063DCF4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F407AA02B41F9E50063DCF4 /* Launch Screen.storyboard */; };
+		1F407AA32B41FA670063DCF4 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F407AA22B41FA670063DCF4 /* LaunchScreen.png */; };
 		1F42D8A42B12D7B600F113BA /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C8AB629B6ACB9000A2BB7 /* WorkoutModels.swift */; };
 		1F42D8B22B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
 		1F42D8B32B13B37400F113BA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42D8B12B13B37400F113BA /* Models.swift */; };
@@ -241,6 +243,8 @@
 		1F2336522AF9CC2400F2597B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		1F2336542AF9CC2500F2597B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F2336562AF9CC2500F2597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F407AA02B41F9E50063DCF4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1F407AA22B41FA670063DCF4 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		1F42D8B12B13B37400F113BA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1F4743762AA38C330053537D /* NotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelpers.swift; sourceTree = "<group>"; };
 		1F48CEDB29822952006250DB /* CircleGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGradient.swift; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 				29374B972963C42900664042 /* Assets.xcassets */,
 				29374B992963C42900664042 /* Preview Content */,
 				1F51409829CFEA5400DD9A2A /* Documentation.docc */,
+				1F407AA02B41F9E50063DCF4 /* Launch Screen.storyboard */,
+				1F407AA22B41FA670063DCF4 /* LaunchScreen.png */,
 			);
 			path = NShapeSets;
 			sourceTree = "<group>";
@@ -896,7 +902,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2935B3722980B92800B66589 /* AXR ArcadeMachine.ttf in Resources */,
+				1F407AA32B41FA670063DCF4 /* LaunchScreen.png in Resources */,
 				29374B9B2963C42900664042 /* Preview Assets.xcassets in Resources */,
+				1F407AA12B41F9E50063DCF4 /* Launch Screen.storyboard in Resources */,
 				29374B982963C42900664042 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1236,7 +1244,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NShapeSets-watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "NShapeSets-watch";
+				INFOPLIST_KEY_CFBundleDisplayName = "NShape Sets";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1246,7 +1254,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1271,7 +1279,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NShapeSets-watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "NShapeSets-watch";
+				INFOPLIST_KEY_CFBundleDisplayName = "NShape Sets";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your heartrate to track calories burned during a workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want permission to log a workout towards your Activity goals.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1281,7 +1289,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1511,6 +1519,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1518,7 +1527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1549,6 +1558,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1556,7 +1566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.NShapeSets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
