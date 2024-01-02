@@ -28,8 +28,9 @@ class CountdownTimer: ObservableObject {
     
     @objc func appMovedToForeground() {
         // get the difference between the current time and the timerEndDate in seconds
-        guard let timerEndDate, let timer else { return }
+        guard let timerEndDate else { return }
         let differenceInSeconds = Calendar.current.dateComponents([.second], from: Date(), to: timerEndDate).second
+        self.timerEndDate = nil
         
         guard let differenceInSeconds, differenceInSeconds > 0 else {
             onCountdownComplete()
