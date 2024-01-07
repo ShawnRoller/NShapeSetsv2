@@ -41,9 +41,9 @@ class CountdownTimer: ObservableObject {
     }
 
     @objc func appMovedToBackground() {
-        guard remainingTime > 0 else { return }
-        timer?.cancel()
-        timer = nil
+        guard remainingTime > 0, let timer else { return }
+        timer.cancel()
+        self.timer = nil
         self.timerEndDate = Date().addingTimeInterval(TimeInterval(remainingTime))
     }
     
