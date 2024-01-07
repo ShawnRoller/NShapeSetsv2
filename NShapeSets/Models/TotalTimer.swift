@@ -36,7 +36,9 @@ class TotalTimer: ObservableObject {
     }
 
     @objc func appMovedToBackground() {
-        timer?.cancel()
+        guard let timer else { return }
+        timer.cancel()
+        self.timer = nil
         self.timerBackgroundDate = Date.now
     }
     
@@ -51,10 +53,12 @@ class TotalTimer: ObservableObject {
     
     func pause() -> Void {
         timer?.cancel()
+        timer = nil
     }
     
     func stop() -> Void {
         timer?.cancel()
+        timer = nil
         totalTime = 0
     }
     
