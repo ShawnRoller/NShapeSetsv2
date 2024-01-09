@@ -129,13 +129,18 @@ class Workout: ObservableObject, Identifiable {
         state = .Setup
         currentSet = 1
         notifications.cancelNotifications()
+        startRestDate = nil
+        totalRestTime = 0
     }
     
     private func endRestTracking() -> Void {
         guard let startRestDate else { return }
         let currentDate = Date.now
-        let differenceInSeconds = currentDate - startRestDate
-        totalRestTime += Int(differenceInSeconds)
+        let differenceInSeconds = Int(currentDate - startRestDate)
+        
+        // If rest expired while app was in the background, we need to use the rest value
+        let restTrackingTime = differenceInSeconds > rest ? rest : differenceInSeconds
+        totalRestTime += restTrackingTime
         self.startRestDate = nil
     }
     
