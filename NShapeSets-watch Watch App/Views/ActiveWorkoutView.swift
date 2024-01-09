@@ -53,11 +53,10 @@ struct ActiveWorkoutView: View {
     var body: some View {
         VStack {
             InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true)
-                .padding([.top], 22.0)
+                .padding([.top], 30.0)
                 .padding([.leading, .trailing])
             Spacer()
             getView(for: workout)
-            Spacer()
             PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
                 self.onCTAPress()
             }
@@ -89,6 +88,7 @@ struct ActiveWorkoutView: View {
                 }), secondaryButton: .cancel())
             }
         }
+        .padding(.bottom, 0)
         .ignoresSafeArea(edges: [.bottom, .top])
         .onDisappear() {
             if !self.showingAlert {

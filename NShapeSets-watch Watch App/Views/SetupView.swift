@@ -52,16 +52,17 @@ struct SetupView: View {
                     .foregroundColor(Palette.primaryButtonTitleText)
                     .watchCtaFont()
             }
-            .frame(height: 44)
+            .frame(height: 36)
             .background(Palette.primaryButtonFill)
             .cornerRadius(100)
+            .padding(.horizontal)
         }
         .navigationTitle {
             Text(workoutType.name)
                 .font(.title3)
                 .foregroundStyle(Palette.secondary)
         }
-        .padding(.bottom, 2)
+        .padding(.bottom)
         .ignoresSafeArea(edges: .bottom)
     }
 }
