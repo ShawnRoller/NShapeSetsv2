@@ -18,17 +18,17 @@ class HealthManager: ObservableObject {
     func authorizeHealthKit() {
         os_log("Authorizing HealthKit...", log: .healthKit)
         
-        //set the types to read from HKStore
-//        let healthKitTypesToRead = Set(arrayLiteral:
-//            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-//            HKObjectType.workoutType()
-//            )
-        
-        //set the types to write to HKStore
-        let healthKitTypesToWrite = Set(arrayLiteral:
+        let typesToShare: Set = [
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-            HKObjectType.workoutType()
-        )
+            HKQuantityType.workoutType()
+        ]
+
+        // The quantity types to read from the health store.
+        let typesToRead: Set = [
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKObjectType.activitySummaryType()
+        ]
         
         //if store unavailable return an error
         if !HKHealthStore.isHealthDataAvailable() {
@@ -36,7 +36,7 @@ class HealthManager: ObservableObject {
         }
         
         //request healthkit authorization
-        healthKitStore.requestAuthorization(toShare: healthKitTypesToWrite, read: nil) { (success, error) -> Void in
+        healthKitStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) -> Void in
             if success {
                 os_log("HeathKit authorized", log: .healthKit)
                 self.didAuthorize = true
@@ -107,36 +107,37 @@ class HealthManager: ObservableObject {
     }
     
     func saveWorkout(_ calories: Double, startDate: Date, endDate: Date) {
-        os_log("Saving workout...", log: .healthKit)
-        
-        if self.didAuthorize {
-            let energy = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
-            let quantity = HKQuantity(unit: HKUnit.smallCalorie(), doubleValue: calories)
-            let sample = HKQuantitySample(type: energy!, quantity: quantity, start: startDate, end: endDate)
+        #if os(iOS)
+            os_log("Saving workout...", log: .healthKit)
             
-            let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(with: .kilo), doubleValue: 0.0)
-            let workout = HKWorkout(activityType: .crossTraining, start: startDate, end: endDate, duration: abs(endDate.timeIntervalSince(startDate)), totalEnergyBurned: quantity, totalDistance: distanceQuantity, metadata: nil)
-            
-            healthKitStore.save(sample, withCompletion: { (success, error) -> Void in
+            if self.didAuthorize {
+                let energy = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
+                let quantity = HKQuantity(unit: HKUnit.smallCalorie(), doubleValue: calories)
+                let sample = HKQuantitySample(type: energy!, quantity: quantity, start: startDate, end: endDate)
                 
-                if error != nil {
-                    os_log("error saving calorie burn sample: %{public}@", log: .healthKit, type: .error, String(describing: error?.localizedDescription))
-                } else {
-                    print("calories saved successfully")
-                    self.healthKitStore.save(workout, withCompletion: { (saved, errors) -> Void in
-                        
-                        if errors != nil {
-                            os_log("error saving workout: %{public}@", log: .healthKit, type: .error, String(describing: errors?.localizedDescription))
-                        } else {
-                            os_log("workout saved successfully", log: .healthKit)
-                        }
-                        
-                    })
-                }
+                let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(with: .kilo), doubleValue: 0.0)
+                let workout = HKWorkout(activityType: .crossTraining, start: startDate, end: endDate, duration: abs(endDate.timeIntervalSince(startDate)), totalEnergyBurned: quantity, totalDistance: distanceQuantity, metadata: nil)
                 
-            })
-        }
-        
+                healthKitStore.save(sample, withCompletion: { (success, error) -> Void in
+                    
+                    if error != nil {
+                        os_log("error saving calorie burn sample: %{public}@", log: .healthKit, type: .error, String(describing: error?.localizedDescription))
+                    } else {
+                        print("calories saved successfully")
+                        self.healthKitStore.save(workout, withCompletion: { (saved, errors) -> Void in
+                            
+                            if errors != nil {
+                                os_log("error saving workout: %{public}@", log: .healthKit, type: .error, String(describing: errors?.localizedDescription))
+                            } else {
+                                os_log("workout saved successfully", log: .healthKit)
+                            }
+                            
+                        })
+                    }
+                    
+                })
+            }
+        #endif
     }
     
     func getCalories(for workoutType: HKWorkoutActivityType, seconds: Int) -> Double {

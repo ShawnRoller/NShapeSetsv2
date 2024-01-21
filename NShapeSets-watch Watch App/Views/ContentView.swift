@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var healthManager = HealthManager.shared
     @State private var preferredColumn = NavigationSplitViewColumn.detail
     
     var body: some View {
@@ -22,6 +23,9 @@ struct ContentView: View {
             }
         } detail: {
             SetupView()
+        }
+        .onAppear() {
+            healthManager.authorizeHealthKit()
         }
     }
 }

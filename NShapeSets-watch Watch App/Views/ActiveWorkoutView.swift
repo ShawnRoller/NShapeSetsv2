@@ -10,12 +10,15 @@ import HealthKit
 import os
 
 struct ActiveWorkoutView: View {
+    let selectedWorkout: HKWorkoutActivityType
+    
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
     @State private var showingRecap = false
     
     @ObservedObject var workout: Workout
+    @Environment(WorkoutManager.self) private var hkHelper
     private var healthStore = HKHealthStore()
     
     private var buttonTitle: String {
@@ -46,7 +49,8 @@ struct ActiveWorkoutView: View {
         return color
     }
     
-    init(workout: Workout) {
+    init(selectedWorkout: HKWorkoutActivityType, workout: Workout) {
+        self.selectedWorkout = selectedWorkout
         self.workout = workout
     }
     
@@ -144,10 +148,12 @@ struct ActiveWorkoutView: View {
     }
     
     func startWorkout() {
+        hkHelper.startWorkout(workoutType: selectedWorkout)
         workout.startWorkout()
     }
     
     func endWorkout() {
+        hkHelper.endWorkout()
         workout.endWorkout()
     }
     
@@ -193,6 +199,6 @@ struct ActiveWorkoutView: View {
 
 struct ActiveWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveWorkoutView(workout: Workout.example)
+        ActiveWorkoutView(selectedWorkout: HKWorkoutActivityType.yoga, workout: Workout.example)
     }
 }
