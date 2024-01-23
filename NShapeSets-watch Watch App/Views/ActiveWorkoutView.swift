@@ -70,6 +70,9 @@ struct ActiveWorkoutView: View {
                 self.goBack()
             }
         }
+        .onChange(of: workout.timer.remainingTime) { prev, new in
+            self.countdown()
+        }
         .onAppear() {
             os_log("Active workout appeared!", log: .ui)
             self.setDefaultSettings()
@@ -122,16 +125,13 @@ struct ActiveWorkoutView: View {
         case .Setup:
             workout.startWorkout()
         case .Active:
+            workout.startRest()
             if workout.currentSet == workout.rounds {
-                self.endWorkout()
                 showingRecap = true
-            } else {
-                workout.startRest()
             }
         case .Rest:
-            workout.nextSet()
+            workout.skipRest()
         case .Recap:
-            self.endWorkout()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                 self.goBack()
             }
@@ -164,13 +164,14 @@ struct ActiveWorkoutView: View {
     func countdown() {
         if 1...3 ~= workout.timer.remainingTime {
             HapticHelper.playCountdownHaptic()
+        } else if workout.timer.remainingTime == 0 {
+            HapticHelper.playStartHaptic()
         }
     }
     
     func onRestEnd() {
         os_log("rest is over", log: .ui)
         HapticHelper.playStartHaptic()
-        workout.nextSet()
     }
     
     func goBack() {
@@ -189,11 +190,6 @@ struct ActiveWorkoutView: View {
         else {
             workout.startRest()
         }
-    }
-    
-    func onSkip() {
-        os_log("Rest was skipped", log: .ui)
-        onRestEnd()
     }
 }
 
