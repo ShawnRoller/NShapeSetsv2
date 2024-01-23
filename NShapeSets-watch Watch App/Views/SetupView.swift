@@ -47,7 +47,7 @@ struct SetupView: View {
                 }
             }
             .padding()
-            NavigationLink(destination: ActiveWorkoutView(selectedWorkout: workoutType.type,workout: Workout(rounds: selectedSets, rest: selectedRest))) {
+            NavigationLink(destination: ActiveWorkoutView(selectedWorkout: workoutType,workout: Workout(rounds: selectedSets, rest: selectedRest))) {
                 Text("Start")
                     .foregroundColor(Palette.primaryButtonTitleText)
                     .watchCtaFont()

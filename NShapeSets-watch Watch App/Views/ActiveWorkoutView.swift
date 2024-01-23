@@ -10,7 +10,7 @@ import HealthKit
 import os
 
 struct ActiveWorkoutView: View {
-    let selectedWorkout: HKWorkoutActivityType
+    let selectedWorkout: WorkoutType
     
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
@@ -49,7 +49,7 @@ struct ActiveWorkoutView: View {
         return color
     }
     
-    init(selectedWorkout: HKWorkoutActivityType, workout: Workout) {
+    init(selectedWorkout: WorkoutType, workout: Workout) {
         self.selectedWorkout = selectedWorkout
         self.workout = workout
     }
@@ -116,7 +116,7 @@ struct ActiveWorkoutView: View {
         .sheet(isPresented: $showingRecap, onDismiss: {
             workout.state = .Done
         }) {
-            RecapView(workout: workout)
+            RecapView(workout: workout, workoutType: selectedWorkout)
         }
     }
     
@@ -148,7 +148,7 @@ struct ActiveWorkoutView: View {
     }
     
     func startWorkout() {
-        hkHelper.startWorkout(workoutType: selectedWorkout)
+        hkHelper.startWorkout(workoutType: selectedWorkout.type)
         workout.startWorkout()
     }
     
@@ -195,6 +195,6 @@ struct ActiveWorkoutView: View {
 
 struct ActiveWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveWorkoutView(selectedWorkout: HKWorkoutActivityType.yoga, workout: Workout.example)
+        ActiveWorkoutView(selectedWorkout: workouts.first!, workout: Workout.example)
     }
 }

@@ -21,7 +21,7 @@ struct PrimaryButton: View {
                 .foregroundStyle(titleColor)
                 .watchCtaFont()
         })
-        .frame(height: 36)
+        .frame(height: 40)
         .background(buttonColor)
         .cornerRadius(100)
         .padding([.horizontal, .bottom])
