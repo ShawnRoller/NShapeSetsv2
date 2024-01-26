@@ -79,6 +79,7 @@
 		1F9B01EC2B3B8C8C001AF325 /* CircleGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B01EB2B3B8C8C001AF325 /* CircleGradient.swift */; };
 		1F9FB1182A3F688700BA9EC5 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB1172A3F688700BA9EC5 /* SetupView.swift */; };
 		1F9FB11C2A3F68C400BA9EC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB11B2A3F68C400BA9EC5 /* Workout.swift */; };
+		1FA4D6D32B5D79E8005920B0 /* HealthkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB192B3F72E200218309 /* HealthkitManager.swift */; };
 		1FA6E0FA2A793BF100AE84A0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF8622980C5FD0000AF6D /* ProgressBar.swift */; };
 		1FA6E0FB2A793D8B00AE84A0 /* InfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1A299990DC005A3C3A /* InfoBar.swift */; };
 		1FA6E0FC2A793D9C00AE84A0 /* TimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978FF1F299991E2005A3C3A /* TimeHelpers.swift */; };
@@ -87,7 +88,6 @@
 		1FA6E1022A794AB900AE84A0 /* RecapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6E1012A794AB900AE84A0 /* RecapDetailView.swift */; };
 		1FA6E1042A794B3400AE84A0 /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6E1032A794B3400AE84A0 /* RecapView.swift */; };
 		1FA7DB1A2B3F72E200218309 /* HealthkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB192B3F72E200218309 /* HealthkitManager.swift */; };
-		1FA7DB1C2B4086E200218309 /* HealthkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB192B3F72E200218309 /* HealthkitManager.swift */; };
 		1FA7DB1E2B40B1B800218309 /* RecapDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7DB1D2B40B1B800218309 /* RecapDetail.swift */; };
 		1FBA7A0B29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
 		1FBA7A0C29CF38F8007A594F /* RestSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA7A0A29CF38F8007A594F /* RestSelector.swift */; };
@@ -987,7 +987,7 @@
 				1F7EE5B02A66D920007CBBEA /* TotalTimer.swift in Sources */,
 				1FD2A7032A5CF1A50002FEC0 /* Colors.swift in Sources */,
 				1F42D8B32B13B37400F113BA /* Models.swift in Sources */,
-				1FA7DB1C2B4086E200218309 /* HealthkitManager.swift in Sources */,
+				1FA4D6D32B5D79E8005920B0 /* HealthkitManager.swift in Sources */,
 				1F61A1F32A8EA306003FB788 /* WorkoutView.swift in Sources */,
 				1F7EE5D12A66EE7E007CBBEA /* PrimaryButton.swift in Sources */,
 				1F7EE5A92A66CF8A007CBBEA /* OSLogExtensions.swift in Sources */,

@@ -117,6 +117,7 @@ class Workout: ObservableObject, Identifiable {
             return
         }
         
+        // TODO: only for iOS - not watchOS
         // Estimate the calories burned
         let calories = healthManager.getCalories(for: HKWorkoutActivityType.highIntensityIntervalTraining, seconds: totalTimer.totalTime)
         healthManager.saveWorkout(calories, startDate: startDate, endDate: date)

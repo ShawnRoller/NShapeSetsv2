@@ -12,6 +12,9 @@ struct InfoBar: View {
     var totalSeconds: Int
     var detailColor: Color = Palette.quaternary
     var detailOnTop = false
+    var currentSet: Int?
+    var totalSets: Int?
+    
     private var time: String {
         return getTime(from: totalSeconds)
     }
@@ -23,19 +26,38 @@ struct InfoBar: View {
         }
     }
     
+    func setsView() -> some View {
+        Group {
+            if let currentSet, let totalSets {
+                Text("\(currentSet)/\(totalSets)")
+                    .totalTimeFont()
+                    .foregroundColor(Palette.primary)
+            } else {
+                EmptyView()
+            }
+        }
+    }
+    
     func topView() -> some View {
         Group {
             if (detailOnTop) {
-                Label {
-                    Text(time)
-                        .totalTimeFont()
-                        .foregroundColor(detailColor)
-                } icon: {
-                    Image(systemName: "clock.fill")
-                        .foregroundColor(detailColor)
+                HStack {
+                    Spacer()
+                    Label {
+                        Text(time)
+                            .totalTimeFont()
+                            .foregroundColor(detailColor)
+                    } icon: {
+                        Image(systemName: "clock.fill")
+                            .foregroundColor(detailColor)
+                    }
+                    .padding(.leading)
+                    .labelStyle(.titleOnly)
+                    Spacer()
+                        .overlay {
+                            setsView()
+                        }
                 }
-                .padding(.leading)
-                .labelStyle(.titleOnly)
             } else {
                 ProgressBar(progress: progress)
                     .padding([.leading, .trailing])
@@ -77,6 +99,12 @@ struct InfoBar_Previews: PreviewProvider {
             }
             .background()
             .environment(\.colorScheme, .light)
+            VStack {
+                InfoBar(progress: 33, totalSeconds: 999, detailOnTop: true, currentSet: 10, totalSets: 12)
+                    .environment(\.colorScheme, .dark)
+            }
+            .background()
+            .environment(\.colorScheme, .dark)
         }
     }
 }

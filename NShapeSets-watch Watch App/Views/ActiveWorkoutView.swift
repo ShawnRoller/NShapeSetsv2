@@ -10,12 +10,15 @@ import HealthKit
 import os
 
 struct ActiveWorkoutView: View {
+    let selectedWorkout: WorkoutType
+    
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     @State private var activeAlert: ActiveAlert = .done
     @State private var showingRecap = false
     
     @ObservedObject var workout: Workout
+    @Environment(WorkoutManager.self) private var hkHelper
     private var healthStore = HKHealthStore()
     
     private var buttonTitle: String {
@@ -46,18 +49,18 @@ struct ActiveWorkoutView: View {
         return color
     }
     
-    init(workout: Workout) {
+    init(selectedWorkout: WorkoutType, workout: Workout) {
+        self.selectedWorkout = selectedWorkout
         self.workout = workout
     }
     
     var body: some View {
         VStack {
             InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true)
-                .padding([.top], 22.0)
+                .padding([.top], 30.0)
                 .padding([.leading, .trailing])
             Spacer()
             getView(for: workout)
-            Spacer()
             PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
                 self.onCTAPress()
             }
@@ -66,6 +69,9 @@ struct ActiveWorkoutView: View {
             if new == WorkoutState.Done {
                 self.goBack()
             }
+        }
+        .onChange(of: workout.timer.remainingTime) { prev, new in
+            self.countdown()
         }
         .onAppear() {
             os_log("Active workout appeared!", log: .ui)
@@ -89,6 +95,7 @@ struct ActiveWorkoutView: View {
                 }), secondaryButton: .cancel())
             }
         }
+        .padding(.bottom, 0)
         .ignoresSafeArea(edges: [.bottom, .top])
         .onDisappear() {
             if !self.showingAlert {
@@ -109,7 +116,7 @@ struct ActiveWorkoutView: View {
         .sheet(isPresented: $showingRecap, onDismiss: {
             workout.state = .Done
         }) {
-            RecapView(workout: workout)
+            RecapView(workout: workout, workoutType: selectedWorkout)
         }
     }
     
@@ -118,16 +125,14 @@ struct ActiveWorkoutView: View {
         case .Setup:
             workout.startWorkout()
         case .Active:
+            workout.startRest()
             if workout.currentSet == workout.rounds {
-                self.endWorkout()
+                endWorkout()
                 showingRecap = true
-            } else {
-                workout.startRest()
             }
         case .Rest:
-            workout.nextSet()
+            workout.skipRest()
         case .Recap:
-            self.endWorkout()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                 self.goBack()
             }
@@ -144,10 +149,12 @@ struct ActiveWorkoutView: View {
     }
     
     func startWorkout() {
+        hkHelper.startWorkout(workoutType: selectedWorkout.type)
         workout.startWorkout()
     }
     
     func endWorkout() {
+        hkHelper.endWorkout()
         workout.endWorkout()
     }
     
@@ -158,13 +165,9 @@ struct ActiveWorkoutView: View {
     func countdown() {
         if 1...3 ~= workout.timer.remainingTime {
             HapticHelper.playCountdownHaptic()
+        } else if workout.timer.remainingTime == 0 {
+            HapticHelper.playStartHaptic()
         }
-    }
-    
-    func onRestEnd() {
-        os_log("rest is over", log: .ui)
-        HapticHelper.playStartHaptic()
-        workout.nextSet()
     }
     
     func goBack() {
@@ -173,26 +176,10 @@ struct ActiveWorkoutView: View {
         workout.reset()
         presentationMode.wrappedValue.dismiss()
     }
-    
-    func onRest() {
-        os_log("Rest started", log: .ui)
-        if workout.currentSet == workout.rounds {
-            activeAlert = .done
-            showingAlert = true
-        }
-        else {
-            workout.startRest()
-        }
-    }
-    
-    func onSkip() {
-        os_log("Rest was skipped", log: .ui)
-        onRestEnd()
-    }
 }
 
 struct ActiveWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveWorkoutView(workout: Workout.example)
+        ActiveWorkoutView(selectedWorkout: workouts.first!, workout: Workout.example)
     }
 }

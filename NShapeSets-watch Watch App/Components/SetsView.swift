@@ -12,19 +12,10 @@ struct SetsView: View {
     var totalSets: Int
     
     var body: some View {
-        HStack {
-            Spacer()
+        HStack(alignment: .center) {
             Text("\(currentSet)")
                 .font(.largeTitle)
                 .foregroundStyle(Palette.primary)
-            Spacer()
-                .overlay(
-                    HStack {
-                        Text("/ \(totalSets)")
-                            .padding(.leading, 26.0)
-                        Spacer()
-                    }
-                )
         }
     }
 }

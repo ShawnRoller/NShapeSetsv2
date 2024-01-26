@@ -20,6 +20,7 @@ struct WorkoutView: View {
             ProgressRing(progress: progress, isRest: workout.state == .Rest, ringWidth: 5)
             renderText(for: workout)
         }
+        .frame(maxHeight: .infinity)
     }
     
     func renderText(for workout: Workout) -> some View {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecapView: View {
     var workout: Workout
+    var workoutType: WorkoutType
     @Environment(\.dismiss) var dismiss
     
     private var time: String {
@@ -25,6 +26,9 @@ struct RecapView: View {
                     .watchCtaFont()
                     .foregroundColor(Palette.primary)
                     .listRowBackground(Color.white.opacity(0))
+                Text(workoutType.name)
+                    .foregroundColor(Palette.secondary)
+                    .listRowBackground(Color.white.opacity(0))
             }
             .frame(height: 10)
             
@@ -33,12 +37,9 @@ struct RecapView: View {
             RecapDetailView(title: "Total time", value: time)
             RecapDetailView(title: "Active time", value: activeTime)
         }
-        PrimaryButton(title: "Done", buttonColor: Palette.tertiary) {
-            dismiss()
-        }
     }
 }
 
 #Preview {
-    RecapView(workout: Workout.example)
+    RecapView(workout: Workout.example, workoutType: workouts.first!)
 }
