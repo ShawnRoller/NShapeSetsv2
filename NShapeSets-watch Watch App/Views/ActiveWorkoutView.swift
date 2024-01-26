@@ -56,7 +56,7 @@ struct ActiveWorkoutView: View {
     
     var body: some View {
         VStack {
-            InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true)
+            InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true, currentSet: workout.currentSet, totalSets: workout.rounds)
                 .padding([.top], 30.0)
                 .padding([.leading, .trailing])
             Spacer()
