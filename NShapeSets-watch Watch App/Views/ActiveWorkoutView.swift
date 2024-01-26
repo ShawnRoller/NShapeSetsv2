@@ -127,6 +127,7 @@ struct ActiveWorkoutView: View {
         case .Active:
             workout.startRest()
             if workout.currentSet == workout.rounds {
+                endWorkout()
                 showingRecap = true
             }
         case .Rest:
@@ -169,27 +170,11 @@ struct ActiveWorkoutView: View {
         }
     }
     
-    func onRestEnd() {
-        os_log("rest is over", log: .ui)
-        HapticHelper.playStartHaptic()
-    }
-    
     func goBack() {
         os_log("Going back to setup...", log: .ui)
         workout.endWorkout()
         workout.reset()
         presentationMode.wrappedValue.dismiss()
-    }
-    
-    func onRest() {
-        os_log("Rest started", log: .ui)
-        if workout.currentSet == workout.rounds {
-            activeAlert = .done
-            showingAlert = true
-        }
-        else {
-            workout.startRest()
-        }
     }
 }
 
