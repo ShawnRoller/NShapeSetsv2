@@ -57,7 +57,7 @@ struct ActiveWorkoutView: View {
     var body: some View {
         VStack {
             InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true, currentSet: workout.currentSet, totalSets: workout.rounds)
-                .padding([.top], 30.0)
+                .padding([.top], 35.0)
                 .padding([.leading, .trailing])
             Spacer()
             getView(for: workout)
@@ -83,15 +83,17 @@ struct ActiveWorkoutView: View {
                 self.endWorkout()
                 return Alert(title: Text("Workout complete!"), message: Text("You completed all sets in \(workout.totalTimer.totalTime)!"), dismissButton: .default(Text("OK"), action: {
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-                        self.goBack()
+                        self.endWorkout()
+                        self.showingRecap = true
                     }
                 }))
             } else {
                 return Alert(title: Text("All done?"), primaryButton: .destructive(Text("Done!"), action: {
+                    self.endWorkout()
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                         self.endWorkout()
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-                            self.goBack()
-                        }
+                        self.showingRecap = true
+                    }
                 }), secondaryButton: .cancel())
             }
         }

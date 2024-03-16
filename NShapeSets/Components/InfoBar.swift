@@ -44,9 +44,7 @@ struct InfoBar: View {
                 HStack {
                     Spacer()
                     Label {
-                        Text(time)
-                            .totalTimeFont()
-                            .foregroundColor(detailColor)
+                        setsView()
                     } icon: {
                         Image(systemName: "clock.fill")
                             .foregroundColor(detailColor)
@@ -55,7 +53,9 @@ struct InfoBar: View {
                     .labelStyle(.titleOnly)
                     Spacer()
                         .overlay {
-                            setsView()
+                            Text(time)
+                                .totalTimeFont()
+                                .foregroundColor(detailColor)
                         }
                 }
             } else {

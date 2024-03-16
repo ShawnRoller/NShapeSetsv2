@@ -19,51 +19,65 @@ struct SetupView: View {
     var workoutType: WorkoutType = workouts.first!
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    Text("Sets")
-                        .font(.footnote)
-                        .bold()
-                    Picker("Sets", selection: $selectedSets) {
-                        ForEach(sets, id: \.self) {
-                            Text(String($0))
-                                .font(.title2)
+        GeometryReader { proxy in
+            VStack {
+                HStack {
+                    VStack {
+                        Text("Sets")
+                            .font(.footnote)
+                            .bold()
+                        Picker("Sets", selection: $selectedSets) {
+                            ForEach(sets, id: \.self) {
+                                Text(String($0))
+                                    .font(.title2)
+                            }
                         }
+                        .labelsHidden()
                     }
-                    .labelsHidden()
-                }
-                VStack {
-                    Text("Rest")
-                        .font(.footnote)
-                        .bold()
-                    Picker("Rest", selection: $selectedRest) {
-                        ForEach(rest, id: \.self) {
-                            Text(String($0))
-                                .font(.title2)
+                    VStack {
+                        Text("Rest")
+                            .font(.footnote)
+                            .bold()
+                        Picker("Rest", selection: $selectedRest) {
+                            ForEach(rest, id: \.self) {
+                                Text(String($0))
+                                    .font(.title2)
+                            }
                         }
+                        .labelsHidden()
                     }
-                    .labelsHidden()
                 }
+                .frame(maxHeight: proxy.size.height / 1.3)
+                .padding()
+                NavigationLink(destination: ActiveWorkoutView(selectedWorkout: workoutType,workout: Workout(rounds: selectedSets, rest: selectedRest))) {
+                    Text("Start")
+                        .foregroundColor(Palette.primaryButtonTitleText)
+                        .watchCtaFont()
+                }
+                .frame(height: 36)
+                .background(Palette.primaryButtonFill)
+                .cornerRadius(100)
+                .padding(.horizontal)
             }
-            .padding()
-            NavigationLink(destination: ActiveWorkoutView(selectedWorkout: workoutType,workout: Workout(rounds: selectedSets, rest: selectedRest))) {
-                Text("Start")
-                    .foregroundColor(Palette.primaryButtonTitleText)
-                    .watchCtaFont()
+            .navigationTitle {
+                Text(workoutType.name)
+                    .font(.title3)
+                    .foregroundStyle(Palette.secondary)
             }
-            .frame(height: 36)
-            .background(Palette.primaryButtonFill)
-            .cornerRadius(100)
-            .padding(.horizontal)
+            .padding(.bottom)
+            .ignoresSafeArea(edges: .bottom)
         }
-        .navigationTitle {
-            Text(workoutType.name)
-                .font(.title3)
-                .foregroundStyle(Palette.secondary)
+        .onAppear {
+            loadDefaults()
         }
-        .padding(.bottom)
-        .ignoresSafeArea(edges: .bottom)
+    }
+    
+    func loadDefaults() -> Void {
+        let rest = DefaultManager.getDefault(forKey: Defaults.workoutRest) as? Int ?? Workout.example.rest
+        let rounds = DefaultManager.getDefault(forKey: Defaults.workoutRounds) as? Int ?? Workout.example.rounds
+        
+        selectedRest = rest
+        selectedSets = rounds
     }
 }
 
