@@ -124,11 +124,32 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
                     DispatchQueue.main.async {
+                        guard let workout else { return }
                         self.workout = workout
+                        self.getAverageHeartRate(for: workout)
                     }
                 }
             }
         }
+    }
+    
+    func getAverageHeartRate(for finishedWorkout: HKWorkout) {
+        guard HKHealthStore.isHealthDataAvailable() else { return }
+        
+        let predicate = HKQuery.predicateForObjects(from: finishedWorkout)
+        guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
+        let statisticsQuery = HKStatisticsQuery(quantityType: heartRateType,
+                                                quantitySamplePredicate: predicate,
+                                                options: .discreteAverage) { (query, result, error) in
+            guard let result = result, let averageHeartRate = result.averageQuantity()?.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute())) else {
+                return
+            }
+            
+            print(averageHeartRate)
+//            self.averageHeartRate = averageHeartRate
+        }
+        
+        healthStore.execute(statisticsQuery)
     }
 
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {

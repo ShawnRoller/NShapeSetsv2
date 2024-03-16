@@ -34,6 +34,7 @@ struct RecapView: View {
             
             RecapDetailView(title: "Sets", value: "\(workout.completedSets)")
             RecapDetailView(title: "Skipped rest", value: "\(workout.skippedRest)")
+            RecapDetailView(title: "Heartrate", value: "\(WorkoutManager().averageHeartRate)")
             RecapDetailView(title: "Total time", value: time)
             RecapDetailView(title: "Active time", value: activeTime)
         }
