@@ -52,6 +52,17 @@ struct ActiveWorkoutView: View {
         return color
     }
     
+    private var toButtonColor: Color {
+        var color = Palette.tertiary
+        switch workout.state {
+        case .Rest:
+            color = Palette.secondary
+        default:
+            color = Palette.tertiary
+        }
+        return color
+    }
+    
     init(selectedWorkout: WorkoutType, workout: Workout) {
         self.selectedWorkout = selectedWorkout
         self.workout = workout
@@ -70,9 +81,7 @@ struct ActiveWorkoutView: View {
                     .padding([.leading, .trailing])
                 Spacer()
                 getView(for: workout)
-                PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
-                    self.onCTAPress()
-                }
+                PrimaryButton(title: buttonTitle, buttonColor: buttonColor, onButtonTap: self.onCTAPress, requireHold: true, onHoldColor: toButtonColor)
             }
             .tag(1)
             .padding(.bottom, 0)
