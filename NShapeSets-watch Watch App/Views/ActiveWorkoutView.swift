@@ -67,6 +67,7 @@ struct ActiveWorkoutView: View {
         }
         .onChange(of: workout.state) { prev, new in
             if new == WorkoutState.Done {
+                workout.reset()
                 self.goBack()
             }
         }
