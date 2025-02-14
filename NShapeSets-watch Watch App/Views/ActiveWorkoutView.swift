@@ -21,6 +21,9 @@ struct ActiveWorkoutView: View {
     @Environment(WorkoutManager.self) private var hkHelper
     private var healthStore = HKHealthStore()
     
+    // Tab behavior
+    @State private var currentPage = 1
+    
     private var buttonTitle: String {
         var title = "Start"
         switch workout.state {
@@ -55,15 +58,25 @@ struct ActiveWorkoutView: View {
     }
     
     var body: some View {
-        VStack {
-            InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true, currentSet: workout.currentSet, totalSets: workout.rounds)
-                .padding([.top], 35.0)
-                .padding([.leading, .trailing])
-            Spacer()
-            getView(for: workout)
-            PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
-                self.onCTAPress()
+        TabView(selection: $currentPage) {
+            VStack {
+                SettingsView(sets: Array(workout.currentSet...99), selectedSets: $workout.rounds, selectedRest: $workout.rest)
             }
+            .tag(0)
+            
+            VStack {
+                InfoBar(progress: workout.progress, totalSeconds: workout.totalTimer.totalTime, detailColor: .secondary, detailOnTop: true, currentSet: workout.currentSet, totalSets: workout.rounds)
+                    .padding([.top], 35.0)
+                    .padding([.leading, .trailing])
+                Spacer()
+                getView(for: workout)
+                PrimaryButton(title: buttonTitle, buttonColor: buttonColor) {
+                    self.onCTAPress()
+                }
+            }
+            .tag(1)
+            .padding(.bottom, 0)
+            .ignoresSafeArea(edges: [.bottom, .top])
         }
         .onChange(of: workout.state) { prev, new in
             if new == WorkoutState.Done {
@@ -98,8 +111,6 @@ struct ActiveWorkoutView: View {
                 }), secondaryButton: .cancel())
             }
         }
-        .padding(.bottom, 0)
-        .ignoresSafeArea(edges: [.bottom, .top])
         .onDisappear() {
             if !self.showingAlert {
                 self.endWorkout()
@@ -121,6 +132,7 @@ struct ActiveWorkoutView: View {
         }) {
             RecapView(workout: workout, workoutType: selectedWorkout)
         }
+            
     }
     
     func onCTAPress() -> Void {
@@ -129,7 +141,7 @@ struct ActiveWorkoutView: View {
             workout.startWorkout()
         case .Active:
             workout.startRest()
-            if workout.currentSet == workout.rounds {
+            if workout.currentSet >= workout.rounds {
                 endWorkout()
                 showingRecap = true
             }

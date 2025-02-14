@@ -8,12 +8,46 @@
 import SwiftUI
 import WorkoutKit
 
-struct SetupView: View {
-    private let sets: [Int] = Array(1...99)
-    private let restValues: [Int] = Array(5...300)
+struct SettingsView: View {
+    let sets: [Int]
+    let restValues: [Int] = Array(5...300)
     private var rest: [Int] {
         return restValues.compactMap { v in v % 5 == 0 ? v : nil }
     }
+    @Binding var selectedSets: Int
+    @Binding var selectedRest: Int
+    
+    var body: some View {
+        HStack {
+            VStack {
+                Text("Sets")
+                    .font(.footnote)
+                    .bold()
+                Picker("Sets", selection: $selectedSets) {
+                    ForEach(sets, id: \.self) {
+                        Text(String($0))
+                            .font(.title2)
+                    }
+                }
+                .labelsHidden()
+            }
+            VStack {
+                Text("Rest")
+                    .font(.footnote)
+                    .bold()
+                Picker("Rest", selection: $selectedRest) {
+                    ForEach(rest, id: \.self) {
+                        Text(String($0))
+                            .font(.title2)
+                    }
+                }
+                .labelsHidden()
+            }
+        }
+    }
+}
+
+struct SetupView: View {
     @State private var selectedSets: Int = 15
     @State private var selectedRest: Int = 90
     var workoutType: WorkoutType = workouts.first!
@@ -21,32 +55,7 @@ struct SetupView: View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
-                HStack {
-                    VStack {
-                        Text("Sets")
-                            .font(.footnote)
-                            .bold()
-                        Picker("Sets", selection: $selectedSets) {
-                            ForEach(sets, id: \.self) {
-                                Text(String($0))
-                                    .font(.title2)
-                            }
-                        }
-                        .labelsHidden()
-                    }
-                    VStack {
-                        Text("Rest")
-                            .font(.footnote)
-                            .bold()
-                        Picker("Rest", selection: $selectedRest) {
-                            ForEach(rest, id: \.self) {
-                                Text(String($0))
-                                    .font(.title2)
-                            }
-                        }
-                        .labelsHidden()
-                    }
-                }
+                SettingsView(sets: Array(1...99), selectedSets: $selectedSets, selectedRest: $selectedRest)
                 .frame(maxHeight: proxy.size.height / 1.3)
                 .padding()
                 NavigationLink(destination: ActiveWorkoutView(selectedWorkout: workoutType,workout: Workout(rounds: selectedSets, rest: selectedRest))) {
