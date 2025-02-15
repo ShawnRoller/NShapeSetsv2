@@ -1,4 +1,5 @@
 import SwiftUI
+import WatchKit
 
 struct PrimaryButton: View {
     var title: String
@@ -6,13 +7,13 @@ struct PrimaryButton: View {
     var titleColor: Color = .white
     var onButtonTap: () -> Void
     var requireHold: Bool = false
-    var onHoldColor: Color = Palette.secondaryButtonFill
-
-    @State private var progress: CGFloat = 0
-    @State private var animation: Animation? = nil
-
-    let holdDuration: TimeInterval = 1.0
-
+    
+    @State private var scale: CGFloat = 1.0
+    @State private var offset: CGFloat = 0
+    @State private var isHolding = false
+    
+    let holdDuration: TimeInterval = 0.5
+    
     var body: some View {
         Button(action: {
             if !requireHold {
@@ -24,9 +25,11 @@ struct PrimaryButton: View {
                 .watchCtaFont()
         })
         .frame(height: 40)
-        .background(buttonBackgroundColor)
+        .background(buttonColor)
         .cornerRadius(100)
         .padding([.horizontal, .bottom])
+        .scaleEffect(scale)
+        .offset(x: offset)
         .simultaneousGesture(
             requireHold ? LongPressGesture(minimumDuration: holdDuration)
                 .onChanged { _ in
@@ -34,69 +37,96 @@ struct PrimaryButton: View {
                 }
                 .onEnded { success in
                     if success {
-                        onButtonTap()
+                        triggerSuccess()
                     }
-                    stopHoldAnimation()
                 } : nil
         )
         .simultaneousGesture(
             requireHold ? DragGesture(minimumDistance: 0)
                 .onEnded { _ in
-                    if progress > 0 {
-                        stopHoldAnimation()
+                    if isHolding {
+                        cancelHoldAnimation()
                     }
                 } : nil
         )
     }
     
-    private var buttonBackgroundColor: Color {
-        buttonColor.interpolate(to: onHoldColor, progress: progress)
-    }
-
-    /// Starts the animation when the button is held
     private func startHoldAnimation() {
-        animation = Animation.linear(duration: holdDuration)
-        withAnimation(animation) {
-            progress = 1.0
+        isHolding = true
+        
+        // Start shrinking animation
+        withAnimation(.easeInOut(duration: holdDuration)) {
+            scale = 0.8
+        }
+        
+        // Initial haptic feedback
+        WKInterfaceDevice.current().play(.start)
+        
+        // Schedule periodic haptic feedback
+        Timer.scheduledTimer(withTimeInterval: holdDuration/3, repeats: false) { _ in
+            if isHolding {
+                WKInterfaceDevice.current().play(.click)
+            }
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: holdDuration/1.5, repeats: false) { _ in
+            if isHolding {
+                WKInterfaceDevice.current().play(.click)
+            }
         }
     }
-
-    /// Stops the animation and reverses progress if released early
-    private func stopHoldAnimation() {
-        // If released early, reverse the animation back to 0
-        withAnimation(Animation.easeOut(duration: 0.3)) {
-            progress = 0
+    
+    private func triggerSuccess() {
+        isHolding = false
+        
+        // Pop animation
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
+            scale = 1.15
         }
-    }
-}
-
-extension Color {
-    func interpolate(to color: Color, progress: CGFloat) -> Color {
-        return Color(
-            red: (1 - progress) * self.redComponent + progress * color.redComponent,
-            green: (1 - progress) * self.greenComponent + progress * color.greenComponent,
-            blue: (1 - progress) * self.blueComponent + progress * color.blueComponent,
-            opacity: (1 - progress) * self.opacityComponent + progress * color.opacityComponent
-        )
-    }
-    
-    private var redComponent: CGFloat {
-        UIColor(self).cgColor.components?[0] ?? 0
+        
+        // Return to normal size
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
+                scale = 1.0
+            }
+        }
+        
+        // Success haptic
+        WKInterfaceDevice.current().play(.success)
+        
+        onButtonTap()
     }
     
-    private var greenComponent: CGFloat {
-        UIColor(self).cgColor.components?[1] ?? 0
-    }
-    
-    private var blueComponent: CGFloat {
-        UIColor(self).cgColor.components?[2] ?? 0
-    }
-    
-    private var opacityComponent: CGFloat {
-        UIColor(self).cgColor.alpha
+    private func cancelHoldAnimation() {
+        isHolding = false
+        
+        // Reset scale with spring animation
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
+            scale = 1.0
+        }
+        
+        // Shake animation
+        withAnimation(.spring(response: 0.1, dampingFraction: 0.3, blendDuration: 0)) {
+            offset = 8
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            withAnimation(.spring(response: 0.1, dampingFraction: 0.3, blendDuration: 0)) {
+                offset = -8
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            withAnimation(.spring(response: 0.1, dampingFraction: 0.3, blendDuration: 0)) {
+                offset = 0
+            }
+        }
+        
+        // Error haptic
+        WKInterfaceDevice.current().play(.failure)
     }
 }
 
 #Preview {
-    PrimaryButton(title: "REST", buttonColor: Palette.primary, onButtonTap: {}, requireHold: true, onHoldColor: .red)
+    PrimaryButton(title: "REST", buttonColor: Palette.primary, onButtonTap: {}, requireHold: true)
 }
